@@ -11,6 +11,7 @@
 		B3B2C8C8299F7BEA00474A3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C7299F7BEA00474A3D /* ContentView.swift */; };
 		B3B2C8CC299F7BEC00474A3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Assets.xcassets */; };
 		B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */; };
+		B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */; };
 		B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D8BCE2299F89F400BEA574 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,9 @@
 		B3B2C8CB299F7BEC00474A3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3B2C8D5299F7F8500474A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GarmentConfigurator/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
+		B3CDC11A29A371CB00AD0B7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3CDC11C29A371DE00AD0B7A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3CDC11D29A371DF00AD0B7A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3D8BCE1299F89F400BEA574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3D8BCE3299F8A6900BEA574 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3D8BCE4299F8A7800BEA574 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -77,11 +81,20 @@
 				B3B2C8CB299F7BEC00474A3D /* Assets.xcassets */,
 				B3B2C8D5299F7F8500474A3D /* Info.plist */,
 				B3B2C8CD299F7BEC00474A3D /* Preview Content */,
-				B3D8BCE2299F89F400BEA574 /* Localizable.strings */,
+				B3CDC11E29A371E400AD0B7A /* Localization */,
 			);
 			name = Resources;
 			path = GarmentConfigurator/Resources;
 			sourceTree = SOURCE_ROOT;
+		};
+		B3CDC11E29A371E400AD0B7A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */,
+				B3D8BCE2299F89F400BEA574 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
 		};
 		B3D8BCDB299F87AF00BEA574 /* App */ = {
 			isa = PBXGroup;
@@ -157,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
+				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
 				B3B2C8CC299F7BEC00474A3D /* Assets.xcassets in Resources */,
 			);
@@ -198,6 +212,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3CDC11A29A371CB00AD0B7A /* en */,
+				B3CDC11C29A371DE00AD0B7A /* it */,
+				B3CDC11D29A371DF00AD0B7A /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		B3D8BCE2299F89F400BEA574 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -343,7 +367,6 @@
 				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SnapARment;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Give me access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -381,7 +404,6 @@
 				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SnapARment;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Give me access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
