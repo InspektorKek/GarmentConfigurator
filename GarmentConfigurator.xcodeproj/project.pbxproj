@@ -7,20 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674929A39BA40077A9FB /* Strings+Generated.swift */; };
+		B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */; };
 		B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
 		B3B2C8C8299F7BEA00474A3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C7299F7BEA00474A3D /* ContentView.swift */; };
-		B3B2C8CA299F7BEA00474A3D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C9299F7BEA00474A3D /* Experience.rcproject */; };
-		B3B2C8CC299F7BEC00474A3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Assets.xcassets */; };
+		B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Images.xcassets */; };
 		B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */; };
+		B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */; };
+		B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CDC12129A398B000AD0B7A /* Colors.xcassets */; };
+		B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D8BCE2299F89F400BEA574 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B381674929A39BA40077A9FB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarmentConfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B2C8C7299F7BEA00474A3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B3B2C8C9299F7BEA00474A3D /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
-		B3B2C8CB299F7BEC00474A3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3B2C8CB299F7BEC00474A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3B2C8D5299F7F8500474A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GarmentConfigurator/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
+		B3CDC11A29A371CB00AD0B7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3CDC11C29A371DE00AD0B7A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3CDC11D29A371DF00AD0B7A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3CDC12129A398B000AD0B7A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B3D8BCE1299F89F400BEA574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3D8BCE3299F8A6900BEA574 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3D8BCE4299F8A7800BEA574 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +66,9 @@
 		B3B2C8C4299F7BEA00474A3D /* GarmentConfigurator */ = {
 			isa = PBXGroup;
 			children = (
-				B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */,
+				B3D8BCDB299F87AF00BEA574 /* App */,
 				B3B2C8C7299F7BEA00474A3D /* ContentView.swift */,
-				B3B2C8C9299F7BEA00474A3D /* Experience.rcproject */,
-				B3B2C8CB299F7BEC00474A3D /* Assets.xcassets */,
-				B3B2C8CD299F7BEC00474A3D /* Preview Content */,
+				B3B2C8DB299F867900474A3D /* Resources */,
 			);
 			path = GarmentConfigurator;
 			sourceTree = "<group>";
@@ -70,6 +81,46 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B3B2C8DB299F867900474A3D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3B2C8CB299F7BEC00474A3D /* Images.xcassets */,
+				B3CDC12129A398B000AD0B7A /* Colors.xcassets */,
+				B3B2C8D5299F7F8500474A3D /* Info.plist */,
+				B3CDC12029A3981A00AD0B7A /* Generated */,
+				B3B2C8CD299F7BEC00474A3D /* Preview Content */,
+				B3CDC11E29A371E400AD0B7A /* Localization */,
+			);
+			name = Resources;
+			path = GarmentConfigurator/Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		B3CDC11E29A371E400AD0B7A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */,
+				B3D8BCE2299F89F400BEA574 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		B3CDC12029A3981A00AD0B7A /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				B381674929A39BA40077A9FB /* Strings+Generated.swift */,
+				B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		B3D8BCDB299F87AF00BEA574 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +128,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3B2C8D2299F7BEC00474A3D /* Build configuration list for PBXNativeTarget "GarmentConfigurator" */;
 			buildPhases = (
+				B381674E29A3ADEE0077A9FB /* SwiftGen */,
 				B3B2C8BE299F7BEA00474A3D /* Sources */,
 				B3B2C8BF299F7BEA00474A3D /* Frameworks */,
 				B3B2C8C0299F7BEA00474A3D /* Resources */,
+				B3D8BCE9299F8FEB00BEA574 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GarmentConfigurator;
+			packageProductDependencies = (
+			);
 			productName = GarmentConfigurator;
 			productReference = B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */;
 			productType = "com.apple.product-type.application";
@@ -112,8 +167,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				it,
 			);
 			mainGroup = B3B2C8B9299F7BEA00474A3D;
+			packageReferences = (
+			);
 			productRefGroup = B3B2C8C3299F7BEA00474A3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,12 +187,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
-				B3B2C8CC299F7BEC00474A3D /* Assets.xcassets in Resources */,
+				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
+				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
+				B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B381674E29A3ADEE0077A9FB /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftgen; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+		B3D8BCE9299F8FEB00BEA574 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3B2C8BE299F7BEA00474A3D /* Sources */ = {
@@ -142,17 +244,42 @@
 			files = (
 				B3B2C8C8299F7BEA00474A3D /* ContentView.swift in Sources */,
 				B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */,
-				B3B2C8CA299F7BEA00474A3D /* Experience.rcproject in Sources */,
+				B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */,
+				B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3CDC11A29A371CB00AD0B7A /* en */,
+				B3CDC11C29A371DE00AD0B7A /* it */,
+				B3CDC11D29A371DF00AD0B7A /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B3D8BCE2299F89F400BEA574 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3D8BCE1299F89F400BEA574 /* en */,
+				B3D8BCE3299F8A6900BEA574 /* ru */,
+				B3D8BCE4299F8A7800BEA574 /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B3B2C8D0299F7BEC00474A3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -199,12 +326,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -213,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -253,11 +382,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -268,19 +398,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GarmentConfigurator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "GarmentConfigurator/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 38BRD9SJV7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SnapARment;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -288,6 +422,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.argoVol2.GarmentConfigurator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,19 +436,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GarmentConfigurator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "GarmentConfigurator/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 38BRD9SJV7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SnapARment;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,6 +460,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.argoVol2.GarmentConfigurator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
