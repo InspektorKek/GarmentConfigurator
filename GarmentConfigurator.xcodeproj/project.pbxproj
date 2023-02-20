@@ -128,6 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3B2C8D2299F7BEC00474A3D /* Build configuration list for PBXNativeTarget "GarmentConfigurator" */;
 			buildPhases = (
+				B381674E29A3ADEE0077A9FB /* SwiftGen */,
 				B3B2C8BE299F7BEA00474A3D /* Sources */,
 				B3B2C8BF299F7BEA00474A3D /* Frameworks */,
 				B3B2C8C0299F7BEA00474A3D /* Resources */,
@@ -171,7 +172,6 @@
 			);
 			mainGroup = B3B2C8B9299F7BEA00474A3D;
 			packageReferences = (
-				B3CDC11F29A3977700AD0B7A /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */,
 			);
 			productRefGroup = B3B2C8C3299F7BEA00474A3D /* Products */;
 			projectDirPath = "";
@@ -198,6 +198,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B381674E29A3ADEE0077A9FB /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftgen; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
 		B3D8BCE9299F8FEB00BEA574 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -472,17 +491,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B3CDC11F29A3977700AD0B7A /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftGen/SwiftGenPlugin";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B3B2C8BA299F7BEA00474A3D /* Project object */;
 }
