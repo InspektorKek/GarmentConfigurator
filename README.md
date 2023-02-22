@@ -10,3 +10,11 @@ Install [SwiftGen](https://github.com/SwiftGen/SwiftGen) throw *brew*:
 ```
 brew install swiftgen
 ```
+
+## Localise setup for **Build**:
+
+In 'File Structure' change value for **Multiple files per language (use assigned filenames). Directory prefix** to:
+
+```
+GarmentConfigurator/Resources/Localization/%LANG_ISO%.lproj
+```
