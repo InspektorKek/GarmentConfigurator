@@ -1,9 +1,9 @@
 import Foundation
 
-protocol CameraScreenContainerDelegate: BackNavigator {
-    func onRightBarButtonTap()
+protocol CameraScreenContainerDelegate: AnyObject {
+
 }
 
-protocol CameraScreenSceneDelegate: AnyObject, AlertPresentable, ConfirmationSheetPresenter {
+protocol CameraScreenSceneDelegate: AnyObject {
     func back()
 }
