@@ -51,6 +51,7 @@
 		F272789729ABE01C0090A9B3 /* CameraScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272789029ABE01C0090A9B3 /* CameraScreenView.swift */; };
 		F272789829ABE01C0090A9B3 /* CameraScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272789129ABE01C0090A9B3 /* CameraScreenViewModel.swift */; };
 		F272789929ABE01C0090A9B3 /* CameraScreenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272789229ABE01C0090A9B3 /* CameraScreenFlow.swift */; };
+		F272789C29ABE7600090A9B3 /* CameraScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272789B29ABE7600090A9B3 /* CameraScreenModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		F272789029ABE01C0090A9B3 /* CameraScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScreenView.swift; sourceTree = "<group>"; };
 		F272789129ABE01C0090A9B3 /* CameraScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScreenViewModel.swift; sourceTree = "<group>"; };
 		F272789229ABE01C0090A9B3 /* CameraScreenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScreenFlow.swift; sourceTree = "<group>"; };
+		F272789B29ABE7600090A9B3 /* CameraScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScreenModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				F272789029ABE01C0090A9B3 /* CameraScreenView.swift */,
 				F272789129ABE01C0090A9B3 /* CameraScreenViewModel.swift */,
 				F272789229ABE01C0090A9B3 /* CameraScreenFlow.swift */,
+				F272789B29ABE7600090A9B3 /* CameraScreenModel.swift */,
 			);
 			path = CameraScreen;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F272789C29ABE7600090A9B3 /* CameraScreenModel.swift in Sources */,
 				B3EFFEB629A8C18B00CF07F2 /* CompletionHandler.swift in Sources */,
 				B3EFFEBC29A8C4F200CF07F2 /* ViewControllable.swift in Sources */,
 				F272789529ABE01C0090A9B3 /* CameraScreenAssembly.swift in Sources */,
