@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
+class CameraScreenModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
 
     @Published var isTaken = false
 

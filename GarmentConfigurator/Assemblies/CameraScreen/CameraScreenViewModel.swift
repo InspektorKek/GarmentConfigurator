@@ -1,9 +1,13 @@
 import Combine
+import AVFoundation
 import UIKit
+import SwiftUI
 
-final class CameraScreenViewModel: ObservableObject {
+final class CameraScreenViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     weak var delegate: CameraScreenSceneDelegate?
     weak var navigationVC: CameraScreenNavigationVC?
+
+    var model = CameraScreenModel()
 
     @Published private(set) var state: CameraScreenFlow.ViewState = .idle
 
@@ -13,7 +17,8 @@ final class CameraScreenViewModel: ObservableObject {
     private let stateValueSubject = CurrentValueSubject<CameraScreenFlow.ViewState, Never>(.idle)
     private var subscriptions = Set<AnyCancellable>()
 
-    init() {
+    override init() {
+        super.init()
         bindInput()
         bindOutput()
     }
@@ -44,6 +49,119 @@ final class CameraScreenViewModel: ObservableObject {
         stateValueSubject
             .assign(to: \.state, on: self)
             .store(in: &subscriptions)
+    }
+
+    func checkPermission() {
+
+        // first checking camera has got permission
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            setUpVideoView()
+            return
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { (status) in
+                if status {
+                    self.setUpVideoView()
+                }
+            }
+        case .denied:
+            self.model.alert.toggle()
+            return
+        default:
+            return
+        }
+    }
+
+    func setUpVideoView() {
+            // setting up camera
+            do {
+
+                // setting configs
+                self.model.session.beginConfiguration()
+
+                let device = AVCaptureDevice.default(for: .video)
+
+                let input = try AVCaptureDeviceInput(device: device!)
+
+                // checking and adding to session
+
+                if self.model.session.canAddInput(input) {
+                    self.model.session.addInput(input)
+                }
+
+                // same for output
+
+                if self.model.session.canAddOutput(self.model.output) {
+                    self.model.session.addOutput(self.model.output)
+                }
+
+                self.model.session.commitConfiguration()
+            } catch {
+
+                print(error.localizedDescription)
+            }
+    }
+
+    func takePic() {
+        Task.detached {
+//        DispatchQueue.global(qos: .background).async {
+
+            self.model.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+//            self.session.stopRunning()
+            Task { @MainActor in
+                withAnimation {self.model.isTaken.toggle()}
+            }
+
+//            Task { @MainActor in
+//                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in self.session.stopRunning() } }
+
+//            Task {
+//                self.session.stopRunning()
+//            }
+
+            DispatchQueue.main.async {
+                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (_) in self.model.session.stopRunning() }
+            }
+        }
+    }
+
+    func reTake() {
+
+        Task.detached {
+
+            self.model.session.startRunning()
+
+            Task { @MainActor in
+                withAnimation {
+                    self.model.isTaken.toggle()
+
+                    // clear
+
+                    self.model.isSaved = false
+                }
+            }
+        }
+    }
+
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if error != nil {
+            return
+        }
+        print("pic taken")
+
+        guard let imageData = photo.fileDataRepresentation() else {return}
+        self.model.picData = imageData
+    }
+
+    func savePic() {
+
+        let image = UIImage(data: self.model.picData)!
+
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+
+        self.model.isSaved = true
+
+        print("saved successfully")
     }
 }
 
