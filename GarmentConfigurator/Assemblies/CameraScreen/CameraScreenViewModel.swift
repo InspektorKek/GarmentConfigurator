@@ -52,7 +52,6 @@ final class CameraScreenViewModel: NSObject, ObservableObject, AVCapturePhotoCap
     }
 
     func checkPermission() {
-
         // first checking camera has got permission
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
@@ -75,7 +74,6 @@ final class CameraScreenViewModel: NSObject, ObservableObject, AVCapturePhotoCap
     func setUpVideoView() {
             // setting up camera
             do {
-
                 // setting configs
                 self.model.session.beginConfiguration()
 
@@ -103,40 +101,27 @@ final class CameraScreenViewModel: NSObject, ObservableObject, AVCapturePhotoCap
     }
 
     func takePic() {
-        Task.detached {
-//        DispatchQueue.global(qos: .background).async {
 
+        Task.detached {
             self.model.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-//            self.session.stopRunning()
+
             Task { @MainActor in
                 withAnimation {self.model.isTaken.toggle()}
             }
 
-//            Task { @MainActor in
-//                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in self.session.stopRunning() } }
-
-//            Task {
-//                self.session.stopRunning()
-//            }
-
             DispatchQueue.main.async {
-                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (_) in self.model.session.stopRunning() }
+                Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false) { (_) in self.model.session.stopRunning() }
             }
         }
     }
 
     func reTake() {
-
         Task.detached {
-
             self.model.session.startRunning()
 
             Task { @MainActor in
                 withAnimation {
                     self.model.isTaken.toggle()
-
-                    // clear
-
                     self.model.isSaved = false
                 }
             }
@@ -156,9 +141,7 @@ final class CameraScreenViewModel: NSObject, ObservableObject, AVCapturePhotoCap
     func savePic() {
 
         let image = UIImage(data: self.model.picData)!
-
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-
         self.model.isSaved = true
 
         print("saved successfully")

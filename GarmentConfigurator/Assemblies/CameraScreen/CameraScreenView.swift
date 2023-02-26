@@ -14,46 +14,45 @@ struct CameraScreenView: View {
     private var content: some View {
 
         ZStack {
-
             CameraPreview(viewModel: viewModel)
                 .ignoresSafeArea()
 
             VStack {
                 if viewModel.model.isTaken {
                     HStack {
-                        Spacer()
+//                        Spacer()
 
                         Button {
                             viewModel.reTake()
                         } label: {
-                            Image(systemName: "arrow.triangle.2.circlepath.camera")
+                            Image(systemName: "chevron.backward")
                                 .foregroundColor(.black)
                                 .padding()
                                 .background(Color.white)
                                 .clipShape(Circle())
                         }
+
+                        Spacer()
                     }
 
                 }
+
                 Spacer()
 
                 HStack {
-
                     // if taken showing save and again take button
-
                     if viewModel.model.isTaken {
                         Button {
                             if !viewModel.model.isSaved {
                                 viewModel.savePic()
                             }
                         } label: {
-                            Text(viewModel.model.isSaved ? "Saved" : "Save")
+                            Image(systemName: viewModel.model.isSaved ? "checkmark" : "square.and.arrow.down")
                                 .foregroundColor(.black)
-                                .fontWeight(.semibold)
-                                .padding(.vertical, 10)
-                                .padding(.horizontal, 20)
+                                .font(.title2)
+                                .padding()
                                 .background(Color.white)
-                                .clipShape(Capsule())
+                                .clipShape(Circle())
                         }
                         .padding(.leading)
 
@@ -82,11 +81,10 @@ struct CameraScreenView: View {
             viewModel.checkPermission()
         }
     }
-
 }
 
 struct CameraPreview: UIViewRepresentable {
-    @StateObject var viewModel: CameraScreenViewModel
+    @ObservedObject var viewModel: CameraScreenViewModel
 
     let view = UIView(frame: UIScreen.main.bounds)
 
@@ -97,7 +95,8 @@ struct CameraPreview: UIViewRepresentable {
         Task.detached {
             await viewModel.model.session.startRunning()
         }
-        return view }
+        return view
+    }
 
     func updateUIView(_ uiView: UIViewType, context: Context) {
 
