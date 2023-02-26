@@ -12,7 +12,7 @@ struct CameraScreenView: View {
 
     private var content: some View {
         ZStack {
-            
+
         }
     }
 }

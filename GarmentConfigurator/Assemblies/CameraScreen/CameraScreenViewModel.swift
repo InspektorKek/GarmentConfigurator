@@ -51,8 +51,8 @@ extension CameraScreenViewModel: CameraScreenContainerDelegate {
     func back() {
         delegate?.back()
     }
-    
+
     func onRightBarButtonTap() {
-        
+
     }
 }
