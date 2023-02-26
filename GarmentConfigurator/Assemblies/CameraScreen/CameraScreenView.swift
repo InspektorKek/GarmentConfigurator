@@ -39,37 +39,72 @@ struct CameraScreenView: View {
 
                 Spacer()
 
-                HStack {
-                    // if taken showing save and again take button
+                ZStack {
                     if viewModel.model.isTaken {
-                        Button {
-                            if !viewModel.model.isSaved {
-                                viewModel.savePic()
-                            }
-                        } label: {
-                            Image(systemName: viewModel.model.isSaved ? "checkmark" : "square.and.arrow.down")
-                                .foregroundColor(.black)
-                                .font(.title2)
-                                .padding()
-                                .background(Color.white)
-                                .clipShape(Circle())
-                        }
-                        .padding(.leading)
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.gray.opacity(0.4))
+                            .ignoresSafeArea()
+                    }
 
+                    HStack {
+                        // if taken showing save and again take button
                         Spacer()
 
-                    } else {
-                        Button {
-                            viewModel.takePic()
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .fill(Color.white)
-                                    .frame(width: 65, height: 65)
+                        if viewModel.model.isTaken {
+                            Button {
+                                if !viewModel.model.isSaved {
+                                    viewModel.savePic()
+                                }
+                            } label: {
+                                Image(systemName: viewModel.model.isSaved ? "checkmark" : "square.and.arrow.down")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .background(Color.white)
+                                    .clipShape(Circle())
+                            }
+                            .padding()
 
-                                Circle()
-                                    .stroke(Color.white, lineWidth: 2)
-                                    .frame(width: 70, height: 70)
+                            Spacer()
+
+                            Button {
+                                //
+                            } label: {
+                                Image("instagram")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .background(Color.white)
+                                    .clipShape(Circle())
+                            }
+                            .padding()
+
+                            Spacer()
+
+                            Button {
+                                //
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .background(Color.white)
+                                    .clipShape(Circle())
+                            }
+                            .padding()
+
+                            Spacer()
+
+                        } else {
+                            Button {
+                                viewModel.takePic()
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .fill(Color.white)
+                                        .frame(width: 65, height: 65)
+
+                                    Circle()
+                                        .stroke(Color.white, lineWidth: 2)
+                                        .frame(width: 70, height: 70)
+                                }
                             }
                         }
                     }
