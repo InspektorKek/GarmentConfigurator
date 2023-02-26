@@ -5,7 +5,7 @@ final class CameraScreenViewController: UIHostingViewControllerCustom<CameraScre
 
     init(viewModel: CameraScreenViewModel) {
         self.viewModel = viewModel
-        super.init(rootView: CameraScreenView(camera: viewModel))
+        super.init(rootView: CameraScreenView(viewModel: viewModel))
     }
 
     @available(*, unavailable)

@@ -2,12 +2,12 @@ import SwiftUI
 import AVFoundation
 
 struct CameraScreenView: View {
-    @StateObject var camera: CameraScreenViewModel
+    @StateObject var viewModel: CameraScreenViewModel
 
     var body: some View {
         content
             .onAppear {
-                camera.send(.onAppear)
+                viewModel.send(.onAppear)
             }
     }
 
@@ -15,16 +15,16 @@ struct CameraScreenView: View {
 
         ZStack {
 
-            CameraPreview(camera: camera)
+            CameraPreview(viewModel: viewModel)
                 .ignoresSafeArea()
 
             VStack {
-                if camera.model.isTaken {
+                if viewModel.model.isTaken {
                     HStack {
                         Spacer()
 
                         Button {
-                            camera.reTake()
+                            viewModel.reTake()
                         } label: {
                             Image(systemName: "arrow.triangle.2.circlepath.camera")
                                 .foregroundColor(.black)
@@ -41,13 +41,13 @@ struct CameraScreenView: View {
 
                     // if taken showing save and again take button
 
-                    if camera.model.isTaken {
+                    if viewModel.model.isTaken {
                         Button {
-                            if !camera.model.isSaved {
-                                camera.savePic()
+                            if !viewModel.model.isSaved {
+                                viewModel.savePic()
                             }
                         } label: {
-                            Text(camera.model.isSaved ? "Saved" : "Save")
+                            Text(viewModel.model.isSaved ? "Saved" : "Save")
                                 .foregroundColor(.black)
                                 .fontWeight(.semibold)
                                 .padding(.vertical, 10)
@@ -58,9 +58,10 @@ struct CameraScreenView: View {
                         .padding(.leading)
 
                         Spacer()
+
                     } else {
                         Button {
-                            camera.takePic()
+                            viewModel.takePic()
                         } label: {
                             ZStack {
                                 Circle()
@@ -78,14 +79,14 @@ struct CameraScreenView: View {
             }
         }
         .onAppear {
-            camera.checkPermission()
+            viewModel.checkPermission()
         }
     }
 
 }
 
 struct CameraPreview: UIViewRepresentable {
-    @StateObject var camera: CameraScreenViewModel
+    @StateObject var viewModel: CameraScreenViewModel
 
     let view = UIView(frame: UIScreen.main.bounds)
 
@@ -94,7 +95,7 @@ struct CameraPreview: UIViewRepresentable {
         view.layer.addSublayer(setupCapturePreview())
 
         Task.detached {
-            await camera.model.session.startRunning()
+            await viewModel.model.session.startRunning()
         }
         return view }
 
@@ -103,7 +104,7 @@ struct CameraPreview: UIViewRepresentable {
     }
 
     private func setupCapturePreview() -> AVCaptureVideoPreviewLayer {
-        let capturePreview = AVCaptureVideoPreviewLayer(session: camera.model.session)
+        let capturePreview = AVCaptureVideoPreviewLayer(session: viewModel.model.session)
         capturePreview.frame = view.frame
         capturePreview.videoGravity = .resizeAspectFill
         return capturePreview
@@ -112,6 +113,6 @@ struct CameraPreview: UIViewRepresentable {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraScreenView(camera: CameraScreenViewModel())
+        CameraScreenView(viewModel: CameraScreenViewModel())
     }
 }
