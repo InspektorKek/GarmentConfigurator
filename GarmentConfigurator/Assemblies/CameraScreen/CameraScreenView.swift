@@ -67,7 +67,7 @@ struct CameraScreenView: View {
                             Spacer()
 
                             Button {
-                                //
+                                viewModel.shareToInstagram()
                             } label: {
                                 Image("instagram")
                                     .foregroundColor(.black)

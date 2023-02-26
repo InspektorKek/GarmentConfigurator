@@ -146,6 +146,31 @@ final class CameraScreenViewModel: NSObject, ObservableObject, AVCapturePhotoCap
 
         print("saved successfully")
     }
+
+    func shareToInstagram() {
+        if let storiesUrl = URL(string: "instagram-stories://share") {
+            if UIApplication.shared.canOpenURL(storiesUrl) {
+                guard let image = UIImage(data: self.model.picData) else {
+                  return }
+                guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
+              let pasteboardItems: [String: Any] = [
+              "com.instagram.sharedSticker.stickerImage": imageData,
+              "com.instagram.sharedSticker.backgroundTopColor": "#636e72",
+              "com.instagram.sharedSticker.backgroundBottomColor": "#b2bec3"
+              ]
+             let pasteboardOptions = [
+             UIPasteboard.OptionsKey.expirationDate:
+             Date().addingTimeInterval(300)
+             ]
+             UIPasteboard.general.setItems([pasteboardItems], options:
+             pasteboardOptions)
+             UIApplication.shared.open(storiesUrl, options: [:],
+             completionHandler: nil)
+           } else {
+             print("Sorry the application is not installed")
+           }
+         }
+    }
 }
 
 extension CameraScreenViewModel: CameraScreenContainerDelegate {
