@@ -26,6 +26,8 @@ final class AppCoordinator: BaseCoordinator {
 
 extension AppCoordinator: SplashScreenSceneDelegate {
     func startMainFlow() {
-
+        let mainCoordinator = MainCoordinator(router: router)
+        add(mainCoordinator)
+        mainCoordinator.start()
     }
 }

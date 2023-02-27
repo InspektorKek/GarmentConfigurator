@@ -25,7 +25,12 @@ internal enum Asset {
   internal enum Colors {
     internal static let accentColor = ColorAsset(name: "AccentColor")
     internal static let backgroundPrimary = ColorAsset(name: "BackgroundPrimary")
+    internal static let baseNavigationColor = ColorAsset(name: "BaseNavigationColor")
     internal static let baseWhite = ColorAsset(name: "BaseWhite")
+    internal enum Gradients {
+      internal static let first = ColorAsset(name: "first")
+      internal static let second = ColorAsset(name: "second")
+    }
     internal static let labelsPrimary = ColorAsset(name: "LabelsPrimary")
   }
   internal enum Images {

@@ -15,7 +15,7 @@ class NavigationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = Asset.Colors.baseWhite.color
+        view.backgroundColor = Asset.Colors.baseNavigationColor.color
         view.addSubviews([container])
         container.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
