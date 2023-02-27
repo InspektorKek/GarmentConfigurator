@@ -1,15 +1,16 @@
 import Combine
 import UIKit
 
-final class SplashScreenViewModel: ObservableObject {
-    weak var delegate: SplashScreenSceneDelegate?
+final class GarmentsViewModel: ObservableObject {
+    weak var delegate: GarmentsSceneDelegate?
+    weak var navigationVC: GarmentsNavigationVC?
 
-    @Published private(set) var state: SplashScreenFlow.ViewState = .idle
+    @Published private(set) var state: GarmentsFlow.ViewState = .idle
 
     // MARK: - Private Properties
 
-    private let eventSubject = PassthroughSubject<SplashScreenFlow.Event, Never>()
-    private let stateValueSubject = CurrentValueSubject<SplashScreenFlow.ViewState, Never>(.idle)
+    private let eventSubject = PassthroughSubject<GarmentsFlow.Event, Never>()
+    private let stateValueSubject = CurrentValueSubject<GarmentsFlow.ViewState, Never>(.idle)
     private var subscriptions = Set<AnyCancellable>()
 
     init() {
@@ -22,7 +23,7 @@ final class SplashScreenViewModel: ObservableObject {
         subscriptions.removeAll()
     }
 
-    func send(_ event: SplashScreenFlow.Event) {
+    func send(_ event: GarmentsFlow.Event) {
         eventSubject.send(event)
     }
 
@@ -33,7 +34,7 @@ final class SplashScreenViewModel: ObservableObject {
                 case .onAppear:
                     self?.objectWillChange.send()
                 case .onNextScene:
-                    self?.delegate?.startMainFlow()
+                    self?.delegate?.openConfigurator()
                 }
             }
             .store(in: &subscriptions)
@@ -46,6 +47,6 @@ final class SplashScreenViewModel: ObservableObject {
     }
 }
 
-extension SplashScreenViewModel: SplashScreenContainerDelegate {
+extension GarmentsViewModel: GarmentsContainerDelegate {
 
 }

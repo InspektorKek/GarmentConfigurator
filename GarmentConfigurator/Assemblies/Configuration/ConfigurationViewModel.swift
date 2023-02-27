@@ -1,15 +1,16 @@
 import Combine
 import UIKit
 
-final class SplashScreenViewModel: ObservableObject {
-    weak var delegate: SplashScreenSceneDelegate?
+final class ConfigurationViewModel: ObservableObject {
+    weak var delegate: ConfigurationSceneDelegate?
+    weak var navigationVC: ConfigurationNavigationVC?
 
-    @Published private(set) var state: SplashScreenFlow.ViewState = .idle
+    @Published private(set) var state: ConfigurationFlow.ViewState = .idle
 
     // MARK: - Private Properties
 
-    private let eventSubject = PassthroughSubject<SplashScreenFlow.Event, Never>()
-    private let stateValueSubject = CurrentValueSubject<SplashScreenFlow.ViewState, Never>(.idle)
+    private let eventSubject = PassthroughSubject<ConfigurationFlow.Event, Never>()
+    private let stateValueSubject = CurrentValueSubject<ConfigurationFlow.ViewState, Never>(.idle)
     private var subscriptions = Set<AnyCancellable>()
 
     init() {
@@ -22,7 +23,7 @@ final class SplashScreenViewModel: ObservableObject {
         subscriptions.removeAll()
     }
 
-    func send(_ event: SplashScreenFlow.Event) {
+    func send(_ event: ConfigurationFlow.Event) {
         eventSubject.send(event)
     }
 
@@ -33,7 +34,7 @@ final class SplashScreenViewModel: ObservableObject {
                 case .onAppear:
                     self?.objectWillChange.send()
                 case .onNextScene:
-                    self?.delegate?.startMainFlow()
+                    print("Next scene")
                 }
             }
             .store(in: &subscriptions)
@@ -46,6 +47,8 @@ final class SplashScreenViewModel: ObservableObject {
     }
 }
 
-extension SplashScreenViewModel: SplashScreenContainerDelegate {
-
+extension ConfigurationViewModel: ConfigurationContainerDelegate {
+    func back() {
+        delegate?.back()
+    }
 }
