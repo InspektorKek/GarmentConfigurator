@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Resolver
 
 final class AppCoordinator: BaseCoordinator {
 
