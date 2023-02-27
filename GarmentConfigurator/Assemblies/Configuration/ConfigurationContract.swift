@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ConfigurationContainerDelegate: BackNavigator {
+protocol ConfigurationContainerDelegate: AnyObject, BackNavigator {
 
 }
 

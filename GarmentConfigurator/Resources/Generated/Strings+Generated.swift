@@ -10,10 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Continue
+  internal static let coreButtonContinue = L10n.tr("Localizable", "coreButtonContinue", fallback: "Continue")
   /// OK
   internal static let coreOkButton = L10n.tr("Localizable", "coreOkButton", fallback: "OK")
-  /// Hello world!
-  internal static let welcomeHeader = L10n.tr("Localizable", "welcome_header", fallback: "Hello world!")
+  /// Garments
+  internal static let titleGarments = L10n.tr("Localizable", "title_garments", fallback: "Garments")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
