@@ -5,7 +5,7 @@ final class ARScreenViewController: UIHostingViewControllerCustom<ARScreenView> 
 
     init(viewModel: ARScreenViewModel) {
         self.viewModel = viewModel
-        super.init(rootView: ARScreenView(capturedImage: UIImage()))
+        super.init(rootView: ARScreenView())
     }
 
     @available(*, unavailable)
