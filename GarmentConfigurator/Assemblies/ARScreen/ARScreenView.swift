@@ -58,9 +58,14 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
       ARVariables.arView = ARView(frame: .zero)
       // Load the "Box" scene from the "Experience" Reality File
-      let boxAnchor = try! Experience.loadBox()
-      // Add the box anchor to the scene
-      ARVariables.arView.scene.anchors.append(boxAnchor)
+        do {
+            let boxAnchor = try Experience.loadBox()
+
+            // Add the box anchor to the scene
+            ARVariables.arView.scene.anchors.append(boxAnchor)
+        } catch {
+            print("cant create boxanchor")
+        }
       return ARVariables.arView
     }
 
