@@ -24,8 +24,8 @@ struct ARScreenView: View {
 
             Button(action: {
                 if viewModel.isRecording {
+                    viewModel.isRecording = false
                     viewModel.stopCapturingVideo()
-                    viewModel.isRecording.toggle()
                     showingSheet.toggle()
                 }
             }, label: {
@@ -39,10 +39,15 @@ struct ARScreenView: View {
                         .frame(width: 70, height: 70)
                 }
             })
-            .simultaneousGesture(LongPressGesture(minimumDuration: 0.2)
-                .onEnded {_ in
-                    viewModel.isRecording.toggle()
-                    viewModel.startCapturingVideo()
+            .simultaneousGesture(LongPressGesture(minimumDuration: 0.1, maximumDistance: 100)
+                .onEnded { isPressing in
+                    if isPressing {
+                        viewModel.isRecording = true
+                        viewModel.startCapturingVideo()
+                    } else {
+                        viewModel.isRecording = false
+                        viewModel.stopCapturingVideo()
+                    }
             })
             .simultaneousGesture(TapGesture().onEnded {
                 viewModel.takePhoto()
