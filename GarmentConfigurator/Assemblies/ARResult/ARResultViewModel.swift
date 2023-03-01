@@ -61,7 +61,10 @@ final class ARResultViewModel: ObservableObject {
        player?.play()
        player?.actionAtItemEnd = .none
 
-       NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: playerItem, queue: .main) { [weak self] _ in
+       NotificationCenter.default.addObserver(
+        forName: .AVPlayerItemDidPlayToEndTime,
+        object: playerItem,
+        queue: .main) { [weak self] _ in
            self?.player?.seek(to: .zero)
            self?.player?.play()
        }

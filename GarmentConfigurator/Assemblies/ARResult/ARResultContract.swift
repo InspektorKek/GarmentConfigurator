@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ARResultContainerDelegate: BackNavigator {
+protocol ARResultContainerDelegate: AnyObject, BackNavigator {
 }
 
 protocol ARResultSceneDelegate: AnyObject, AlertPresentable {
