@@ -67,7 +67,7 @@
 		F22E108429AE11010050FF14 /* ARScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107D29AE11010050FF14 /* ARScreenView.swift */; };
 		F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */; };
 		F22E108629AE11010050FF14 /* ARScreenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107F29AE11010050FF14 /* ARScreenFlow.swift */; };
-		F22E108829AE117E0050FF14 /* ARResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E108729AE117E0050FF14 /* ARResultScreen.swift */; };
+		F22E108829AE117E0050FF14 /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E108729AE117E0050FF14 /* ARResultView.swift */; };
 		F22E108E29AE12D80050FF14 /* SCNRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = F22E108D29AE12D80050FF14 /* SCNRecorder */; };
 		F22E109629AE181E0050FF14 /* ARViewRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E109529AE181E0050FF14 /* ARViewRecordable.swift */; };
 		F22E109829AE18270050FF14 /* ARViewSelfSceneRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */; };
@@ -140,7 +140,7 @@
 		F22E107D29AE11010050FF14 /* ARScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenView.swift; sourceTree = "<group>"; };
 		F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenViewModel.swift; sourceTree = "<group>"; };
 		F22E107F29AE11010050FF14 /* ARScreenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenFlow.swift; sourceTree = "<group>"; };
-		F22E108729AE117E0050FF14 /* ARResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultScreen.swift; sourceTree = "<group>"; };
+		F22E108729AE117E0050FF14 /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
 		F22E109529AE181E0050FF14 /* ARViewRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRecordable.swift; sourceTree = "<group>"; };
 		F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewSelfSceneRecordable.swift; sourceTree = "<group>"; };
 		F22E109A29AE19A60050FF14 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 				F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */,
 				F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */,
 				F22E107D29AE11010050FF14 /* ARScreenView.swift */,
-				F22E108729AE117E0050FF14 /* ARResultScreen.swift */,
+				F22E108729AE117E0050FF14 /* ARResultView.swift */,
 				F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */,
 				F22EE62B29AFA92400D709CD /* ARResultViewModel.swift */,
 				F22E107F29AE11010050FF14 /* ARScreenFlow.swift */,
@@ -570,7 +570,7 @@
 				B3EFFEE529ACBD8E00CF07F2 /* GradientBackgroundStyle.swift in Sources */,
 				B3EFFEC429A8C72800CF07F2 /* UIControl+Extensions.swift in Sources */,
 				B3EFFF0229ACC18D00CF07F2 /* GarmentsViewModel.swift in Sources */,
-				F22E108829AE117E0050FF14 /* ARResultScreen.swift in Sources */,
+				F22E108829AE117E0050FF14 /* ARResultView.swift in Sources */,
 				B3EFFE8D29A8B81000CF07F2 /* Router.swift in Sources */,
 				B3EFFEB029A8BF6100CF07F2 /* NavigationVC.swift in Sources */,
 				B3EFFF1029ACD26300CF07F2 /* ConfigurationAssembly.swift in Sources */,

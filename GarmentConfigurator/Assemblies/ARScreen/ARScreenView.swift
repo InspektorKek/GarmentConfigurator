@@ -13,61 +13,55 @@ import ARKit
 import SCNRecorder
 
 struct ARScreenView: View {
-    @StateObject var viewModel = ARScreenViewModel()
+    @ObservedObject var viewModel: ARScreenViewModel
+
     @State private var showingSheet = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer().edgesIgnoringSafeArea(.all)
+            ARViewContainer()
+                .edgesIgnoringSafeArea(.all)
 
-            HStack {
-                Button {
-                    viewModel.takePhoto()
+            Button(action: {
+                if viewModel.isRecording {
+                    viewModel.stopCapturingVideo()
+                    viewModel.isRecording.toggle()
                     showingSheet.toggle()
-                } label: {
-                    ZStack {
-                        Circle()
-                            .fill(Color.white)
-                            .frame(width: 65, height: 65)
-
-                        Circle()
-                            .stroke(Color.white, lineWidth: 2)
-                            .frame(width: 70, height: 70)
-                    }
                 }
+            }, label: {
+                ZStack {
+                    Circle()
+                        .fill(viewModel.isRecording ? Color.red : Color.white)
+                        .frame(width: 65, height: 65)
 
-                Button {
-                    if !viewModel.isPressed {
-                        viewModel.startCapturingVideo()
-                    } else {
-                        viewModel.stopCapturingVideo()
-                        showingSheet.toggle()
-                    }
-                } label: {
-                    ZStack {
-                        Circle()
-                            .fill(Color.red)
-                            .frame(width: 65, height: 65)
-
-                        Circle()
-                            .stroke(Color.blue, lineWidth: 2)
-                            .frame(width: 70, height: 70)
-                    }
+                    Circle()
+                        .stroke(Color.white, lineWidth: 2)
+                        .frame(width: 70, height: 70)
                 }
-
-            }
-            .sheet(isPresented: $showingSheet) {
-                ARResultScreen().environmentObject(viewModel)
+            })
+            .simultaneousGesture(LongPressGesture(minimumDuration: 0.2)
+                .onEnded {_ in
+                    viewModel.isRecording.toggle()
+                    viewModel.startCapturingVideo()
+            })
+            .simultaneousGesture(TapGesture().onEnded {
+                viewModel.takePhoto()
+                showingSheet.toggle()
+            })
+            .fullScreenCover(isPresented: $viewModel.shouldShowResult) {
+                if let mediaType = viewModel.mediaType {
+                    ARResultView(viewModel: ARResultViewModel(mediaType: mediaType))
+                }
             }
         }
-
         .onAppear {
             ARVariables.arView.prepareForRecording()
         }
     }
 }
 
-struct ARVariables {
+
+struct ARVariables{
     static var arView: ARView!
 }
 
@@ -88,5 +82,4 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: ARView, context: Context) {}
-
 }
