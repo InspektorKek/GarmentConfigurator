@@ -114,4 +114,3 @@ struct ARResultView: View {
         })
     }
 }
-

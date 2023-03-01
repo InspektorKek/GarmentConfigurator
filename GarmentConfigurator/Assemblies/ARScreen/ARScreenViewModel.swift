@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import Combine
 
 enum ARResultMediaType: Equatable {
     case none
@@ -15,13 +16,53 @@ enum ARResultMediaType: Equatable {
 }
 
 class ARScreenViewModel: ObservableObject {
+    weak var delegate: ARScreenSceneDelegate?
+    weak var navigationVC: ARScreenNavigationVC?
+
+    @Published private(set) var state: ARScreenFlow.ViewState = .idle
+
+    // MARK: - Private Properties
+
+    private let eventSubject = PassthroughSubject<ARScreenFlow.Event, Never>()
+    private let stateValueSubject = CurrentValueSubject<ARScreenFlow.ViewState, Never>(.idle)
+    private var subscriptions = Set<AnyCancellable>()
+
     var mediaType: ARResultMediaType?
 
     @Published var shouldShowResult: Bool = false
     @Published var isRecording: Bool = false
 
+    init() {
+        bindInput()
+        bindOutput()
+    }
+
     deinit {
-        print("deinit ARScreenViewModel")
+        subscriptions.forEach { $0.cancel() }
+        subscriptions.removeAll()
+    }
+
+    func send(_ event: ARScreenFlow.Event) {
+        eventSubject.send(event)
+    }
+
+    private func bindInput() {
+        eventSubject
+            .sink { [weak self] event in
+                switch event {
+                case .onAppear:
+                    self?.objectWillChange.send()
+                case .onNextScene:
+                    print("Next scene")
+                }
+            }
+            .store(in: &subscriptions)
+    }
+
+    private func bindOutput() {
+        stateValueSubject
+            .assign(to: \.state, on: self)
+            .store(in: &subscriptions)
     }
 
     func takePhoto() {
@@ -50,5 +91,11 @@ class ARScreenViewModel: ObservableObject {
             self?.mediaType = .video(videoRecording.url)
             self?.shouldShowResult = true
         }
+    }
+}
+
+extension ARScreenViewModel: ARScreenContainerDelegate {
+    func back() {
+        delegate?.back()
     }
 }

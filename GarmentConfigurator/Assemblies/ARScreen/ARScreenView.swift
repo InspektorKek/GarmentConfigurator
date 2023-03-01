@@ -60,8 +60,7 @@ struct ARScreenView: View {
     }
 }
 
-
-struct ARVariables{
+struct ARVariables {
     static var arView: ARView!
 }
 
