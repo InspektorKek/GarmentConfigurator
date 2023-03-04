@@ -81,12 +81,15 @@ class ARScreenViewModel: ObservableObject {
     func startCapturingVideo() {
           do {
               try ARVariables.arView.startVideoRecording()
+              isRecording = true
           } catch {
+              isRecording = false
               print(error)
           }
       }
 
     func stopCapturingVideo() {
+        isRecording = false
         ARVariables.arView.finishVideoRecording { [weak self] videoRecording in
             self?.mediaType = .video(videoRecording.url)
             self?.shouldShowResult = true

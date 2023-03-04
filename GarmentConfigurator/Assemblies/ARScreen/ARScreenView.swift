@@ -23,36 +23,54 @@ struct ARScreenView: View {
                 .edgesIgnoringSafeArea(.all)
 
             Button(action: {
-                if viewModel.isRecording {
-                    viewModel.isRecording = false
-                    viewModel.stopCapturingVideo()
-                    showingSheet.toggle()
-                }
+//                if viewModel.isRecording {
+//                    showingSheet.toggle()
+//                }
             }, label: {
                 ZStack {
                     Circle()
                         .fill(viewModel.isRecording ? Color.red : Color.white)
+
                         .frame(width: 65, height: 65)
+                        .scaleEffect(viewModel.isRecording ? 1.5 : 1)
 
                     Circle()
                         .stroke(Color.white, lineWidth: 2)
                         .frame(width: 70, height: 70)
                 }
             })
-            .simultaneousGesture(LongPressGesture(minimumDuration: 0.1, maximumDistance: 100)
-                .onEnded { isPressing in
-                    if isPressing {
-                        viewModel.isRecording = true
-                        viewModel.startCapturingVideo()
-                    } else {
-                        viewModel.isRecording = false
-                        viewModel.stopCapturingVideo()
+            .simultaneousGesture(
+                LongPressGesture(minimumDuration: 1)
+                    .onChanged { _ in
+//                        if isPressing {
+                            viewModel.startCapturingVideo()
+//                        }
                     }
-            })
-            .simultaneousGesture(TapGesture().onEnded {
-                viewModel.takePhoto()
-                showingSheet.toggle()
-            })
+            )
+            .highPriorityGesture(
+                TapGesture()
+                    .onEnded {
+                        if viewModel.isRecording {
+                            viewModel.stopCapturingVideo()
+                        } else {
+                            viewModel.takePhoto()
+                        }
+                    }
+            )
+//            .simultaneousGesture(LongPressGesture(minimumDuration: 0.1, maximumDistance: 100)
+//                .onEnded { isPressing in
+//                    if isPressing {
+//                        viewModel.isRecording = true
+//                        viewModel.startCapturingVideo()
+//                    } else {
+//                        viewModel.isRecording = false
+//                        viewModel.stopCapturingVideo()
+//                    }
+//            })
+//            .simultaneousGesture(TapGesture().onEnded {
+//                viewModel.takePhoto()
+//                showingSheet.toggle()
+//            })
             .fullScreenCover(isPresented: $viewModel.shouldShowResult) {
                 if let mediaType = viewModel.mediaType {
                     ARResultView(viewModel: ARResultViewModel(mediaType: mediaType))

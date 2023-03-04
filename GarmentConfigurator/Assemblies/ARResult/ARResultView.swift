@@ -13,6 +13,7 @@ struct ARResultView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: ARResultViewModel
     @State var isSaved: Bool = false
+    @State var isShareSheetPresented: Bool = false
 
     var body: some View {
         ZStack {
@@ -53,7 +54,27 @@ struct ARResultView: View {
                     HStack {
                         saveButton
                         instagramButton
-                        shareButton
+//                                                shareButton
+
+                        switch viewModel.mediaType {
+                        case .image(let image):
+                            ShareLink(item: Image(uiImage: image),
+                                      preview: SharePreview("Image", image: Image(uiImage: image))) {
+                                Text("image")
+                            }
+
+                        case .video(let video):
+                            ShareLink(item: video) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .background(Color.white)
+                                    .clipShape(Circle())
+                            }
+                        case .none:
+                            Text("none")
+                        }
+
                     }
                     .padding()
                     .padding(.top, 30)
@@ -76,18 +97,39 @@ struct ARResultView: View {
         .padding()
     }
 
-    private var shareButton: some View {
-        Button(action: {
-//            viewModel.saveMediaToAlbum()
-            viewModel.shareToInstagram()
-        }, label: {
-            Image(systemName: "square.and.arrow.up")
-                .foregroundColor(.black)
-                .padding()
-                .background(Color.white)
-                .clipShape(Circle())
-        })
-    }
+        private var shareButton: some View {
+            Button(action: {
+                print("test")
+    //            viewModel.shareItem()
+                    switch viewModel.mediaType {
+                    case .image(let image):
+                        print("image share")
+                        let items: [Any] = [image]
+                        let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                        UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
+                            shareSheet,
+                            animated: true,
+                            completion: nil)
+                    case .video(let video):
+                        print("video share")
+                        let items: [Any] = [video.path]
+                        let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                        UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
+                            shareSheet,
+                            animated: true,
+                            completion: nil)
+                    case .none:
+                        print("non")
+                    }
+                }, label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(.black)
+                        .padding()
+                        .background(Color.white)
+                        .clipShape(Circle())
+                })
+
+        }
 
     private var saveButton: some View {
         Button(action: {

@@ -7,19 +7,19 @@
 
 import UIKit
 
-//final class MainCoordinator: BaseCoordinator {
+// final class MainCoordinator: BaseCoordinator {
 //    override func start() {
 //        let scene = GarmentsAssembly(delegate: self).makeScene()
 //        router.setRootModule(scene)
 //    }
-//}
+// }
 //
-//extension MainCoordinator: GarmentsSceneDelegate {
+// extension MainCoordinator: GarmentsSceneDelegate {
 //    func openConfigurator() {
 //        let scene = ConfigurationAssembly(delegate: self).makeScene()
 //        router.push(scene, animated: true)
 //    }
-//}
+// }
 
 final class MainCoordinator: BaseCoordinator, ARScreenSceneDelegate {
     override func start() {
@@ -40,6 +40,3 @@ extension MainCoordinator: ConfigurationSceneDelegate {
         router.popModule(animated: true)
     }
 }
-
-
-
