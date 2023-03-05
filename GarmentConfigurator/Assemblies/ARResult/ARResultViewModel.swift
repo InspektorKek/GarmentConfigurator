@@ -91,23 +91,30 @@ final class ARResultViewModel: ObservableObject {
     func shareToInstagram() {
         if let storiesUrl = URL(string: "instagram-stories://share") {
             if UIApplication.shared.canOpenURL(storiesUrl) {
-                var imageData = Data()
-
+                var shareData = Data()
+                var pasteboardItems: [String: Any]
                 switch mediaType {
                 case .image(let image):
-                    imageData = image.jpegData(compressionQuality: 1)!
+                    shareData = image.jpegData(compressionQuality: 1)!
+                    pasteboardItems = [
+                        "com.instagram.sharedSticker.stickerImage": shareData,
+                        "com.instagram.sharedSticker.backgroundTopColor": "#636e72",
+                        "com.instagram.sharedSticker.backgroundBottomColor": "#b2bec3"
+                    ]
                 case .none:
                     return
-                case .video:
-                    return
+                case .video(let video):
+                    do {
+                        shareData = try Data(contentsOf: URL(fileURLWithPath: video.path))} catch {
+                            return
+                        }
+                    pasteboardItems = [
+                        "com.instagram.sharedSticker.backgroundVideo": shareData,
+                        "com.instagram.sharedSticker.backgroundTopColor": "#636e72",
+                        "com.instagram.sharedSticker.backgroundBottomColor": "#b2bec3"
+                    ]
                 }
-                //                guard let imageData = capturedImage.jpegData(compressionQuality: 1) else { return }
-
-                let pasteboardItems: [String: Any] = [
-                    "com.instagram.sharedSticker.stickerImage": imageData,
-                    "com.instagram.sharedSticker.backgroundTopColor": "#636e72",
-                    "com.instagram.sharedSticker.backgroundBottomColor": "#b2bec3"
-                ]
+                
                 let pasteboardOptions = [
                     UIPasteboard.OptionsKey.expirationDate:
                         Date().addingTimeInterval(300)
