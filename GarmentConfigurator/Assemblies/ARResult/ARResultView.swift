@@ -16,70 +16,78 @@ struct ARResultView: View {
     @State var isShareSheetPresented: Bool = false
 
     var body: some View {
-        ZStack {
-            switch viewModel.mediaType {
-            case .image(let image):
-                Image(uiImage: image)
-                    .resizable()
-
-                    .ignoresSafeArea()
-            case .none:
-                Text("nothing")
-            case .video(let video):
-                VideoPlayer(player: viewModel.player)
-                    .ignoresSafeArea()
-                    .onAppear {
-                        let playerItem = AVPlayerItem(url: video)
-                        viewModel.initPlayer(with: playerItem)
-                    }
-                    .onDisappear {
-                        viewModel.player?.pause()
-                        viewModel.player = nil
-                        viewModel.playerLooper = nil
-                    }
-            }
-
-            VStack {
-                HStack {
-                    backButton
-                    Spacer()
-                }
-
-                Spacer()
-                ZStack(alignment: .bottom) {
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundColor(.gray.opacity(0.4))
+        NavigationStack {
+            ZStack {
+                switch viewModel.mediaType {
+                case .image(let image):
+                    Image(uiImage: image)
+                        .resizable()
+//                        .ignoresSafeArea()
+                        .edgesIgnoringSafeArea(.bottom)
+                case .none:
+                    Text("nothing")
+                case .video(let video):
+                    VideoPlayer(player: viewModel.player)
                         .ignoresSafeArea()
-
-                    HStack {
-                        saveButton
-                        instagramButton
-//                                                shareButton
-
-                        switch viewModel.mediaType {
-                        case .image(let image):
-                            ShareLink(item: Image(uiImage: image),
-                                      preview: SharePreview("Image", image: Image(uiImage: image))) {
-                                Text("image")
-                            }
-
-                        case .video(let video):
-                            ShareLink(item: video) {
-                                Image(systemName: "square.and.arrow.up")
-                                    .foregroundColor(.black)
-                                    .padding()
-                                    .background(Color.white)
-                                    .clipShape(Circle())
-                            }
-                        case .none:
-                            Text("none")
+                        .onAppear {
+                            let playerItem = AVPlayerItem(url: video)
+                            viewModel.initPlayer(with: playerItem)
                         }
-
-                    }
-                    .padding()
-                    .padding(.top, 30)
+                        .onDisappear {
+                            viewModel.player?.pause()
+                            viewModel.player = nil
+                            viewModel.playerLooper = nil
+                        }
                 }
-                .frame(height: 80)
+
+                VStack {
+                    HStack {
+//                        backButton
+                        Spacer()
+                    }
+
+                    Spacer()
+                    ZStack(alignment: .bottom) {
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.gray.opacity(0.4))
+                            .ignoresSafeArea()
+
+                        HStack {
+                            saveButton
+                            instagramButton
+                            //                                                shareButton
+
+                            switch viewModel.mediaType {
+                            case .image(let image):
+                                ShareLink(item: Image(uiImage: image),
+                                          preview: SharePreview("Image", image: Image(uiImage: image))) {
+                                    Text("image")
+                                }
+
+                            case .video(let video):
+                                ShareLink(item: video) {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .foregroundColor(.black)
+                                        .padding()
+                                        .background(Color.white)
+                                        .clipShape(Circle())
+                                }
+                            case .none:
+                                Text("none")
+                            }
+
+                        }
+                        .padding()
+                        .padding(.top, 30)
+                    }
+                    .frame(height: 80)
+                }
+            }
+//            .navigationTitle("welcome")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    backButton
+                }
             }
         }
     }
@@ -89,9 +97,10 @@ struct ARResultView: View {
             dismiss()
         }, label: {
             Image(systemName: "chevron.backward")
+//                .foregroundColor(Color(Asset.Colors.labelsPrimary.color))
                 .foregroundColor(.black)
                 .padding()
-                .background(Color.white)
+                .background(.white)
                 .clipShape(Circle())
         })
         .padding()

@@ -21,19 +21,26 @@ import UIKit
 //    }
 // }
 
-final class MainCoordinator: BaseCoordinator, ARScreenSceneDelegate {
+final class MainCoordinator: BaseCoordinator {
     override func start() {
         let scene = GarmentsAssembly(delegate: self).makeScene()
         router.setRootModule(scene)
     }
 }
 
-extension MainCoordinator: GarmentsSceneDelegate {
+extension MainCoordinator: GarmentsSceneDelegate, ARScreenSceneDelegate {
     func openConfigurator() {
         let scene = ARScreenAssembly(delegate: self).makeScene()
         router.push(scene, animated: true)
     }
 }
+
+// extension MainCoordinator: ARScreenSceneDelegate {
+//    func openARResult() {
+//        let scene = ARResultAssembly(delegate: self).makeScene()
+//        router.present(scene, animated: true)
+//    }
+// }
 
 extension MainCoordinator: ConfigurationSceneDelegate {
     func back() {

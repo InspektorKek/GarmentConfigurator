@@ -21,66 +21,85 @@ struct ARScreenView: View {
         ZStack(alignment: .bottom) {
             ARViewContainer()
                 .edgesIgnoringSafeArea(.all)
-
-            Button(action: {
-//                if viewModel.isRecording {
-//                    showingSheet.toggle()
-//                }
-            }, label: {
-                ZStack {
-                    Circle()
-                        .fill(viewModel.isRecording ? Color.red : Color.white)
-
-                        .frame(width: 65, height: 65)
-                        .scaleEffect(viewModel.isRecording ? 1.5 : 1)
-
-                    Circle()
-                        .stroke(Color.white, lineWidth: 2)
-                        .frame(width: 70, height: 70)
+            VStack {
+                if viewModel.isRecording {
+                    timeLabel
+                        .padding()
                 }
-            })
-            .simultaneousGesture(
-                LongPressGesture(minimumDuration: 1)
-                    .onChanged { _ in
-//                        if isPressing {
+
+                Spacer()
+
+                Button(action: {
+//                    viewModel.send(.onNextScene)
+                }, label: {
+                    ZStack {
+                        Circle()
+                            .fill(viewModel.isRecording ? Color.red : Color.white)
+
+                            .frame(width: 65, height: 65)
+
+                        Circle()
+                            .trim(from: 0, to: viewModel.progressValue )
+                            .stroke(Color.white, lineWidth: 2)
+                            .frame(width: 70, height: 70)
+                    }
+                    .scaleEffect(viewModel.isRecording ? 1.15 : 1)
+                })
+                .simultaneousGesture(
+                    LongPressGesture(minimumDuration: 1)
+                        .onChanged { _ in
+                            //                        if isPressing {
                             viewModel.startCapturingVideo()
-//                        }
-                    }
-            )
-            .highPriorityGesture(
-                TapGesture()
-                    .onEnded {
-                        if viewModel.isRecording {
-                            viewModel.stopCapturingVideo()
-                        } else {
-                            viewModel.takePhoto()
+                            //                        }
                         }
+                )
+                .highPriorityGesture(
+                    TapGesture()
+                        .onEnded {
+                            if viewModel.isRecording {
+                                viewModel.stopCapturingVideo()
+                            } else {
+                                viewModel.takePhoto()
+                            }
+                        }
+                )
+                //            .simultaneousGesture(LongPressGesture(minimumDuration: 0.1, maximumDistance: 100)
+                //                .onEnded { isPressing in
+                //                    if isPressing {
+                //                        viewModel.isRecording = true
+                //                        viewModel.startCapturingVideo()
+                //                    } else {
+                //                        viewModel.isRecording = false
+                //                        viewModel.stopCapturingVideo()
+                //                    }
+                //            })
+                //            .simultaneousGesture(TapGesture().onEnded {
+                //                viewModel.takePhoto()
+                //                showingSheet.toggle()
+                //            })
+                .fullScreenCover(isPresented: $viewModel.shouldShowResult) {
+                    if let mediaType = viewModel.mediaType {
+                        ARResultView(viewModel: ARResultViewModel(mediaType: mediaType))
                     }
-            )
-//            .simultaneousGesture(LongPressGesture(minimumDuration: 0.1, maximumDistance: 100)
-//                .onEnded { isPressing in
-//                    if isPressing {
-//                        viewModel.isRecording = true
-//                        viewModel.startCapturingVideo()
-//                    } else {
-//                        viewModel.isRecording = false
-//                        viewModel.stopCapturingVideo()
-//                    }
-//            })
-//            .simultaneousGesture(TapGesture().onEnded {
-//                viewModel.takePhoto()
-//                showingSheet.toggle()
-//            })
-            .fullScreenCover(isPresented: $viewModel.shouldShowResult) {
-                if let mediaType = viewModel.mediaType {
-                    ARResultView(viewModel: ARResultViewModel(mediaType: mediaType))
                 }
+
             }
         }
         .onAppear {
             ARVariables.arView.prepareForRecording()
         }
     }
+
+    private var timeLabel: some View {
+        Label(viewModel.labelText, systemImage: "heart")
+            .padding(5)
+            .background {
+                Rectangle()
+                    .foregroundColor(Color.red)
+            }
+            .labelStyle(.titleOnly)
+    }
+
 }
 
 struct ARVariables {

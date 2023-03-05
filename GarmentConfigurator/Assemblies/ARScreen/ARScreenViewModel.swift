@@ -15,6 +15,10 @@ enum ARResultMediaType: Equatable {
     case video(URL)
 }
 
+enum Capture {
+    static let limitedTime: Double = 10.00
+}
+
 class ARScreenViewModel: ObservableObject {
     weak var delegate: ARScreenSceneDelegate?
     weak var navigationVC: ARScreenNavigationVC?
@@ -31,6 +35,8 @@ class ARScreenViewModel: ObservableObject {
 
     @Published var shouldShowResult: Bool = false
     @Published var isRecording: Bool = false
+    @Published var labelText: String = "0"
+    @Published var progressValue: CGFloat = 0.0
 
     init() {
         bindInput()
@@ -53,52 +59,83 @@ class ARScreenViewModel: ObservableObject {
                 case .onAppear:
                     self?.objectWillChange.send()
                 case .onNextScene:
-                    print("Next scene")
+//                        self?.delegate?.openARResult()
+                        print("Next scene")
+                    }
+                }
+                    .store(in: &subscriptions)
+            }
+
+        private func bindOutput() {
+            stateValueSubject
+                .assign(to: \.state, on: self)
+                .store(in: &subscriptions)
+        }
+
+        func takePhoto() {
+            ARVariables.arView.takePhotoResult { [weak self] result in
+                switch result {
+                case .success(let image):
+                    print("image taken")
+                    self?.mediaType = .image(image)
+                    self?.shouldShowResult = true
+                case .failure(let error):
+                    print(error)
                 }
             }
-            .store(in: &subscriptions)
-    }
+        }
 
-    private func bindOutput() {
-        stateValueSubject
-            .assign(to: \.state, on: self)
-            .store(in: &subscriptions)
-    }
+        //    func startCapturingVideo() {
+        //          do {
+        //              try ARVariables.arView.startVideoRecording()
+        //              isRecording = true
+        //          } catch {
+        //              isRecording = false
+        //              print(error)
+        //          }
+        //      }
 
-    func takePhoto() {
-        ARVariables.arView.takePhotoResult { [weak self] result in
-            switch result {
-            case .success(let image):
-                print("image taken")
-                self?.mediaType = .image(image)
+        func startCapturingVideo() {
+            DispatchQueue.global().async {
+                do {
+                    let videoCapture = try ARVariables.arView.startVideoRecording()
+                    DispatchQueue.main.async {
+                        self.isRecording = true
+                    }
+                    videoCapture.$duration.observe(on: .main) { [weak self] duration in
+                        if duration < Capture.limitedTime {
+                            DispatchQueue.main.async {
+                                self?.labelText = String(format: "%.1f", duration)
+                                self?.progressValue = CGFloat(duration / 10)
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                self?.stopCapturingVideo()
+                            }
+                        }
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        self.isRecording = false
+                        self.stopCapturingVideo()
+                    }
+                    print(error)
+                }
+            }
+        }
+
+        func stopCapturingVideo() {
+            isRecording = false
+            ARVariables.arView.finishVideoRecording { [weak self] videoRecording in
+                self?.mediaType = .video(videoRecording.url)
                 self?.shouldShowResult = true
-            case .failure(let error):
-                print(error)
+                self?.progressValue = 0.0
             }
         }
     }
 
-    func startCapturingVideo() {
-          do {
-              try ARVariables.arView.startVideoRecording()
-              isRecording = true
-          } catch {
-              isRecording = false
-              print(error)
-          }
-      }
-
-    func stopCapturingVideo() {
-        isRecording = false
-        ARVariables.arView.finishVideoRecording { [weak self] videoRecording in
-            self?.mediaType = .video(videoRecording.url)
-            self?.shouldShowResult = true
+    extension ARScreenViewModel: ARScreenContainerDelegate {
+        func back() {
+            delegate?.back()
         }
     }
-}
-
-extension ARScreenViewModel: ARScreenContainerDelegate {
-    func back() {
-        delegate?.back()
-    }
-}
