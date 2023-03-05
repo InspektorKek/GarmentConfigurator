@@ -33,17 +33,21 @@ struct ARScreenView: View {
 //                    viewModel.send(.onNextScene)
                 }, label: {
                     ZStack {
-                        Circle()
-                            .fill(viewModel.isRecording ? Color.red : Color.white)
-
-                            .frame(width: 65, height: 65)
-
+                            Circle()
+                                .fill(Color.gray)
+                                .opacity(viewModel.isRecording ? 0.4 : 1)
+                                .frame(width: 70, height: 70)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 60)
+                                        .frame(width: 20, height: 20)
+                                        .opacity(viewModel.isRecording ? 1 : 0)
+                                }
                         Circle()
                             .trim(from: 0, to: viewModel.progressValue )
-                            .stroke(Color.white, lineWidth: 2)
-                            .frame(width: 70, height: 70)
+                            .stroke(viewModel.isRecording ? Color.red : Color.gray, lineWidth: 5)
+                            .frame(width: 65, height: 65)
                     }
-                    .scaleEffect(viewModel.isRecording ? 1.15 : 1)
+                    .scaleEffect(viewModel.isRecording ? 1.3 : 1)
                 })
                 .simultaneousGesture(
                     LongPressGesture(minimumDuration: 1)

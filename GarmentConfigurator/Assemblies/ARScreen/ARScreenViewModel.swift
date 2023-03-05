@@ -16,7 +16,7 @@ enum ARResultMediaType: Equatable {
 }
 
 enum Capture {
-    static let limitedTime: Double = 10.00
+    static let limitedTime: Double = 60.00
 }
 
 class ARScreenViewModel: ObservableObject {
@@ -36,7 +36,7 @@ class ARScreenViewModel: ObservableObject {
     @Published var shouldShowResult: Bool = false
     @Published var isRecording: Bool = false
     @Published var labelText: String = "0"
-    @Published var progressValue: CGFloat = 0.0
+    @Published var progressValue: CGFloat = 60.0
 
     init() {
         bindInput()
@@ -102,11 +102,17 @@ class ARScreenViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.isRecording = true
                     }
+
+                    let formatted: (TimeInterval) -> String = {
+                      let seconds = Int($0)
+                      return String(format: "%02d:%02d", seconds / 60, seconds % 60)
+                    }
+
                     videoCapture.$duration.observe(on: .main) { [weak self] duration in
                         if duration < Capture.limitedTime {
                             DispatchQueue.main.async {
-                                self?.labelText = String(format: "%.1f", duration)
-                                self?.progressValue = CGFloat(duration / 10)
+                                self?.labelText = formatted(duration)
+                                self?.progressValue = CGFloat(duration / 60)
                             }
                         } else {
                             DispatchQueue.main.async {
@@ -129,7 +135,7 @@ class ARScreenViewModel: ObservableObject {
             ARVariables.arView.finishVideoRecording { [weak self] videoRecording in
                 self?.mediaType = .video(videoRecording.url)
                 self?.shouldShowResult = true
-                self?.progressValue = 0.0
+                self?.progressValue = 60.0
             }
         }
     }
