@@ -38,8 +38,8 @@ struct ARScreenView: View {
                                 .opacity(viewModel.isRecording ? 0.4 : 1)
                                 .frame(width: 70, height: 70)
                                 .overlay {
-                                    RoundedRectangle(cornerRadius: 60)
-                                        .frame(width: 20, height: 20)
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(width: 24, height: 24)
                                         .opacity(viewModel.isRecording ? 1 : 0)
                                 }
                         Circle()
@@ -47,17 +47,21 @@ struct ARScreenView: View {
                             .stroke(viewModel.isRecording ? Color.red : Color.gray, lineWidth: 5)
                             .frame(width: 65, height: 65)
                     }
-                    .scaleEffect(viewModel.isRecording ? 1.3 : 1)
+                    .padding()
+                    .scaleEffect(viewModel.isRecording ? 1.35 : 1)
                 })
-                .simultaneousGesture(
-                    LongPressGesture(minimumDuration: 1)
-                        .onChanged { _ in
+//                .simultaneousGesture
+                .highPriorityGesture(
+                    LongPressGesture(minimumDuration: 0.25)
+                    // .onChanged { _ in
+                        .onEnded { _ in
                             //                        if isPressing {
                             viewModel.startCapturingVideo()
                             //                        }
                         }
                 )
-                .highPriorityGesture(
+//                .highPriorityGesture(
+                        .simultaneousGesture(
                     TapGesture()
                         .onEnded {
                             if viewModel.isRecording {

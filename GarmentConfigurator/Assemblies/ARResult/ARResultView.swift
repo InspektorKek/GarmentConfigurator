@@ -16,20 +16,20 @@ struct ARResultView: View {
     @State var isShareSheetPresented: Bool = false
 
     var body: some View {
-        NavigationStack {
-            ZStack {
+        //        NavigationStack {
+        VStack {
+            ZStack(alignment: .topLeading) {
                 switch viewModel.mediaType {
                 case .image(let image):
                     Image(uiImage: image)
                         .resizable()
-//                        .ignoresSafeArea()
-                        .edgesIgnoringSafeArea(.bottom)
+                    //                        .edgesIgnoringSafeArea(.bottom)
                 case .none:
                     Text("nothing")
                 case .video(let video):
                     VideoPlayer(player: viewModel.player)
-//                        .ignoresSafeArea()
-                        .edgesIgnoringSafeArea(.bottom)
+//                        .scaledToFill()
+                        .ignoresSafeArea()
                         .onAppear {
                             let playerItem = AVPlayerItem(url: video)
                             viewModel.initPlayer(with: playerItem)
@@ -40,57 +40,66 @@ struct ARResultView: View {
                             viewModel.playerLooper = nil
                         }
                 }
-
-                VStack {
-                    HStack {
-//                        backButton
-                        Spacer()
-                    }
-
-                    Spacer()
-                    ZStack(alignment: .bottom) {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.gray.opacity(0.4))
-                            .ignoresSafeArea()
-
-                        HStack {
-                            saveButton
-                            instagramButton
-                            //                                                shareButton
-
-                            switch viewModel.mediaType {
-                            case .image(let image):
-                                ShareLink(item: Image(uiImage: image),
-                                          preview: SharePreview("Image", image: Image(uiImage: image))) {
-                                    Text("image")
-                                }
-
-                            case .video(let video):
-                                ShareLink(item: video) {
-                                    Image(systemName: "square.and.arrow.up")
-                                        .foregroundColor(.black)
-                                        .padding()
-                                        .background(Color.white)
-                                        .clipShape(Circle())
-                                }
-                            case .none:
-                                Text("none")
-                            }
-
-                        }
-                        .padding()
-                        .padding(.top, 30)
-                    }
-                    .frame(height: 80)
-                }
-            }
-//            .navigationTitle("welcome")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                HStack(alignment: .top) {
                     backButton
+                    Spacer()
                 }
+
             }
+
+//            .clipShape(RoundedRectangle(cornerRadius: 32))
+            .cornerRadius(32)
+
+            Spacer()
+
+            ZStack {
+                //                RoundedRectangle(cornerRadius: 20)
+                //                    .foregroundColor(.gray.opacity(0.4))
+                //                    .ignoresSafeArea()
+                //                    .edgesIgnoringSafeArea(.bottom)
+
+                HStack {
+                    saveButton
+                    instagramButton
+                    //                                                shareButton
+
+                    switch viewModel.mediaType {
+                    case .image(let image):
+                        ShareLink(item: Image(uiImage: image),
+                                  preview: SharePreview("Image", image: Image(uiImage: image))) {
+                            Image(systemName: "square.and.arrow.up")
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(Color.white)
+                                .clipShape(Circle())
+                        }
+
+                    case .video(let video):
+                        ShareLink(item: video) {
+                            Image(systemName: "square.and.arrow.up")
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(Color.white)
+                                .clipShape(Circle())
+                        }
+                    case .none:
+                        Text("none")
+                    }
+
+                }
+                .padding()
+                .padding(.top, 30)
+            }
+            .frame(height: 80)
         }
+        //            }
+        //            .navigationTitle("welcome")
+        //            .toolbar {
+        //                ToolbarItem(placement: .navigationBarLeading) {
+        //                    backButton
+        //                }
+        //            }
+        //        }
     }
 
     private var backButton: some View {
@@ -98,48 +107,52 @@ struct ARResultView: View {
             dismiss()
         }, label: {
             Image(systemName: "chevron.backward")
-//                .foregroundColor(Color(Asset.Colors.labelsPrimary.color))
+            //                .foregroundColor(Color(Asset.Colors.labelsPrimary.color))
+                .frame(width: 8, height: 8)
                 .foregroundColor(.black)
                 .padding()
                 .background(.white)
-                .clipShape(Circle())
+                .clipShape(Circle()
+
+                )
+
         })
         .padding()
     }
 
-        private var shareButton: some View {
-            Button(action: {
-                print("test")
-    //            viewModel.shareItem()
-                    switch viewModel.mediaType {
-                    case .image(let image):
-                        print("image share")
-                        let items: [Any] = [image]
-                        let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-                        UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
-                            shareSheet,
-                            animated: true,
-                            completion: nil)
-                    case .video(let video):
-                        print("video share")
-                        let items: [Any] = [video.path]
-                        let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-                        UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
-                            shareSheet,
-                            animated: true,
-                            completion: nil)
-                    case .none:
-                        print("non")
-                    }
-                }, label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundColor(.black)
-                        .padding()
-                        .background(Color.white)
-                        .clipShape(Circle())
-                })
+    private var shareButton: some View {
+        Button(action: {
+            print("test")
+            //            viewModel.shareItem()
+            switch viewModel.mediaType {
+            case .image(let image):
+                print("image share")
+                let items: [Any] = [image]
+                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
+                    shareSheet,
+                    animated: true,
+                    completion: nil)
+            case .video(let video):
+                print("video share")
+                let items: [Any] = [video.path]
+                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
+                    shareSheet,
+                    animated: true,
+                    completion: nil)
+            case .none:
+                print("non")
+            }
+        }, label: {
+            Image(systemName: "square.and.arrow.up")
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .clipShape(Circle())
+        })
 
-        }
+    }
 
     private var saveButton: some View {
         Button(action: {

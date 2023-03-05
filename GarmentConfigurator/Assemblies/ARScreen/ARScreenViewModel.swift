@@ -36,7 +36,7 @@ class ARScreenViewModel: ObservableObject {
     @Published var shouldShowResult: Bool = false
     @Published var isRecording: Bool = false
     @Published var labelText: String = "0"
-    @Published var progressValue: CGFloat = 60.0
+    @Published var progressValue: CGFloat = 0.0
 
     init() {
         bindInput()
@@ -135,7 +135,7 @@ class ARScreenViewModel: ObservableObject {
             ARVariables.arView.finishVideoRecording { [weak self] videoRecording in
                 self?.mediaType = .video(videoRecording.url)
                 self?.shouldShowResult = true
-                self?.progressValue = 60.0
+                self?.progressValue = 0.0
             }
         }
     }
