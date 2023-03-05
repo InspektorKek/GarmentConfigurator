@@ -114,7 +114,7 @@ final class ARResultViewModel: ObservableObject {
                         "com.instagram.sharedSticker.backgroundBottomColor": "#b2bec3"
                     ]
                 }
-                
+
                 let pasteboardOptions = [
                     UIPasteboard.OptionsKey.expirationDate:
                         Date().addingTimeInterval(300)

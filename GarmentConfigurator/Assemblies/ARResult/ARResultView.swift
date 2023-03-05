@@ -28,7 +28,8 @@ struct ARResultView: View {
                     Text("nothing")
                 case .video(let video):
                     VideoPlayer(player: viewModel.player)
-                        .ignoresSafeArea()
+//                        .ignoresSafeArea()
+                        .edgesIgnoringSafeArea(.bottom)
                         .onAppear {
                             let playerItem = AVPlayerItem(url: video)
                             viewModel.initPlayer(with: playerItem)
