@@ -78,6 +78,10 @@
 		F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63229AFABFC00D709CD /* ARResultView.swift */; };
 		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
 		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
+		F24CE91C29B5F7900076D241 /* test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91829B5F78F0076D241 /* test.usdz */; };
+		F24CE91D29B5F7900076D241 /* untitled7.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91929B5F78F0076D241 /* untitled7.usdz */; };
+		F24CE91E29B5F7900076D241 /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91A29B5F78F0076D241 /* robot.usdz */; };
+		F24CE91F29B5F7900076D241 /* untitled2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* untitled2.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +159,10 @@
 		F22EE63229AFABFC00D709CD /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
 		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
 		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
+		F24CE91829B5F78F0076D241 /* test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = test.usdz; sourceTree = "<group>"; };
+		F24CE91929B5F78F0076D241 /* untitled7.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = untitled7.usdz; sourceTree = "<group>"; };
+		F24CE91A29B5F78F0076D241 /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
+		F24CE91B29B5F78F0076D241 /* untitled2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = untitled2.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +413,10 @@
 				F22E107F29AE11010050FF14 /* ARScreenFlow.swift */,
 				F22E109529AE181E0050FF14 /* ARViewRecordable.swift */,
 				F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */,
+				F24CE91A29B5F78F0076D241 /* robot.usdz */,
+				F24CE91829B5F78F0076D241 /* test.usdz */,
+				F24CE91B29B5F78F0076D241 /* untitled2.usdz */,
+				F24CE91929B5F78F0076D241 /* untitled7.usdz */,
 				F22E109A29AE19A60050FF14 /* Experience.rcproject */,
 			);
 			path = ARScreen;
@@ -497,10 +509,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
+				F24CE91F29B5F7900076D241 /* untitled2.usdz in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
+				F24CE91D29B5F7900076D241 /* untitled7.usdz in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
 				B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */,
+				F24CE91E29B5F7900076D241 /* robot.usdz in Resources */,
+				F24CE91C29B5F7900076D241 /* test.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
