@@ -20,7 +20,7 @@ struct ARScreenView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer(viewModel: ARScreenViewModel())
+            ARViewContainer(viewModel: viewModel)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 if viewModel.isRecording {
@@ -232,7 +232,7 @@ struct ARViewContainer: UIViewRepresentable {
             } else {
                 // Fallback on earlier versions
             }
-
+            // swiftlint: enable all
             viewModel.loadCharacter(material: material)
 
             return arView
