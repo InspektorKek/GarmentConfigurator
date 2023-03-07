@@ -12,10 +12,16 @@ import Foundation
 internal enum L10n {
   /// Continue
   internal static let coreButtonContinue = L10n.tr("Localizable", "coreButtonContinue", fallback: "Continue")
+  /// Save
+  internal static let coreButtonSave = L10n.tr("Localizable", "coreButtonSave", fallback: "Save")
+  /// Saved
+  internal static let coreButtonSaved = L10n.tr("Localizable", "coreButtonSaved", fallback: "Saved")
+  /// Share
+  internal static let coreButtonShare = L10n.tr("Localizable", "coreButtonShare", fallback: "Share")
   /// OK
   internal static let coreOkButton = L10n.tr("Localizable", "coreOkButton", fallback: "OK")
   /// Garments
-  internal static let titleGarments = L10n.tr("Localizable", "title_garments", fallback: "Garments")
+  internal static let titleGarments = L10n.tr("Localizable", "titleGarments", fallback: "Garments")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

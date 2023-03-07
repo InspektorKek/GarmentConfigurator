@@ -78,9 +78,10 @@ struct ARResultView: View {
 //                                    .padding()
 //                                    .background(Color.white)
 //                                    .clipShape(Circle())
-                                Text("Share")
+                                Text(L10n.coreButtonShare)
                                     .font(.caption2)
                             }
+                            .frame(maxWidth: 100, maxHeight: 100)
                         }
 
                     case .video(let video):
@@ -92,9 +93,10 @@ struct ARResultView: View {
 //                                    .padding()
 //                                    .background(Color.white)
 //                                    .clipShape(Circle())
-                                Text("Share")
+                                Text(L10n.coreButtonShare)
                                     .font(.caption2)
                             }
+                            .frame(maxWidth: 100, maxHeight: 100)
                         }
                     case .none:
                         Text("none")
@@ -177,9 +179,10 @@ struct ARResultView: View {
 //                    .padding()
 //                    .background(Color.white)
 //                    .clipShape(Circle())
-                Text(!isSaved ? "Save" : "Saved")
+                Text(!isSaved ? L10n.coreButtonSave : L10n.coreButtonSaved)
                     .font(.caption2)
             }
+            .frame(maxWidth: 100, maxHeight: 100)
         })
     }
 
@@ -198,6 +201,7 @@ struct ARResultView: View {
                 Text("Instagram")
                     .font(.caption2)
             }
+            .frame(maxWidth: 100, maxHeight: 100)
         })
     }
 }
