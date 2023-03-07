@@ -16,7 +16,7 @@ import SCNRecorder
 struct ARScreenView: View {
     @ObservedObject var viewModel: ARScreenViewModel
 
-    @State private var showingSheet = false
+    @State private var showеingSheet = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -31,18 +31,18 @@ struct ARScreenView: View {
                 Spacer()
 
                 Button(action: {
-//                    viewModel.send(.onNextScene)
+                    //                    viewModel.send(.onNextScene)
                 }, label: {
                     ZStack {
-                            Circle()
-                                .fill(Color.gray)
-                                .opacity(viewModel.isRecording ? 0.4 : 1)
-                                .frame(width: 70, height: 70)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .frame(width: 24, height: 24)
-                                        .opacity(viewModel.isRecording ? 1 : 0)
-                                }
+                        Circle()
+                            .fill(Color.gray)
+                            .opacity(viewModel.isRecording ? 0.4 : 1)
+                            .frame(width: 70, height: 70)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(width: 24, height: 24)
+                                    .opacity(viewModel.isRecording ? 1 : 0)
+                            }
                         Circle()
                             .trim(from: 0, to: viewModel.progressValue )
                             .stroke(viewModel.isRecording ? Color.red : Color.gray, lineWidth: 5)
@@ -57,7 +57,7 @@ struct ARScreenView: View {
                             viewModel.startCapturingVideo()
                         }
                 )
-                        .simultaneousGesture(
+                .simultaneousGesture(
                     TapGesture()
                         .onEnded {
                             if viewModel.isRecording {
@@ -67,20 +67,6 @@ struct ARScreenView: View {
                             }
                         }
                 )
-                //            .simultaneousGesture(LongPressGesture(minimumDuration: 0.1, maximumDistance: 100)
-                //                .onEnded { isPressing in
-                //                    if isPressing {
-                //                        viewModel.isRecording = true
-                //                        viewModel.startCapturingVideo()
-                //                    } else {
-                //                        viewModel.isRecording = false
-                //                        viewModel.stopCapturingVideo()
-                //                    }
-                //            })
-                //            .simultaneousGesture(TapGesture().onEnded {
-                //                viewModel.takePhoto()
-                //                showingSheet.toggle()
-                //            })
                 .fullScreenCover(isPresented: $viewModel.shouldShowResult) {
                     if let mediaType = viewModel.mediaType {
                         ARResultView(viewModel: ARResultViewModel(mediaType: mediaType))
@@ -88,9 +74,6 @@ struct ARScreenView: View {
                 }
 
             }
-        }
-        .onAppear {
-            viewModel.arView?.prepareForRecording()
         }
     }
 
@@ -219,23 +202,24 @@ struct ARViewContainer: UIViewRepresentable {
     @ObservedObject var viewModel: ARScreenViewModel
 
     func makeUIView(context: Context) -> ARView {
-            let arView = ARView(frame: .zero)
-            viewModel.arView = arView
-            arView.session.delegate = viewModel
-            arView.session.run(ARBodyTrackingConfiguration())
-            // swiftlint:disable all
-            var material = SimpleMaterial()
-            if #available(iOS 15.0, *) {
-                material.color = try! .init(tint: .white, texture: .init(.load(named: "img", in: nil)))
-                material.metallic = .init(floatLiteral: 1.0)
-                material.roughness = .init(floatLiteral: 0.5)
-            } else {
-                // Fallback on earlier versions
-            }
-            // swiftlint: enable all
-            viewModel.loadCharacter(material: material)
+        let arView = ARView(frame: .zero)
+        arView.session.run(ARBodyTrackingConfiguration())
 
-            return arView
+        viewModel.arView = arView
+        arView.session.delegate = viewModel
+
+        do {
+            var material = SimpleMaterial()
+            material.color = try .init(tint: .white, texture: .init(.load(named: "img", in: nil)))
+            material.metallic = .init(floatLiteral: 1.0)
+            material.roughness = .init(floatLiteral: 0.5)
+
+            viewModel.loadCharacter(material: material)
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+
+        return arView
     }
 
     func updateUIView(_ uiView: ARView, context: Context) {

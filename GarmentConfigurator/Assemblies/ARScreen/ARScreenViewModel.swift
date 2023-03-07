@@ -39,7 +39,12 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     @Published var labelText: String = "0"
     @Published var progressValue: CGFloat = 0.0
 
-    @Published var arView: ARView?
+    var arView: ARView? {
+        didSet {
+            arView?.prepareForRecording()
+        }
+    }
+
     var scaleValue: Float = 0.01
     var character: BodyTrackedEntity?
     let characterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
@@ -129,12 +134,12 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     }
 
     func stopCapturingVideo() {
-        //            isRecording = false
-        //            self.arView.finishVideoRecording { [weak self] videoRecording in
-        //                self?.mediaType = .video(videoRecording.url)
-        //                self?.shouldShowResult = true
-        //                self?.progressValue = 0.0
-        //            }
+        isRecording = false
+        arView?.finishVideoRecording { [weak self] videoRecording in
+            self?.mediaType = .video(videoRecording.url)
+            self?.shouldShowResult = true
+            self?.progressValue = 0.0
+        }
     }
 
     func loadCharacter(material: SimpleMaterial) {
@@ -148,7 +153,7 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
                 character.scale = [self?.scaleValue ?? 0.01, self?.scaleValue ?? 0.01, self?.scaleValue ?? 0.01]
                 self?.character = character
 
-                self?.arView?.scene.addAnchor(self!.characterAnchor) // Add characterAnchor to the scene
+                self?.arView!.scene.addAnchor(self!.characterAnchor) // Add characterAnchor to the scene
             } else {
                 print("Error: Unable to load model as BodyTrackedEntity")
             }
