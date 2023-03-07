@@ -13,20 +13,20 @@ import UIKit
         router.setRootModule(scene)
     }
  }
-//
-// extension MainCoordinator: GarmentsSceneDelegate {
+
+ extension MainCoordinator: GarmentsSceneDelegate {
+    func openConfigurator() {
+        let scene = ConfigurationAssembly(delegate: self).makeScene()
+        router.push(scene, animated: true)
+    }
+ }
+
+// extension MainCoordinator: GarmentsSceneDelegate, ARScreenSceneDelegate {
 //    func openConfigurator() {
-//        let scene = ConfigurationAssembly(delegate: self).makeScene()
+//        let scene = ARScreenAssembly(delegate: self).makeScene()
 //        router.push(scene, animated: true)
 //    }
 // }
-
-extension MainCoordinator: GarmentsSceneDelegate, ARScreenSceneDelegate {
-    func openConfigurator() {
-        let scene = ARScreenAssembly(delegate: self).makeScene()
-        router.push(scene, animated: true)
-    }
-}
 
 // extension MainCoordinator: ARScreenSceneDelegate {
 //    func openARResult() {

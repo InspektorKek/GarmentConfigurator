@@ -80,6 +80,7 @@
 		F24CE91C29B5F7900076D241 /* test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91829B5F78F0076D241 /* test.usdz */; };
 		F24CE91E29B5F7900076D241 /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91A29B5F78F0076D241 /* robot.usdz */; };
 		F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */; };
+		F264EDB229B76004009F8951 /* Shape+InsettableShape-Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = F264EDB129B76004009F8951 /* Shape+InsettableShape-Stroke.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +160,7 @@
 		F24CE91829B5F78F0076D241 /* test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = test.usdz; sourceTree = "<group>"; };
 		F24CE91A29B5F78F0076D241 /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
 		F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tshirtModel.usdz; sourceTree = "<group>"; };
+		F264EDB129B76004009F8951 /* Shape+InsettableShape-Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+InsettableShape-Stroke.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 				B3EFFEBF29A8C5D900CF07F2 /* UIView+AddSubviews.swift */,
 				B3EFFEC329A8C72800CF07F2 /* UIControl+Extensions.swift */,
 				B3EFFEBD29A8C5A500CF07F2 /* UIView+Animation.swift */,
+				F264EDB129B76004009F8951 /* Shape+InsettableShape-Stroke.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				B3EFFEA029A8BDFD00CF07F2 /* SplashScreenAssembly.swift in Sources */,
 				B3EFFE8B29A8B7E500CF07F2 /* BaseCoordinator.swift in Sources */,
 				F22E108129AE11010050FF14 /* ARScreenViewController.swift in Sources */,
+				F264EDB229B76004009F8951 /* Shape+InsettableShape-Stroke.swift in Sources */,
 				B3EFFE8F29A8B81D00CF07F2 /* BaseNavigationController.swift in Sources */,
 				B3EFFF0129ACC18D00CF07F2 /* GarmentsView.swift in Sources */,
 				F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */,
