@@ -9,6 +9,27 @@
 /* Begin PBXBuildFile section */
 		B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674929A39BA40077A9FB /* Strings+Generated.swift */; };
 		B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */; };
+		B3994E6229AE47CA00DFBAE2 /* Model3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */; };
+		B3994E6429AE480900DFBAE2 /* Model3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6329AE480900DFBAE2 /* Model3DTypes.swift */; };
+		B3994E6629AE495F00DFBAE2 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6529AE495F00DFBAE2 /* Math.swift */; };
+		B3994E6829AE4AD100DFBAE2 /* Euler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6729AE4AD100DFBAE2 /* Euler.swift */; };
+		B3994E6A29AE4B0900DFBAE2 /* Cameras.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6929AE4B0900DFBAE2 /* Cameras.swift */; };
+		B3994E6C29AE4B5D00DFBAE2 /* CameraControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6B29AE4B5D00DFBAE2 /* CameraControls.swift */; };
+		B3994E6F29AE4C5400DFBAE2 /* ResourcesCash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6E29AE4C5400DFBAE2 /* ResourcesCash.swift */; };
+		B3994E7129AE4D7200DFBAE2 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E7029AE4D7200DFBAE2 /* EnvironmentValues.swift */; };
+		B3994E7329AE4D9B00DFBAE2 /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E7229AE4D9B00DFBAE2 /* Transform3D.swift */; };
+		B3994E7829AE508D00DFBAE2 /* DisplayLink in Frameworks */ = {isa = PBXBuildFile; productRef = B3994E7729AE508D00DFBAE2 /* DisplayLink */; };
+		B3994E7B29AE509C00DFBAE2 /* GLTFSceneKit in Frameworks */ = {isa = PBXBuildFile; productRef = B3994E7A29AE509C00DFBAE2 /* GLTFSceneKit */; };
+		B3AD240829B70BF2007215B1 /* GarmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240729B70BF2007215B1 /* GarmentType.swift */; };
+		B3AD240A29B70C10007215B1 /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240929B70C10007215B1 /* BodyType.swift */; };
+		B3AD240C29B70C24007215B1 /* Garmentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240B29B70C24007215B1 /* Garmentable.swift */; };
+		B3AD240E29B70C69007215B1 /* GarmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240D29B70C69007215B1 /* GarmentModel.swift */; };
+		B3AD241029B70CCC007215B1 /* Patternable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240F29B70CCC007215B1 /* Patternable.swift */; };
+		B3AD241329B70D32007215B1 /* TShirtPatternInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241229B70D32007215B1 /* TShirtPatternInfo.swift */; };
+		B3AD241629B70D72007215B1 /* TShirtPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241529B70D72007215B1 /* TShirtPattern.swift */; };
+		B3AD241829B728E4007215B1 /* MaterialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241729B728E4007215B1 /* MaterialsService.swift */; };
+		B3AD241B29B7711D007215B1 /* PatternNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241A29B7711D007215B1 /* PatternNode.swift */; };
+		B3AD241D29B77158007215B1 /* PatternedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241C29B77158007215B1 /* PatternedScene.swift */; };
 		B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
 		B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Images.xcassets */; };
 		B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */; };
@@ -60,11 +81,31 @@
 		B3EFFF1329ACD26300CF07F2 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */; };
 		B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */; };
 		B3EFFF1629ACE4A000CF07F2 /* GarmentsNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF1529ACE4A000CF07F2 /* GarmentsNavigationVC.swift */; };
+		B3FE968729AE176700767BF6 /* SceneCatalog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FE968629AE176700767BF6 /* SceneCatalog.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B381674929A39BA40077A9FB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3DView.swift; sourceTree = "<group>"; };
+		B3994E6329AE480900DFBAE2 /* Model3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3DTypes.swift; sourceTree = "<group>"; };
+		B3994E6529AE495F00DFBAE2 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		B3994E6729AE4AD100DFBAE2 /* Euler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euler.swift; sourceTree = "<group>"; };
+		B3994E6929AE4B0900DFBAE2 /* Cameras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cameras.swift; sourceTree = "<group>"; };
+		B3994E6B29AE4B5D00DFBAE2 /* CameraControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControls.swift; sourceTree = "<group>"; };
+		B3994E6E29AE4C5400DFBAE2 /* ResourcesCash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesCash.swift; sourceTree = "<group>"; };
+		B3994E7029AE4D7200DFBAE2 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
+		B3994E7229AE4D9B00DFBAE2 /* Transform3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
+		B3AD240729B70BF2007215B1 /* GarmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentType.swift; sourceTree = "<group>"; };
+		B3AD240929B70C10007215B1 /* BodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		B3AD240B29B70C24007215B1 /* Garmentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garmentable.swift; sourceTree = "<group>"; };
+		B3AD240D29B70C69007215B1 /* GarmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentModel.swift; sourceTree = "<group>"; };
+		B3AD240F29B70CCC007215B1 /* Patternable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patternable.swift; sourceTree = "<group>"; };
+		B3AD241229B70D32007215B1 /* TShirtPatternInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtPatternInfo.swift; sourceTree = "<group>"; };
+		B3AD241529B70D72007215B1 /* TShirtPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtPattern.swift; sourceTree = "<group>"; };
+		B3AD241729B728E4007215B1 /* MaterialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsService.swift; sourceTree = "<group>"; };
+		B3AD241A29B7711D007215B1 /* PatternNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternNode.swift; sourceTree = "<group>"; };
+		B3AD241C29B77158007215B1 /* PatternedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternedScene.swift; sourceTree = "<group>"; };
 		B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarmentConfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B2C8CB299F7BEC00474A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -120,6 +161,7 @@
 		B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
 		B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationFlow.swift; sourceTree = "<group>"; };
 		B3EFFF1529ACE4A000CF07F2 /* GarmentsNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentsNavigationVC.swift; sourceTree = "<group>"; };
+		B3FE968629AE176700767BF6 /* SceneCatalog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = SceneCatalog.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,12 +171,76 @@
 			files = (
 				B3EFFE9429A8B99500CF07F2 /* Resolver in Frameworks */,
 				B3EFFEAC29A8BEBD00CF07F2 /* SnapKit in Frameworks */,
+				B3994E7829AE508D00DFBAE2 /* DisplayLink in Frameworks */,
+				B3994E7B29AE509C00DFBAE2 /* GLTFSceneKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3994E6D29AE4C3600DFBAE2 /* Cameras */ = {
+			isa = PBXGroup;
+			children = (
+				B3994E6929AE4B0900DFBAE2 /* Cameras.swift */,
+				B3994E6B29AE4B5D00DFBAE2 /* CameraControls.swift */,
+			);
+			path = Cameras;
+			sourceTree = "<group>";
+		};
+		B3994E7429AE4EA600DFBAE2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3994E6529AE495F00DFBAE2 /* Math.swift */,
+				B3994E6729AE4AD100DFBAE2 /* Euler.swift */,
+				B3994E6E29AE4C5400DFBAE2 /* ResourcesCash.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B3994E7529AE4EAF00DFBAE2 /* 3DView */ = {
+			isa = PBXGroup;
+			children = (
+				B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */,
+				B3994E6329AE480900DFBAE2 /* Model3DTypes.swift */,
+				B3994E7229AE4D9B00DFBAE2 /* Transform3D.swift */,
+				B3994E7029AE4D7200DFBAE2 /* EnvironmentValues.swift */,
+				B3994E7429AE4EA600DFBAE2 /* Utils */,
+				B3994E6D29AE4C3600DFBAE2 /* Cameras */,
+			);
+			path = 3DView;
+			sourceTree = "<group>";
+		};
+		B3AD241129B70D03007215B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD240729B70BF2007215B1 /* GarmentType.swift */,
+				B3AD240929B70C10007215B1 /* BodyType.swift */,
+				B3AD240B29B70C24007215B1 /* Garmentable.swift */,
+				B3AD240F29B70CCC007215B1 /* Patternable.swift */,
+				B3AD240D29B70C69007215B1 /* GarmentModel.swift */,
+				B3AD241429B70D37007215B1 /* TShirts */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B3AD241429B70D37007215B1 /* TShirts */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD241529B70D72007215B1 /* TShirtPattern.swift */,
+				B3AD241229B70D32007215B1 /* TShirtPatternInfo.swift */,
+			);
+			path = TShirts;
+			sourceTree = "<group>";
+		};
+		B3AD241929B72BF6007215B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD241729B728E4007215B1 /* MaterialsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B3B2C8B9299F7BEA00474A3D = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +264,7 @@
 				B3EFFEC529A8C88C00CF07F2 /* Coordinators */,
 				B3EFFEC929A8C8DF00CF07F2 /* Core */,
 				B3EFFEC729A8C8CB00CF07F2 /* UI */,
+				B3AD241929B72BF6007215B1 /* Services */,
 				B3EFFECC29A8C99800CF07F2 /* Assemblies */,
 				B3B2C8DB299F867900474A3D /* Resources */,
 			);
@@ -181,6 +288,7 @@
 				B3CDC12029A3981A00AD0B7A /* Generated */,
 				B3CDC11E29A371E400AD0B7A /* Localization */,
 				B3B2C8CD299F7BEC00474A3D /* Preview Content */,
+				B3FE968629AE176700767BF6 /* SceneCatalog.scnassets */,
 			);
 			name = Resources;
 			path = GarmentConfigurator/Resources;
@@ -251,6 +359,7 @@
 				B3EFFEC829A8C8D100CF07F2 /* Core */,
 				B3EFFECB29A8C94400CF07F2 /* Extensions */,
 				B3EFFEE629ACBD9100CF07F2 /* Buttons */,
+				B3994E7529AE4EAF00DFBAE2 /* 3DView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -274,6 +383,7 @@
 				B3EFFEA629A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift */,
 				B3EFFE9029A8B87200CF07F2 /* NotificationCenter.swift */,
 				B3EFFED129A8CE8400CF07F2 /* Resolver */,
+				B3AD241129B70D03007215B1 /* Models */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -351,6 +461,8 @@
 				B3EFFF0B29ACD26300CF07F2 /* ConfigurationView.swift */,
 				B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */,
 				B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */,
+				B3AD241A29B7711D007215B1 /* PatternNode.swift */,
+				B3AD241C29B77158007215B1 /* PatternedScene.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -366,7 +478,6 @@
 				B3B2C8BE299F7BEA00474A3D /* Sources */,
 				B3B2C8BF299F7BEA00474A3D /* Frameworks */,
 				B3B2C8C0299F7BEA00474A3D /* Resources */,
-				B3D8BCE9299F8FEB00BEA574 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -376,6 +487,8 @@
 			packageProductDependencies = (
 				B3EFFE9329A8B99500CF07F2 /* Resolver */,
 				B3EFFEAB29A8BEBD00CF07F2 /* SnapKit */,
+				B3994E7729AE508D00DFBAE2 /* DisplayLink */,
+				B3994E7A29AE509C00DFBAE2 /* GLTFSceneKit */,
 			);
 			productName = GarmentConfigurator;
 			productReference = B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */;
@@ -410,6 +523,8 @@
 			packageReferences = (
 				B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */,
 				B3EFFEAA29A8BEBD00CF07F2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B3994E7629AE508D00DFBAE2 /* XCRemoteSwiftPackageReference "DisplayLink" */,
+				B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */,
 			);
 			productRefGroup = B3B2C8C3299F7BEA00474A3D /* Products */;
 			projectDirPath = "";
@@ -428,6 +543,7 @@
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
+				B3FE968729AE176700767BF6 /* SceneCatalog.scnassets in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
 				B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */,
 			);
@@ -455,24 +571,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftgen; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
 		};
-		B3D8BCE9299F8FEB00BEA574 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -484,37 +582,52 @@
 				B3EFFF1129ACD26300CF07F2 /* ConfigurationNavigationVC.swift in Sources */,
 				B3EFFEBC29A8C4F200CF07F2 /* ViewControllable.swift in Sources */,
 				B3EFFEFF29ACC18D00CF07F2 /* GarmentsAssembly.swift in Sources */,
+				B3994E6C29AE4B5D00DFBAE2 /* CameraControls.swift in Sources */,
 				B3EFFEA929A8BE5100CF07F2 /* NavigationContainerViewController.swift in Sources */,
 				B3EFFED029A8CE3800CF07F2 /* Resolver+Services.swift in Sources */,
+				B3994E7129AE4D7200DFBAE2 /* EnvironmentValues.swift in Sources */,
 				B3EFFEBE29A8C5A500CF07F2 /* UIView+Animation.swift in Sources */,
 				B3EFFEA029A8BDFD00CF07F2 /* SplashScreenAssembly.swift in Sources */,
 				B3EFFE8B29A8B7E500CF07F2 /* BaseCoordinator.swift in Sources */,
+				B3994E7329AE4D9B00DFBAE2 /* Transform3D.swift in Sources */,
 				B3EFFE8F29A8B81D00CF07F2 /* BaseNavigationController.swift in Sources */,
+				B3994E6429AE480900DFBAE2 /* Model3DTypes.swift in Sources */,
+				B3AD241629B70D72007215B1 /* TShirtPattern.swift in Sources */,
 				B3EFFF0129ACC18D00CF07F2 /* GarmentsView.swift in Sources */,
+				B3AD241B29B7711D007215B1 /* PatternNode.swift in Sources */,
 				B3EFFEBA29A8C3D000CF07F2 /* BaseViewController.swift in Sources */,
 				B3EFFEC029A8C5D900CF07F2 /* UIView+AddSubviews.swift in Sources */,
 				B3EFFEA729A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift in Sources */,
 				B3EFFEFE29ACC18D00CF07F2 /* GarmentsViewController.swift in Sources */,
+				B3AD241329B70D32007215B1 /* TShirtPatternInfo.swift in Sources */,
 				B3EFFEB429A8C17400CF07F2 /* UIViewController+Alert.swift in Sources */,
+				B3994E6629AE495F00DFBAE2 /* Math.swift in Sources */,
+				B3994E6A29AE4B0900DFBAE2 /* Cameras.swift in Sources */,
 				B3EFFF0E29ACD26300CF07F2 /* ConfigurationContract.swift in Sources */,
 				B3EFFEA429A8BDFD00CF07F2 /* SplashScreenFlow.swift in Sources */,
 				B3EFFE9129A8B87200CF07F2 /* NotificationCenter.swift in Sources */,
+				B3994E6829AE4AD100DFBAE2 /* Euler.swift in Sources */,
+				B3AD240C29B70C24007215B1 /* Garmentable.swift in Sources */,
 				B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */,
 				B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */,
 				B3EFFEFD29ACC18C00CF07F2 /* GarmentsContract.swift in Sources */,
 				B3EFFECE29A8CDA100CF07F2 /* SceneDelegate.swift in Sources */,
 				B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */,
+				B3AD241D29B77158007215B1 /* PatternedScene.swift in Sources */,
 				B3EFFF1229ACD26300CF07F2 /* ConfigurationView.swift in Sources */,
 				B3EFFEA229A8BDFD00CF07F2 /* SplashScreenView.swift in Sources */,
 				B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */,
 				B3EFFED329A8CE9B00CF07F2 /* Resolver+Injection.swift in Sources */,
 				B3EFFE9629A8BA3700CF07F2 /* AppCoordinator.swift in Sources */,
 				B3EFFF0329ACC18D00CF07F2 /* GarmentsFlow.swift in Sources */,
+				B3994E6229AE47CA00DFBAE2 /* Model3DView.swift in Sources */,
 				B3EFFEC229A8C62F00CF07F2 /* BackButtonAndTitleNavigationVC.swift in Sources */,
 				B3EFFEE529ACBD8E00CF07F2 /* GradientBackgroundStyle.swift in Sources */,
 				B3EFFEC429A8C72800CF07F2 /* UIControl+Extensions.swift in Sources */,
 				B3EFFF0229ACC18D00CF07F2 /* GarmentsViewModel.swift in Sources */,
+				B3AD240A29B70C10007215B1 /* BodyType.swift in Sources */,
 				B3EFFE8D29A8B81000CF07F2 /* Router.swift in Sources */,
+				B3994E6F29AE4C5400DFBAE2 /* ResourcesCash.swift in Sources */,
 				B3EFFEB029A8BF6100CF07F2 /* NavigationVC.swift in Sources */,
 				B3EFFF1029ACD26300CF07F2 /* ConfigurationAssembly.swift in Sources */,
 				B3EFFF0F29ACD26300CF07F2 /* ConfigurationViewController.swift in Sources */,
@@ -523,7 +636,11 @@
 				B3EFFF0529ACC33600CF07F2 /* MainCoordinator.swift in Sources */,
 				B3EFFE9E29A8BDFD00CF07F2 /* SplashScreenContract.swift in Sources */,
 				B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */,
+				B3AD241829B728E4007215B1 /* MaterialsService.swift in Sources */,
+				B3AD241029B70CCC007215B1 /* Patternable.swift in Sources */,
+				B3AD240829B70BF2007215B1 /* GarmentType.swift in Sources */,
 				B3EFFEAE29A8BF1400CF07F2 /* BackButtonNavigationVC.swift in Sources */,
+				B3AD240E29B70C69007215B1 /* GarmentModel.swift in Sources */,
 				B3EFFEA329A8BDFD00CF07F2 /* SplashScreenViewModel.swift in Sources */,
 				B3EFFF1329ACD26300CF07F2 /* ConfigurationViewModel.swift in Sources */,
 			);
@@ -777,6 +894,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B3994E7629AE508D00DFBAE2 /* XCRemoteSwiftPackageReference "DisplayLink" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timdonnelly/DisplayLink";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+		B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/frzi/GLTFSceneKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 		B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -796,6 +929,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B3994E7729AE508D00DFBAE2 /* DisplayLink */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3994E7629AE508D00DFBAE2 /* XCRemoteSwiftPackageReference "DisplayLink" */;
+			productName = DisplayLink;
+		};
+		B3994E7A29AE509C00DFBAE2 /* GLTFSceneKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */;
+			productName = GLTFSceneKit;
+		};
 		B3EFFE9329A8B99500CF07F2 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */;

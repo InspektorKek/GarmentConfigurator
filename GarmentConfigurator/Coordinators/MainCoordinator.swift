@@ -15,8 +15,8 @@ final class MainCoordinator: BaseCoordinator {
 }
 
 extension MainCoordinator: GarmentsSceneDelegate {
-    func openConfigurator() {
-        let scene = ConfigurationAssembly(delegate: self).makeScene()
+    func openConfigurator(input: ConfigurationSceneInput) {
+        let scene = ConfigurationAssembly(input: input, delegate: self).makeScene()
         router.push(scene, animated: true)
     }
 }

@@ -10,5 +10,6 @@ enum ConfigurationFlow {
     enum Event {
         case onAppear
         case onNextScene
+        case apply(material: ImageMaterial, pattern: TShirtPatternInfo)
     }
 }
