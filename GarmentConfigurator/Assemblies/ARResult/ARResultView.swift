@@ -41,9 +41,8 @@ struct ARResultView: View {
                         }
                 }
                 HStack(alignment: .top) {
+                    backButton
                     Spacer()
-                    closeButton
-//                        .padding()
                 }
 
             }
@@ -59,50 +58,37 @@ struct ARResultView: View {
                 //                    .ignoresSafeArea()
                 //                    .edgesIgnoringSafeArea(.bottom)
 
-//                HStack(spacing: 64) {
                 HStack {
-                    Spacer()
                     saveButton
-                    Spacer()
                     instagramButton
-                    // shareButton
-                    Spacer()
+                    //                                                shareButton
+
                     switch viewModel.mediaType {
                     case .image(let image):
                         ShareLink(item: Image(uiImage: image),
                                   preview: SharePreview("Image", image: Image(uiImage: image))) {
-                            VStack(spacing: 4) {
-                                Image(systemName: "ellipsis.circle")
-                                    .font(.title2)
-                                    .foregroundColor(.white)
-//                                    .padding()
-//                                    .background(Color.white)
-//                                    .clipShape(Circle())
-                                Text("Share")
-                                    .font(.caption2)
-                            }
+                            Image(systemName: "square.and.arrow.up")
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(Color.white)
+                                .clipShape(Circle())
                         }
 
                     case .video(let video):
                         ShareLink(item: video) {
-                            VStack(spacing: 4) {
-                                Image(systemName: "square.and.arrow.up")
-                                    .font(.title2)
-                                    .foregroundColor(.white)
-//                                    .padding()
-//                                    .background(Color.white)
-//                                    .clipShape(Circle())
-                                Text("Share")
-                                    .font(.caption2)
-                            }
+                            Image(systemName: "square.and.arrow.up")
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(Color.white)
+                                .clipShape(Circle())
                         }
                     case .none:
                         Text("none")
                     }
-                    Spacer()
+
                 }
                 .padding()
-//                .padding(.top, 30)
+                .padding(.top, 30)
             }
             .frame(height: 80)
         }
@@ -116,70 +102,68 @@ struct ARResultView: View {
         //        }
     }
 
-    private var closeButton: some View {
+    private var backButton: some View {
         Button(action: {
             dismiss()
         }, label: {
-            Image(systemName: "xmark")
-//                .font(.title2)
+            Image(systemName: "chevron.backward")
+            //                .foregroundColor(Color(Asset.Colors.labelsPrimary.color))
                 .frame(width: 8, height: 8)
                 .foregroundColor(.black)
                 .padding()
                 .background(.white)
-                .clipShape(Circle())
+                .clipShape(Circle()
+
+                )
 
         })
         .padding()
     }
 
-//    private var shareButton: some View {
-//        Button(action: {
-//            print("test")
-//            //            viewModel.shareItem()
-//            switch viewModel.mediaType {
-//            case .image(let image):
-//                print("image share")
-//                let items: [Any] = [image]
-//                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
-//                    shareSheet,
-//                    animated: true,
-//                    completion: nil)
-//            case .video(let video):
-//                print("video share")
-//                let items: [Any] = [video.path]
-//                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
-//                    shareSheet,
-//                    animated: true,
-//                    completion: nil)
-//            case .none:
-//                print("non")
-//            }
-//        }, label: {
-//            Image(systemName: "square.and.arrow.up")
-//                .foregroundColor(.black)
-//                .padding()
-//                .background(Color.white)
-//                .clipShape(Circle())
-//        })
-//    }
+    private var shareButton: some View {
+        Button(action: {
+            print("test")
+            //            viewModel.shareItem()
+            switch viewModel.mediaType {
+            case .image(let image):
+                print("image share")
+                let items: [Any] = [image]
+                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
+                    shareSheet,
+                    animated: true,
+                    completion: nil)
+            case .video(let video):
+                print("video share")
+                let items: [Any] = [video.path]
+                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
+                    shareSheet,
+                    animated: true,
+                    completion: nil)
+            case .none:
+                print("non")
+            }
+        }, label: {
+            Image(systemName: "square.and.arrow.up")
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .clipShape(Circle())
+        })
+
+    }
 
     private var saveButton: some View {
         Button(action: {
             viewModel.saveMediaToAlbum()
             isSaved = true
         }, label: {
-            VStack(spacing: 4) {
-                Image(systemName: !isSaved ? "arrow.down.to.line.compact" : "checkmark")
-                    .font(.title2)
-                    .foregroundColor(.white)
-//                    .padding()
-//                    .background(Color.white)
-//                    .clipShape(Circle())
-                Text(!isSaved ? "Save" : "Saved")
-                    .font(.caption2)
-            }
+            Image(systemName: !isSaved ? "square.and.arrow.down" : "checkmark")
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .clipShape(Circle())
         })
     }
 
@@ -187,17 +171,11 @@ struct ARResultView: View {
         Button(action: {
             viewModel.shareToInstagram()
         }, label: {
-            VStack(spacing: 4) {
-                Image("instagram")
-                    .font(.title2)
-                    .foregroundColor(.white)
-//                    .padding()
-//                    .background(Color.white)
-//                    .clipShape(Circle())
-
-                Text("Instagram")
-                    .font(.caption2)
-            }
+            Image("instagram")
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .clipShape(Circle())
         })
     }
 }
