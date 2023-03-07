@@ -70,7 +70,6 @@
 		F22E108E29AE12D80050FF14 /* SCNRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = F22E108D29AE12D80050FF14 /* SCNRecorder */; };
 		F22E109629AE181E0050FF14 /* ARViewRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E109529AE181E0050FF14 /* ARViewRecordable.swift */; };
 		F22E109829AE18270050FF14 /* ARViewSelfSceneRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */; };
-		F22E109B29AE19B40050FF14 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F22E109A29AE19A60050FF14 /* Experience.rcproject */; };
 		F22EE63529AFABFC00D709CD /* ARResultContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE62E29AFABFC00D709CD /* ARResultContract.swift */; };
 		F22EE63629AFABFC00D709CD /* ARResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE62F29AFABFC00D709CD /* ARResultViewController.swift */; };
 		F22EE63729AFABFC00D709CD /* ARResultAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63029AFABFC00D709CD /* ARResultAssembly.swift */; };
@@ -79,9 +78,8 @@
 		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
 		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
 		F24CE91C29B5F7900076D241 /* test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91829B5F78F0076D241 /* test.usdz */; };
-		F24CE91D29B5F7900076D241 /* untitled7.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91929B5F78F0076D241 /* untitled7.usdz */; };
 		F24CE91E29B5F7900076D241 /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91A29B5F78F0076D241 /* robot.usdz */; };
-		F24CE91F29B5F7900076D241 /* untitled2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* untitled2.usdz */; };
+		F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,7 +149,6 @@
 		F22E107F29AE11010050FF14 /* ARScreenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenFlow.swift; sourceTree = "<group>"; };
 		F22E109529AE181E0050FF14 /* ARViewRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRecordable.swift; sourceTree = "<group>"; };
 		F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewSelfSceneRecordable.swift; sourceTree = "<group>"; };
-		F22E109A29AE19A60050FF14 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		F22EE62E29AFABFC00D709CD /* ARResultContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultContract.swift; sourceTree = "<group>"; };
 		F22EE62F29AFABFC00D709CD /* ARResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewController.swift; sourceTree = "<group>"; };
 		F22EE63029AFABFC00D709CD /* ARResultAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultAssembly.swift; sourceTree = "<group>"; };
@@ -160,9 +157,8 @@
 		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
 		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
 		F24CE91829B5F78F0076D241 /* test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = test.usdz; sourceTree = "<group>"; };
-		F24CE91929B5F78F0076D241 /* untitled7.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = untitled7.usdz; sourceTree = "<group>"; };
 		F24CE91A29B5F78F0076D241 /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
-		F24CE91B29B5F78F0076D241 /* untitled2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = untitled2.usdz; sourceTree = "<group>"; };
+		F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tshirtModel.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,9 +411,7 @@
 				F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */,
 				F24CE91A29B5F78F0076D241 /* robot.usdz */,
 				F24CE91829B5F78F0076D241 /* test.usdz */,
-				F24CE91B29B5F78F0076D241 /* untitled2.usdz */,
-				F24CE91929B5F78F0076D241 /* untitled7.usdz */,
-				F22E109A29AE19A60050FF14 /* Experience.rcproject */,
+				F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */,
 			);
 			path = ARScreen;
 			sourceTree = "<group>";
@@ -509,9 +503,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
-				F24CE91F29B5F7900076D241 /* untitled2.usdz in Resources */,
+				F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
-				F24CE91D29B5F7900076D241 /* untitled7.usdz in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
 				B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */,
@@ -591,7 +584,6 @@
 				B3EFFEFE29ACC18D00CF07F2 /* GarmentsViewController.swift in Sources */,
 				B3EFFEB429A8C17400CF07F2 /* UIViewController+Alert.swift in Sources */,
 				F22E108329AE11010050FF14 /* ARScreenNavigationVC.swift in Sources */,
-				F22E109B29AE19B40050FF14 /* Experience.rcproject in Sources */,
 				B3EFFF0E29ACD26300CF07F2 /* ConfigurationContract.swift in Sources */,
 				B3EFFEA429A8BDFD00CF07F2 /* SplashScreenFlow.swift in Sources */,
 				F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */,

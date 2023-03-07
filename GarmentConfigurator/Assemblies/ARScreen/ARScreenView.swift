@@ -31,7 +31,6 @@ struct ARScreenView: View {
                 Spacer()
 
                 Button(action: {
-                    //                    viewModel.send(.onNextScene)
                 }, label: {
                     ZStack {
                         Circle()
@@ -88,115 +87,6 @@ struct ARScreenView: View {
     }
 
 }
-
-// struct ARVariables {
-//    static var arView: ARView!
-// }
-
-// struct ARViewContainer: UIViewRepresentable {
-//
-//    func makeUIView(context: Context) -> ARView {
-//        ARVariables.arView = ARView(frame: .zero)
-//        // Load the "Box" scene from the "Experience" Reality File
-//        do {
-//            let boxAnchor = try Experience.loadBox()
-//
-//            // Add the box anchor to the scene
-//            ARVariables.arView.scene.anchors.append(boxAnchor)
-//        } catch {
-//            print("cant create boxanchor")
-//        }
-//        return ARVariables.arView
-//    }
-//
-//    func updateUIView(_ uiView: ARView, context: Context) {}
-// }
-
-// struct ARViewContainer: UIViewRepresentable {
-//    @ObservedObject var viewModel: ARScreenViewModel
-//    let arView = ARView(frame: .zero)
-//
-//    func makeUIView(context: Context) -> ARView {
-//        arView.session.delegate = context.coordinator
-//        arView.session.run(ARBodyTrackingConfiguration())
-//        return arView
-//    }
-//
-//    func updateUIView(_ uiView: ARView, context: Context) {
-//    }
-//
-//    func makeCoordinator() -> Coordinator {
-//        return Coordinator(parent: self)
-//    }
-//
-//    class Coordinator: NSObject, ARSessionDelegate {
-//
-//        var parent: ARViewContainer
-//
-//        // The 3D character to display.
-//        var character: BodyTrackedEntity?
-//        let characterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
-//        let characterAnchor = AnchorEntity()
-//
-//        init(parent: ARViewContainer) {
-//            self.parent = parent
-//            super.init()
-//
-//            var material = SimpleMaterial()
-//            // swiftlint:disable all
-//            if #available(iOS 15.0, *) {
-//                material.color = try! .init(tint: .white,
-//                                            texture: .init(.load(named: "img", in: nil)))
-//                // material.color = try! .init(tint: .white,texture: .init(.load(contentsOf:url, withName:nil)))
-//                material.metallic = .init(floatLiteral: 1.0)
-//                material.roughness = .init(floatLiteral: 0.5)
-//            } else {
-//                // Fallback on earlier versions
-//            }
-//            // swiftlint:enable all
-//            parent.arView.scene.addAnchor(characterAnchor)
-//            // Asynchronously load the 3D character.
-//            var cancellable: AnyCancellable?
-//            cancellable = Entity.loadBodyTrackedAsync(named: "untitled2").sink(
-//                receiveCompletion: { completion in
-//                    if case let .failure(error) = completion {
-//                        print("Error: Unable to load model: \(error.localizedDescription)")
-//                    }
-//                    cancellable?.cancel()
-//                }, receiveValue: { (character: Entity) in
-//                    if let character = character as? BodyTrackedEntity {
-//                        // Scale the character to human size
-//                        character.model?.materials[0] = material
-//                        // character.model?.materials[1] = material
-//                        character.scale = [0.01, 0.01, 0.01]
-//                        self.character = character
-//                        cancellable?.cancel()
-//                    } else {
-//                        print("Error: Unable to load model as BodyTrackedEntity")
-//                    }
-//                })
-//        }
-//        func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
-//            for anchor in anchors {
-//                guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-//
-//                // Update the position of the character anchor's position.
-//                let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
-//                characterAnchor.position = bodyPosition + characterOffset
-//                // Also copy over the rotation of the body anchor, because the skeleton's pose
-//                // in the world is relative to the body anchor's rotation.
-//                characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
-//
-//                if let character = character, character.parent == nil {
-//                    // Attach the character to its anchor as soon as
-//                    // 1. the body anchor was detected and
-//                    // 2. the character was loaded.
-//                    characterAnchor.addChild(character)
-//                }
-//            }
-//        }
-//    }
-// }
 
 struct ARViewContainer: UIViewRepresentable {
     @ObservedObject var viewModel: ARScreenViewModel

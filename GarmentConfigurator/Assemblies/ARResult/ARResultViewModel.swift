@@ -29,7 +29,6 @@ final class ARResultViewModel: ObservableObject {
     deinit {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
-        print("deinit ARResultViewModel")
     }
 
     func send(_ event: ARResultFlow.Event) {

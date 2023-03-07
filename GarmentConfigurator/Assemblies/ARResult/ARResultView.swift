@@ -16,19 +16,16 @@ struct ARResultView: View {
     @State var isShareSheetPresented: Bool = false
 
     var body: some View {
-        //        NavigationStack {
         VStack {
             ZStack(alignment: .topLeading) {
                 switch viewModel.mediaType {
                 case .image(let image):
                     Image(uiImage: image)
                         .resizable()
-                    //                        .edgesIgnoringSafeArea(.bottom)
                 case .none:
                     Text("nothing")
                 case .video(let video):
                     VideoPlayer(player: viewModel.player)
-//                        .scaledToFill()
                         .ignoresSafeArea()
                         .onAppear {
                             let playerItem = AVPlayerItem(url: video)
@@ -43,23 +40,13 @@ struct ARResultView: View {
                 HStack(alignment: .top) {
                     Spacer()
                     closeButton
-//                        .padding()
                 }
-
             }
-
-//            .clipShape(RoundedRectangle(cornerRadius: 32))
             .cornerRadius(32)
 
             Spacer()
 
             ZStack {
-                //                RoundedRectangle(cornerRadius: 20)
-                //                    .foregroundColor(.gray.opacity(0.4))
-                //                    .ignoresSafeArea()
-                //                    .edgesIgnoringSafeArea(.bottom)
-
-//                HStack(spacing: 64) {
                 HStack {
                     Spacer()
                     saveButton
@@ -75,9 +62,6 @@ struct ARResultView: View {
                                 Image(systemName: "ellipsis.circle")
                                     .font(.title2)
                                     .foregroundColor(.white)
-//                                    .padding()
-//                                    .background(Color.white)
-//                                    .clipShape(Circle())
                                 Text(L10n.coreButtonShare)
                                     .font(.caption2)
                             }
@@ -90,9 +74,6 @@ struct ARResultView: View {
                                 Image(systemName: "square.and.arrow.up")
                                     .font(.title2)
                                     .foregroundColor(.white)
-//                                    .padding()
-//                                    .background(Color.white)
-//                                    .clipShape(Circle())
                                 Text(L10n.coreButtonShare)
                                     .font(.caption2)
                             }
@@ -104,18 +85,9 @@ struct ARResultView: View {
                     Spacer()
                 }
                 .padding()
-//                .padding(.top, 30)
             }
             .frame(height: 80)
         }
-        //            }
-        //            .navigationTitle("welcome")
-        //            .toolbar {
-        //                ToolbarItem(placement: .navigationBarLeading) {
-        //                    backButton
-        //                }
-        //            }
-        //        }
     }
 
     private var closeButton: some View {
@@ -123,7 +95,7 @@ struct ARResultView: View {
             dismiss()
         }, label: {
             Image(systemName: "xmark")
-//                .font(.title2)
+            //                .font(.title2)
                 .frame(width: 8, height: 8)
                 .foregroundColor(.black)
                 .padding()
@@ -134,39 +106,6 @@ struct ARResultView: View {
         .padding()
     }
 
-//    private var shareButton: some View {
-//        Button(action: {
-//            print("test")
-//            //            viewModel.shareItem()
-//            switch viewModel.mediaType {
-//            case .image(let image):
-//                print("image share")
-//                let items: [Any] = [image]
-//                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
-//                    shareSheet,
-//                    animated: true,
-//                    completion: nil)
-//            case .video(let video):
-//                print("video share")
-//                let items: [Any] = [video.path]
-//                let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//                UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
-//                    shareSheet,
-//                    animated: true,
-//                    completion: nil)
-//            case .none:
-//                print("non")
-//            }
-//        }, label: {
-//            Image(systemName: "square.and.arrow.up")
-//                .foregroundColor(.black)
-//                .padding()
-//                .background(Color.white)
-//                .clipShape(Circle())
-//        })
-//    }
-
     private var saveButton: some View {
         Button(action: {
             viewModel.saveMediaToAlbum()
@@ -176,9 +115,6 @@ struct ARResultView: View {
                 Image(systemName: !isSaved ? "arrow.down.to.line.compact" : "checkmark")
                     .font(.title2)
                     .foregroundColor(.white)
-//                    .padding()
-//                    .background(Color.white)
-//                    .clipShape(Circle())
                 Text(!isSaved ? L10n.coreButtonSave : L10n.coreButtonSaved)
                     .font(.caption2)
             }
@@ -194,10 +130,6 @@ struct ARResultView: View {
                 Image("instagram")
                     .font(.title2)
                     .foregroundColor(.white)
-//                    .padding()
-//                    .background(Color.white)
-//                    .clipShape(Circle())
-
                 Text("Instagram")
                     .font(.caption2)
             }

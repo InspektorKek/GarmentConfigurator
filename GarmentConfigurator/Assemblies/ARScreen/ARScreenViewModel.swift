@@ -45,10 +45,12 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
         }
     }
 
+    // MARK: Augmented Reality model properties
     var scaleValue: Float = 0.01
     var character: BodyTrackedEntity?
-    let characterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
+    let characterOffset: SIMD3<Float> = [0, 0, 0]
     let characterAnchor = AnchorEntity()
+    var cancellables = Set<AnyCancellable>()
 
     override init() {
         super.init()
@@ -72,7 +74,7 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
                 case .onAppear:
                     self?.objectWillChange.send()
                 case .onNextScene:
-                    //                        self?.delegate?.openARResult()
+                    // self?.delegate?.openARResult()
                     print("Next scene")
                 }
             }
@@ -84,6 +86,8 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
             .assign(to: \.state, on: self)
             .store(in: &subscriptions)
     }
+
+    // MARK: Photo/Video capture methods
 
     func takePhoto() {
         arView?.takePhotoResult { [weak self] result in
@@ -99,38 +103,38 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     }
 
     func startCapturingVideo() {
-                    DispatchQueue.global().async {
-                        do {
-                            guard let videoCapture = try self.arView?.startVideoRecording() else { return }
-                            DispatchQueue.main.async {
-                                self.isRecording = true
-                            }
+        DispatchQueue.global().async {
+            do {
+                guard let videoCapture = try self.arView?.startVideoRecording() else { return }
+                DispatchQueue.main.async {
+                    self.isRecording = true
+                }
 
-                            let formatted: (TimeInterval) -> String = {
-                              let seconds = Int($0)
-                              return String(format: "%02d:%02d", seconds / 60, seconds % 60)
-                            }
+                let formatted: (TimeInterval) -> String = {
+                    let seconds = Int($0)
+                    return String(format: "%02d:%02d", seconds / 60, seconds % 60)
+                }
 
-                            videoCapture.$duration.observe(on: .main) { [weak self] duration in
-                                if duration < Capture.limitedTime {
-                                    DispatchQueue.main.async {
-                                        self?.labelText = formatted(duration)
-                                        self?.progressValue = CGFloat(duration / 60)
-                                    }
-                                } else {
-                                    DispatchQueue.main.async {
-                                        self?.stopCapturingVideo()
-                                    }
-                                }
-                            }
-                        } catch {
-                            DispatchQueue.main.async {
-                                self.isRecording = false
-                                self.stopCapturingVideo()
-                            }
-                            print(error)
+                videoCapture.$duration.observe(on: .main) { [weak self] duration in
+                    if duration < Capture.limitedTime {
+                        DispatchQueue.main.async {
+                            self?.labelText = formatted(duration)
+                            self?.progressValue = CGFloat(duration / 60)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self?.stopCapturingVideo()
                         }
                     }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.isRecording = false
+                    self.stopCapturingVideo()
+                }
+                print(error)
+            }
+        }
     }
 
     func stopCapturingVideo() {
@@ -142,8 +146,9 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
         }
     }
 
+    // MARK: Augmented Reality model methods
     func loadCharacter(material: SimpleMaterial) {
-        Entity.loadBodyTrackedAsync(named: "untitled2").sink(receiveCompletion: { completion in
+        Entity.loadBodyTrackedAsync(named: "tshirtModel").sink(receiveCompletion: { completion in
             if case let .failure(error) = completion {
                 print("Error: Unable to load model: \(error.localizedDescription)")
             }
@@ -159,8 +164,6 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
             }
         }).store(in: &cancellables)
     }
-
-    var cancellables = Set<AnyCancellable>()
 
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
