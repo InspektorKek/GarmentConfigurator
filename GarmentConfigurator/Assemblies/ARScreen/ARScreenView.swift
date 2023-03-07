@@ -16,8 +16,6 @@ import SCNRecorder
 struct ARScreenView: View {
     @ObservedObject var viewModel: ARScreenViewModel
 
-    @State private var showеingSheet = false
-
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(viewModel: viewModel)
@@ -34,24 +32,29 @@ struct ARScreenView: View {
                 }, label: {
                     ZStack {
                         Circle()
-                            .fill(Color.gray)
+//                            .fill(Color.gray)
+                            .fill(
+                                RadialGradient(gradient: Gradient(colors: [.white, .black]), center: .center, startRadius: 0, endRadius: 50)
+                                , strokeBorder: .white)
                             .opacity(viewModel.isRecording ? 0.4 : 1)
-                            .frame(width: 70, height: 70)
+                            .frame(width: 80, height: 80)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 8)
                                     .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
                                     .opacity(viewModel.isRecording ? 1 : 0)
                             }
                         Circle()
-                            .trim(from: 0, to: viewModel.progressValue )
-                            .stroke(viewModel.isRecording ? Color.red : Color.gray, lineWidth: 5)
-                            .frame(width: 65, height: 65)
+                            .trim(from: 0, to: viewModel.progressValue)
+                            .stroke(viewModel.isRecording ? Color.red : Color.gray, lineWidth: 3)
+                            .rotationEffect(.degrees(-90))
+                            .frame(width: 77, height: 77)
                     }
                     .padding()
                     .scaleEffect(viewModel.isRecording ? 1.35 : 1)
                 })
                 .highPriorityGesture(
-                    LongPressGesture(minimumDuration: 0.25)
+                    LongPressGesture(minimumDuration: 0.1)
                         .onEnded { _ in
                             viewModel.startCapturingVideo()
                         }
@@ -113,5 +116,21 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: ARView, context: Context) {
+    }
+}
+
+extension Shape {
+    func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
+        self
+            .stroke(strokeStyle, lineWidth: lineWidth)
+            .background(self.fill(fillStyle))
+    }
+}
+
+extension InsettableShape {
+    func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
+        self
+            .strokeBorder(strokeStyle, lineWidth: lineWidth)
+            .background(self.fill(fillStyle))
     }
 }
