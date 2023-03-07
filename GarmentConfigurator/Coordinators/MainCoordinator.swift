@@ -7,12 +7,12 @@
 
 import UIKit
 
-// final class MainCoordinator: BaseCoordinator {
-//    override func start() {
-//        let scene = GarmentsAssembly(delegate: self).makeScene()
-//        router.setRootModule(scene)
-//    }
-// }
+ final class MainCoordinator: BaseCoordinator {
+    override func start() {
+        let scene = GarmentsAssembly(delegate: self).makeScene()
+        router.setRootModule(scene)
+    }
+ }
 //
 // extension MainCoordinator: GarmentsSceneDelegate {
 //    func openConfigurator() {
@@ -20,13 +20,6 @@ import UIKit
 //        router.push(scene, animated: true)
 //    }
 // }
-
-final class MainCoordinator: BaseCoordinator {
-    override func start() {
-        let scene = GarmentsAssembly(delegate: self).makeScene()
-        router.setRootModule(scene)
-    }
-}
 
 extension MainCoordinator: GarmentsSceneDelegate, ARScreenSceneDelegate {
     func openConfigurator() {

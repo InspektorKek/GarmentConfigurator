@@ -36,7 +36,7 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
 
     @Published var shouldShowResult: Bool = false
     @Published var isRecording: Bool = false
-    @Published var labelText: String = "0"
+    @Published var labelText: String = "00:00"
     @Published var progressValue: CGFloat = 0.0
 
     var arView: ARView? {
