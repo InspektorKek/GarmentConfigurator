@@ -107,6 +107,7 @@
 		F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63229AFABFC00D709CD /* ARResultView.swift */; };
 		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
 		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
+		F2E999EF29B88FAF00CEC4C9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */; };
 		F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +212,7 @@
 		F22EE63229AFABFC00D709CD /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
 		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
 		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
+		F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -455,6 +457,7 @@
 			children = (
 				B3EFFEA629A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift */,
 				B3EFFE9029A8B87200CF07F2 /* NotificationCenter.swift */,
+				F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */,
 				B3EFFED129A8CE8400CF07F2 /* Resolver */,
 				B3AD241129B70D03007215B1 /* Models */,
 				B3AD242B29B89509007215B1 /* AppData.swift */,
@@ -755,6 +758,7 @@
 				B3994E6229AE47CA00DFBAE2 /* Model3DView.swift in Sources */,
 				B3EFFEC229A8C62F00CF07F2 /* BackButtonAndTitleNavigationVC.swift in Sources */,
 				B3EFFEE529ACBD8E00CF07F2 /* GradientBackgroundStyle.swift in Sources */,
+				F2E999EF29B88FAF00CEC4C9 /* AppConstants.swift in Sources */,
 				B3EFFEC429A8C72800CF07F2 /* UIControl+Extensions.swift in Sources */,
 				B3EFFF0229ACC18D00CF07F2 /* GarmentsViewModel.swift in Sources */,
 				B3AD240A29B70C10007215B1 /* BodyType.swift in Sources */,

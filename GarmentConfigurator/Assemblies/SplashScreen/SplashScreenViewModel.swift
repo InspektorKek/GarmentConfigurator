@@ -44,6 +44,20 @@ final class SplashScreenViewModel: ObservableObject {
             .assign(to: \.state, on: self)
             .store(in: &subscriptions)
     }
+
+     func openPrivacyPolicy() {
+        guard let url = URL(string: AppConstants.Links.privacyPolicy) else { return }
+         UIApplication.shared.open(url)
+         // MARK: in case if we would need to open safari inside app
+//        delegate?.openURL(url)
+    }
+
+     func openTermsAndConditiions() {
+         guard let url = URL(string: AppConstants.Links.termsAndConditions) else { return }
+         UIApplication.shared.open(url)
+         // MARK: in case if we would need to open safari inside app
+//        delegate?.openURL(url)
+    }
 }
 
 extension SplashScreenViewModel: SplashScreenContainerDelegate {

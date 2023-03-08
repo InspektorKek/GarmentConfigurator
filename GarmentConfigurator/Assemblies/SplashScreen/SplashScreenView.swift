@@ -11,9 +11,27 @@ struct SplashScreenView: View {
     }
 
     private var content: some View {
-        ZStack {
+        VStack {
             VStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 38)
+                        .inset(by: 10)
+                        .stroke(Color.gray, lineWidth: 2)
+                        .frame(maxWidth: 235, maxHeight: 490)
+                    VStack {
+                        Text(L10n.coreWelcomeToText + "\nARgo")
+                            .font(.system(size: 34).bold())
+
+                        Spacer()
+                            .frame(height: 100)
+                        Text(L10n.coreSpeedUpText + "\n" + L10n.corePrototypingProcessesText)
+                            .font(.system(size: 25))
+                    }
+                    .multilineTextAlignment(.center)
+                }
+
                 Spacer()
+
                 Button {
                     viewModel.send(.onNextScene)
                 } label: {
@@ -28,6 +46,19 @@ struct SplashScreenView: View {
                 )
             }
             .padding()
+
+            Text("\(L10n.coreAgreementText)\n [\(L10n.coreTermsAndConditions)](https://google.com) \(L10n.coreAndText) [\(L10n.corePrivacyPolicy)](https://apple.com).")
+                .padding(5)
+                .multilineTextAlignment(.center)
+                .font(.subheadline)
+                .foregroundColor(.gray)
+
         }
+    }
+}
+
+struct SplashScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashScreenView(viewModel: SplashScreenViewModel())
     }
 }

@@ -22,7 +22,7 @@ struct GradientBackgroundStyle: ButtonStyle {
                     .fill(
                         LinearGradient(gradient: Gradient(stops: [
                             Gradient.Stop(color: startColor, location: 0.1),
-                            Gradient.Stop(color: endColor, location: 0.7),
+                            Gradient.Stop(color: endColor, location: 0.7)
                         ]), startPoint: .top, endPoint: .bottom)
                     )
                     .overlay(
@@ -32,13 +32,13 @@ struct GradientBackgroundStyle: ButtonStyle {
             )
             .foregroundColor(.white)
             .font(.system(size: 16, weight: .bold))
-        
+
         //            .background(isEnabled
         //                        ? LinearGradient(gradient: Gradient(colors: [startColor, endColor]),
         //                                         startPoint: .leading, endPoint: .trailing)
         //                        : LinearGradient(colors: [Color(Asset.Colors.accentColor.color)],
         //                                         startPoint: .bottom, endPoint: .top)
         //        )
-        
+
     }
 }

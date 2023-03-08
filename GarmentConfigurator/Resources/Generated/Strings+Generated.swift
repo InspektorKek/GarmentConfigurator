@@ -28,6 +28,10 @@ internal enum L10n {
   internal static let coreButtonRemovePhoto = L10n.tr("Localizable", "core_button_removePhoto", fallback: "Remove Photo")
   /// Patterns
   internal static let coreTitlePatterns = L10n.tr("Localizable", "core_title_patterns", fallback: "Patterns")
+  /// By continuing you agree to our
+  internal static let coreAgreementText = L10n.tr("Localizable", "coreAgreementText", fallback: "By continuing you agree to our")
+  /// and
+  internal static let coreAndText = L10n.tr("Localizable", "coreAndText", fallback: "and")
   /// Continue
   internal static let coreButtonContinue = L10n.tr("Localizable", "coreButtonContinue", fallback: "Continue")
   /// Save
@@ -38,6 +42,16 @@ internal enum L10n {
   internal static let coreButtonShare = L10n.tr("Localizable", "coreButtonShare", fallback: "Share")
   /// OK
   internal static let coreOkButton = L10n.tr("Localizable", "coreOkButton", fallback: "OK")
+  /// Privacy Policy
+  internal static let corePrivacyPolicy = L10n.tr("Localizable", "corePrivacyPolicy", fallback: "Privacy Policy")
+  /// prototyping process
+  internal static let corePrototypingProcessesText = L10n.tr("Localizable", "corePrototypingProcessesText", fallback: "prototyping process")
+  /// speed up the garment
+  internal static let coreSpeedUpText = L10n.tr("Localizable", "coreSpeedUpText", fallback: "speed up the garment")
+  /// Terms and Conditions
+  internal static let coreTermsAndConditions = L10n.tr("Localizable", "coreTermsAndConditions", fallback: "Terms and Conditions")
+  /// Welcome to
+  internal static let coreWelcomeToText = L10n.tr("Localizable", "coreWelcomeToText", fallback: "Welcome to")
   /// Back Side
   internal static let patternTshirtBackTitle = L10n.tr("Localizable", "pattern_tshirt_backTitle", fallback: "Back Side")
   /// Front Side

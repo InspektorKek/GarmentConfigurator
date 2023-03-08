@@ -20,3 +20,10 @@
 "coreButtonSave" = "Сохранить";
 "coreButtonSaved" = "Сохранено";
 "coreButtonShare" = "Поделиться";
+"coreTermsAndConditions" = "Правилами и условиями";
+"corePrivacyPolicy" = "Политикой конфиденциальности";
+"coreAgreementText" = "Продолжая, вы соглашаетесь с нашими";
+"coreWelcomeToText" = "Добро пожаловать в";
+"coreSpeedUpText" = "ускорьте процесс";
+"corePrototypingProcessesText" = "создания одежды";
+"coreAndText" = "и";

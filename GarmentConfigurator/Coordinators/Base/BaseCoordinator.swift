@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 protocol SceneAssembly {
     func makeScene() -> UIViewController
@@ -40,6 +41,18 @@ class BaseCoordinator: NSObject, Coordinator {
     func start() {
         fatalError("This function must be override")
     }
+
+    // MARK: in case if we would need to open safari inside app
+//    func openURL(_ url: URL) {
+//        let config = SFSafariViewController.Configuration()
+//        config.barCollapsingEnabled = false
+//        let destination = SFSafariViewController(
+//            url: url,
+//            configuration: config
+//        )
+//        destination.modalPresentationStyle = .popover
+//        router.present(destination, animated: true)
+//    }
 
     final func add(_ child: Coordinator) {
         for element in children where child === element { return }

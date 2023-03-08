@@ -20,3 +20,10 @@
 "coreButtonSave" = "Save";
 "coreButtonSaved" = "Saved";
 "coreButtonShare" = "Share";
+"coreTermsAndConditions" = "Terms and Conditions";
+"corePrivacyPolicy" = "Privacy Policy";
+"coreAgreementText" = "By continuing you agree to our";
+"coreWelcomeToText" = "Welcome to";
+"coreSpeedUpText" = "speed up the garment";
+"corePrototypingProcessesText" = "prototyping process";
+"coreAndText" = "and";
