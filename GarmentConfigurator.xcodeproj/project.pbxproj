@@ -60,6 +60,26 @@
 		B3EFFF1329ACD26300CF07F2 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */; };
 		B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */; };
 		B3EFFF1629ACE4A000CF07F2 /* GarmentsNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF1529ACE4A000CF07F2 /* GarmentsNavigationVC.swift */; };
+		F22E108029AE11010050FF14 /* ARScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107929AE11010050FF14 /* ARScreenContract.swift */; };
+		F22E108129AE11010050FF14 /* ARScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107A29AE11010050FF14 /* ARScreenViewController.swift */; };
+		F22E108229AE11010050FF14 /* ARScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */; };
+		F22E108329AE11010050FF14 /* ARScreenNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */; };
+		F22E108429AE11010050FF14 /* ARScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107D29AE11010050FF14 /* ARScreenView.swift */; };
+		F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */; };
+		F22E108629AE11010050FF14 /* ARScreenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107F29AE11010050FF14 /* ARScreenFlow.swift */; };
+		F22E108E29AE12D80050FF14 /* SCNRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = F22E108D29AE12D80050FF14 /* SCNRecorder */; };
+		F22E109629AE181E0050FF14 /* ARViewRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E109529AE181E0050FF14 /* ARViewRecordable.swift */; };
+		F22E109829AE18270050FF14 /* ARViewSelfSceneRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */; };
+		F22EE63529AFABFC00D709CD /* ARResultContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE62E29AFABFC00D709CD /* ARResultContract.swift */; };
+		F22EE63629AFABFC00D709CD /* ARResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE62F29AFABFC00D709CD /* ARResultViewController.swift */; };
+		F22EE63729AFABFC00D709CD /* ARResultAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63029AFABFC00D709CD /* ARResultAssembly.swift */; };
+		F22EE63829AFABFC00D709CD /* ARResultNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63129AFABFC00D709CD /* ARResultNavigationVC.swift */; };
+		F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63229AFABFC00D709CD /* ARResultView.swift */; };
+		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
+		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
+		F24CE91C29B5F7900076D241 /* test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91829B5F78F0076D241 /* test.usdz */; };
+		F24CE91E29B5F7900076D241 /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91A29B5F78F0076D241 /* robot.usdz */; };
+		F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +140,25 @@
 		B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
 		B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationFlow.swift; sourceTree = "<group>"; };
 		B3EFFF1529ACE4A000CF07F2 /* GarmentsNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentsNavigationVC.swift; sourceTree = "<group>"; };
+		F22E107929AE11010050FF14 /* ARScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenContract.swift; sourceTree = "<group>"; };
+		F22E107A29AE11010050FF14 /* ARScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenViewController.swift; sourceTree = "<group>"; };
+		F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenAssembly.swift; sourceTree = "<group>"; };
+		F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenNavigationVC.swift; sourceTree = "<group>"; };
+		F22E107D29AE11010050FF14 /* ARScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenView.swift; sourceTree = "<group>"; };
+		F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenViewModel.swift; sourceTree = "<group>"; };
+		F22E107F29AE11010050FF14 /* ARScreenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenFlow.swift; sourceTree = "<group>"; };
+		F22E109529AE181E0050FF14 /* ARViewRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRecordable.swift; sourceTree = "<group>"; };
+		F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewSelfSceneRecordable.swift; sourceTree = "<group>"; };
+		F22EE62E29AFABFC00D709CD /* ARResultContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultContract.swift; sourceTree = "<group>"; };
+		F22EE62F29AFABFC00D709CD /* ARResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewController.swift; sourceTree = "<group>"; };
+		F22EE63029AFABFC00D709CD /* ARResultAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultAssembly.swift; sourceTree = "<group>"; };
+		F22EE63129AFABFC00D709CD /* ARResultNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultNavigationVC.swift; sourceTree = "<group>"; };
+		F22EE63229AFABFC00D709CD /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
+		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
+		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
+		F24CE91829B5F78F0076D241 /* test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = test.usdz; sourceTree = "<group>"; };
+		F24CE91A29B5F78F0076D241 /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
+		F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tshirtModel.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22E108E29AE12D80050FF14 /* SCNRecorder in Frameworks */,
 				B3EFFE9429A8B99500CF07F2 /* Resolver in Frameworks */,
 				B3EFFEAC29A8BEBD00CF07F2 /* SnapKit in Frameworks */,
 			);
@@ -303,6 +343,8 @@
 		B3EFFECC29A8C99800CF07F2 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				F22EE62D29AFABE600D709CD /* ARResult */,
+				F22E107829AE10E90050FF14 /* ARScreen */,
 				B3EFFF0629ACD24F00CF07F2 /* Configuration */,
 				B3EFFEE729ACC14A00CF07F2 /* Garments */,
 				B3EFFEA529A8BE0200CF07F2 /* SplashScreen */,
@@ -355,6 +397,39 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		F22E107829AE10E90050FF14 /* ARScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F22E107929AE11010050FF14 /* ARScreenContract.swift */,
+				F22E107A29AE11010050FF14 /* ARScreenViewController.swift */,
+				F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */,
+				F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */,
+				F22E107D29AE11010050FF14 /* ARScreenView.swift */,
+				F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */,
+				F22E107F29AE11010050FF14 /* ARScreenFlow.swift */,
+				F22E109529AE181E0050FF14 /* ARViewRecordable.swift */,
+				F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */,
+				F24CE91A29B5F78F0076D241 /* robot.usdz */,
+				F24CE91829B5F78F0076D241 /* test.usdz */,
+				F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */,
+			);
+			path = ARScreen;
+			sourceTree = "<group>";
+		};
+		F22EE62D29AFABE600D709CD /* ARResult */ = {
+			isa = PBXGroup;
+			children = (
+				F22EE62E29AFABFC00D709CD /* ARResultContract.swift */,
+				F22EE62F29AFABFC00D709CD /* ARResultViewController.swift */,
+				F22EE63029AFABFC00D709CD /* ARResultAssembly.swift */,
+				F22EE63129AFABFC00D709CD /* ARResultNavigationVC.swift */,
+				F22EE63229AFABFC00D709CD /* ARResultView.swift */,
+				F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */,
+				F22EE63429AFABFC00D709CD /* ARResultFlow.swift */,
+			);
+			path = ARResult;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,6 +451,7 @@
 			packageProductDependencies = (
 				B3EFFE9329A8B99500CF07F2 /* Resolver */,
 				B3EFFEAB29A8BEBD00CF07F2 /* SnapKit */,
+				F22E108D29AE12D80050FF14 /* SCNRecorder */,
 			);
 			productName = GarmentConfigurator;
 			productReference = B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */;
@@ -410,6 +486,7 @@
 			packageReferences = (
 				B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */,
 				B3EFFEAA29A8BEBD00CF07F2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F22E108C29AE12D80050FF14 /* XCRemoteSwiftPackageReference "SCNRecorder" */,
 			);
 			productRefGroup = B3B2C8C3299F7BEA00474A3D /* Products */;
 			projectDirPath = "";
@@ -426,10 +503,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
+				F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
 				B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */,
+				F24CE91E29B5F7900076D241 /* robot.usdz in Resources */,
+				F24CE91C29B5F7900076D241 /* test.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,26 +561,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EFFEB629A8C18B00CF07F2 /* CompletionHandler.swift in Sources */,
+				F22EE63729AFABFC00D709CD /* ARResultAssembly.swift in Sources */,
 				B3EFFF1129ACD26300CF07F2 /* ConfigurationNavigationVC.swift in Sources */,
+				F22E109629AE181E0050FF14 /* ARViewRecordable.swift in Sources */,
 				B3EFFEBC29A8C4F200CF07F2 /* ViewControllable.swift in Sources */,
 				B3EFFEFF29ACC18D00CF07F2 /* GarmentsAssembly.swift in Sources */,
 				B3EFFEA929A8BE5100CF07F2 /* NavigationContainerViewController.swift in Sources */,
 				B3EFFED029A8CE3800CF07F2 /* Resolver+Services.swift in Sources */,
 				B3EFFEBE29A8C5A500CF07F2 /* UIView+Animation.swift in Sources */,
+				F22EE63629AFABFC00D709CD /* ARResultViewController.swift in Sources */,
+				F22E108429AE11010050FF14 /* ARScreenView.swift in Sources */,
 				B3EFFEA029A8BDFD00CF07F2 /* SplashScreenAssembly.swift in Sources */,
 				B3EFFE8B29A8B7E500CF07F2 /* BaseCoordinator.swift in Sources */,
+				F22E108129AE11010050FF14 /* ARScreenViewController.swift in Sources */,
 				B3EFFE8F29A8B81D00CF07F2 /* BaseNavigationController.swift in Sources */,
 				B3EFFF0129ACC18D00CF07F2 /* GarmentsView.swift in Sources */,
+				F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */,
+				F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */,
 				B3EFFEBA29A8C3D000CF07F2 /* BaseViewController.swift in Sources */,
 				B3EFFEC029A8C5D900CF07F2 /* UIView+AddSubviews.swift in Sources */,
 				B3EFFEA729A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift in Sources */,
 				B3EFFEFE29ACC18D00CF07F2 /* GarmentsViewController.swift in Sources */,
 				B3EFFEB429A8C17400CF07F2 /* UIViewController+Alert.swift in Sources */,
+				F22E108329AE11010050FF14 /* ARScreenNavigationVC.swift in Sources */,
 				B3EFFF0E29ACD26300CF07F2 /* ConfigurationContract.swift in Sources */,
 				B3EFFEA429A8BDFD00CF07F2 /* SplashScreenFlow.swift in Sources */,
+				F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */,
 				B3EFFE9129A8B87200CF07F2 /* NotificationCenter.swift in Sources */,
+				F22EE63529AFABFC00D709CD /* ARResultContract.swift in Sources */,
 				B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */,
 				B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */,
+				F22EE63829AFABFC00D709CD /* ARResultNavigationVC.swift in Sources */,
+				F22E108029AE11010050FF14 /* ARScreenContract.swift in Sources */,
 				B3EFFEFD29ACC18C00CF07F2 /* GarmentsContract.swift in Sources */,
 				B3EFFECE29A8CDA100CF07F2 /* SceneDelegate.swift in Sources */,
 				B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */,
@@ -508,7 +600,9 @@
 				B3EFFEA229A8BDFD00CF07F2 /* SplashScreenView.swift in Sources */,
 				B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */,
 				B3EFFED329A8CE9B00CF07F2 /* Resolver+Injection.swift in Sources */,
+				F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */,
 				B3EFFE9629A8BA3700CF07F2 /* AppCoordinator.swift in Sources */,
+				F22E109829AE18270050FF14 /* ARViewSelfSceneRecordable.swift in Sources */,
 				B3EFFF0329ACC18D00CF07F2 /* GarmentsFlow.swift in Sources */,
 				B3EFFEC229A8C62F00CF07F2 /* BackButtonAndTitleNavigationVC.swift in Sources */,
 				B3EFFEE529ACBD8E00CF07F2 /* GradientBackgroundStyle.swift in Sources */,
@@ -522,6 +616,8 @@
 				B3EFFF1629ACE4A000CF07F2 /* GarmentsNavigationVC.swift in Sources */,
 				B3EFFF0529ACC33600CF07F2 /* MainCoordinator.swift in Sources */,
 				B3EFFE9E29A8BDFD00CF07F2 /* SplashScreenContract.swift in Sources */,
+				F22E108629AE11010050FF14 /* ARScreenFlow.swift in Sources */,
+				F22E108229AE11010050FF14 /* ARScreenAssembly.swift in Sources */,
 				B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */,
 				B3EFFEAE29A8BF1400CF07F2 /* BackButtonNavigationVC.swift in Sources */,
 				B3EFFEA329A8BDFD00CF07F2 /* SplashScreenViewModel.swift in Sources */,
@@ -689,6 +785,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ARgo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -729,6 +826,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ARgo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -793,6 +891,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F22E108C29AE12D80050FF14 /* XCRemoteSwiftPackageReference "SCNRecorder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gorastudio-ceo/SCNRecorder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -805,6 +911,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3EFFEAA29A8BEBD00CF07F2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F22E108D29AE12D80050FF14 /* SCNRecorder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F22E108C29AE12D80050FF14 /* XCRemoteSwiftPackageReference "SCNRecorder" */;
+			productName = SCNRecorder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

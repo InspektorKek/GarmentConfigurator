@@ -1,3 +1,6 @@
 "coreOkButton" = "OK";
 "coreButtonContinue" = "Continua";
-"title_garments" = "Indumenti";
+"titleGarments" = "Indumenti";
+"coreButtonSave" = "Salva";
+"coreButtonSaved" = "Salvato";
+"coreButtonShare" = "Condividere";
