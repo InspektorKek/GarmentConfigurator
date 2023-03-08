@@ -80,6 +80,7 @@
 		F24CE91C29B5F7900076D241 /* test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91829B5F78F0076D241 /* test.usdz */; };
 		F24CE91E29B5F7900076D241 /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91A29B5F78F0076D241 /* robot.usdz */; };
 		F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */; };
+		F2E999EF29B88FAF00CEC4C9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +160,7 @@
 		F24CE91829B5F78F0076D241 /* test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = test.usdz; sourceTree = "<group>"; };
 		F24CE91A29B5F78F0076D241 /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
 		F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tshirtModel.usdz; sourceTree = "<group>"; };
+		F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 			children = (
 				B3EFFEA629A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift */,
 				B3EFFE9029A8B87200CF07F2 /* NotificationCenter.swift */,
+				F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */,
 				B3EFFED129A8CE8400CF07F2 /* Resolver */,
 			);
 			path = Core;
@@ -606,6 +609,7 @@
 				B3EFFF0329ACC18D00CF07F2 /* GarmentsFlow.swift in Sources */,
 				B3EFFEC229A8C62F00CF07F2 /* BackButtonAndTitleNavigationVC.swift in Sources */,
 				B3EFFEE529ACBD8E00CF07F2 /* GradientBackgroundStyle.swift in Sources */,
+				F2E999EF29B88FAF00CEC4C9 /* AppConstants.swift in Sources */,
 				B3EFFEC429A8C72800CF07F2 /* UIControl+Extensions.swift in Sources */,
 				B3EFFF0229ACC18D00CF07F2 /* GarmentsViewModel.swift in Sources */,
 				B3EFFE8D29A8B81000CF07F2 /* Router.swift in Sources */,
