@@ -21,12 +21,12 @@ import UIKit
     }
  }
 //
-//extension MainCoordinator: GarmentsSceneDelegate, ARScreenSceneDelegate {
+// extension MainCoordinator: GarmentsSceneDelegate, ARScreenSceneDelegate {
 //    func openConfigurator() {
 //        let scene = ARScreenAssembly(delegate: self).makeScene()
 //        router.push(scene, animated: true)
 //    }
-//}
+// }
 
 // extension MainCoordinator: ARScreenSceneDelegate {
 //    func openARResult() {
