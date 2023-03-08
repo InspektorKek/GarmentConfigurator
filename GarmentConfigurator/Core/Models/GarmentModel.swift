@@ -32,6 +32,18 @@ class GarmentModel {
         patterns[patternIndex].textureMaterial = material
     }
     
+    func updateRotation(value: Float, for pattern: TShirtPatternInfo) {
+        guard let patternIndex = patterns.firstIndex(where: { $0.type == pattern.type }) else { return }
+        
+        patterns[patternIndex].rotation = value
+    }
+    
+    func updateScale(value: Float, for pattern: TShirtPatternInfo) {
+        guard let patternIndex = patterns.firstIndex(where: { $0.type == pattern.type }) else { return }
+        
+        patterns[patternIndex].scale = value
+    }
+    
     private static func patterns(by type: GarmentType) -> [TShirtPatternInfo] {
         switch type {
         case .tShirt:

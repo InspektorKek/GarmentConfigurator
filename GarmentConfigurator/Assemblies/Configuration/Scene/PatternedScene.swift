@@ -25,4 +25,12 @@ class PatternedScene {
     func applyMaterial(data: Data, to pattern: any Patternable) throws {
         try patternedNode.applyTexture(textureData: data, to: pattern)
     }
+    
+    func applyScale(value: Float, for pattern: any Patternable) throws {
+        try patternedNode.applyScale(value: value, for: pattern)
+    }
+    
+    func applyRotation(value: Float, for pattern: any Patternable) throws {
+        try patternedNode.applyRotation(value: value, for: pattern)
+    }
 }

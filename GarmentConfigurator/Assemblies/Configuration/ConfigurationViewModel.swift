@@ -46,6 +46,10 @@ final class ConfigurationViewModel: ObservableObject {
                     self?.openPhotoSelector(for: pattern)
                 case .apply(material: let material, pattern: let pattern):
                     self?.updateMaterial(material, for: pattern)
+                case .onChangeScale(value: let value, pattern: let pattern):
+                    self?.updateScale(value, for: pattern)
+                case .onChangeRotation(value: let value, pattern: let pattern):
+                    self?.updateRotation(value, for: pattern)
                 }
             }
             .store(in: &subscriptions)
@@ -72,6 +76,24 @@ final class ConfigurationViewModel: ObservableObject {
         }
         model.update(pattern: pattern, with: textureMaterial)
         objectWillChange.send()
+    }
+    
+    private func updateScale(_ value: Float, for pattern: TShirtPatternInfo) {
+        do {
+            try scene.applyScale(value: value, for: pattern)
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        model.updateScale(value: value, for: pattern)
+    }
+    
+    private func updateRotation(_ value: Float, for pattern: TShirtPatternInfo) {
+        do {
+            try scene.applyRotation(value: value, for: pattern)
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        model.updateRotation(value: value, for: pattern)
     }
     
     private func openPhotoSelector(for pattern: TShirtPatternInfo) {
