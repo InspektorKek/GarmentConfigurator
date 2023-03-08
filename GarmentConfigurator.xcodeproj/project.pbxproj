@@ -30,6 +30,7 @@
 		B3AD241829B728E4007215B1 /* MaterialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241729B728E4007215B1 /* MaterialsService.swift */; };
 		B3AD241B29B7711D007215B1 /* PatternNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241A29B7711D007215B1 /* PatternNode.swift */; };
 		B3AD241D29B77158007215B1 /* PatternedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241C29B77158007215B1 /* PatternedScene.swift */; };
+		B3AD242029B78A8E007215B1 /* View+RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */; };
 		B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
 		B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Images.xcassets */; };
 		B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */; };
@@ -106,6 +107,7 @@
 		B3AD241729B728E4007215B1 /* MaterialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsService.swift; sourceTree = "<group>"; };
 		B3AD241A29B7711D007215B1 /* PatternNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternNode.swift; sourceTree = "<group>"; };
 		B3AD241C29B77158007215B1 /* PatternedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternedScene.swift; sourceTree = "<group>"; };
+		B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorner.swift"; sourceTree = "<group>"; };
 		B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarmentConfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B2C8CB299F7BEC00474A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -239,6 +241,15 @@
 				B3AD241729B728E4007215B1 /* MaterialsService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B3AD241E29B771DF007215B1 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD241A29B7711D007215B1 /* PatternNode.swift */,
+				B3AD241C29B77158007215B1 /* PatternedScene.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		B3B2C8B9299F7BEA00474A3D = {
@@ -406,6 +417,7 @@
 				B3EFFEBF29A8C5D900CF07F2 /* UIView+AddSubviews.swift */,
 				B3EFFEC329A8C72800CF07F2 /* UIControl+Extensions.swift */,
 				B3EFFEBD29A8C5A500CF07F2 /* UIView+Animation.swift */,
+				B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,8 +473,7 @@
 				B3EFFF0B29ACD26300CF07F2 /* ConfigurationView.swift */,
 				B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */,
 				B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */,
-				B3AD241A29B7711D007215B1 /* PatternNode.swift */,
-				B3AD241C29B77158007215B1 /* PatternedScene.swift */,
+				B3AD241E29B771DF007215B1 /* Scene */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -641,6 +652,7 @@
 				B3AD240829B70BF2007215B1 /* GarmentType.swift in Sources */,
 				B3EFFEAE29A8BF1400CF07F2 /* BackButtonNavigationVC.swift in Sources */,
 				B3AD240E29B70C69007215B1 /* GarmentModel.swift in Sources */,
+				B3AD242029B78A8E007215B1 /* View+RoundedCorner.swift in Sources */,
 				B3EFFEA329A8BDFD00CF07F2 /* SplashScreenViewModel.swift in Sources */,
 				B3EFFF1329ACD26300CF07F2 /* ConfigurationViewModel.swift in Sources */,
 			);
@@ -810,9 +822,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -850,9 +863,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

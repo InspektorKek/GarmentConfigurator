@@ -12,20 +12,18 @@ protocol MaterialManagingProtocol {
     func addNew(_ material: ImageMaterial)
 }
 
-struct ImageMaterial: Identifiable {
+struct ImageMaterial: Codable, Identifiable, Hashable, Equatable {
     var texture: Data?
-    let id = UUID()
-    
-    static let `default` = ImageMaterial(texture: nil)
+    let id: UUID
 }
 
 final class ImageDataMaterialsService: MaterialManagingProtocol {
     func retrieveSavedMaterials() -> [ImageMaterial] {
         return [
-            .init(texture: UIImage(named: "AppIcon")!.pngData()),
-            .init(texture: UIImage(named: "First")!.pngData()),
-            .init(texture: UIImage(named: "Second")!.pngData()),
-            .init(texture: UIImage(named: "Third")!.pngData())
+            .init(texture: UIImage(named: "AppIcon")!.pngData(), id: UUID()),
+            .init(texture: UIImage(named: "First")!.pngData(), id: UUID()),
+            .init(texture: UIImage(named: "Second")!.pngData(), id: UUID()),
+            .init(texture: UIImage(named: "Third")!.pngData(), id: UUID())
         ]
     }
     

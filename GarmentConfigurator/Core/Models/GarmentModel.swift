@@ -24,10 +24,10 @@ class GarmentModel {
         self.bodyType = bodyType
     }
     
-    func update(pattern: TShirtPatternInfo, with textureData: Data) {
-        guard let patternIndex = patterns.firstIndex(where: { $0.id == pattern.id }) else { return }
-
-        patterns[patternIndex].textureData = textureData
+    func update(pattern: TShirtPatternInfo, with material: ImageMaterial) {
+        guard let patternIndex = patterns.firstIndex(where: { $0.type == pattern.type }) else { return }
+        
+        patterns[patternIndex].textureMaterial = material
     }
     
     private static func patterns(by type: GarmentType) -> [TShirtPatternInfo] {

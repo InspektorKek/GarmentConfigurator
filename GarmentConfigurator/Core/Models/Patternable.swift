@@ -8,9 +8,9 @@
 import Foundation
 
 /// A protocol for patterns.
-protocol Patternable: Codable, Identifiable, Hashable {
+protocol Patternable: Codable, Identifiable, Hashable, Equatable {
     var name: String { get }
-    var textureData: Data? { get set }
+    var textureMaterial: ImageMaterial? { get set }
     var scale: Float { get set }
     var rotation: Float { get set }
 }

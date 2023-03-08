@@ -9,7 +9,6 @@ final class ConfigurationViewModel: ObservableObject {
     @Published private(set) var model: GarmentModel
     @Published private(set) var state: ConfigurationFlow.ViewState = .idle
     @Published private(set) var materials: [ImageMaterial]
-    @Published private(set) var selectedMaterial: ImageMaterial = .default
     
     let scene: PatternedScene
 
@@ -47,7 +46,7 @@ final class ConfigurationViewModel: ObservableObject {
                 case .onNextScene:
                     print("Next scene")
                 case .apply(material: let material, pattern: let pattern):
-                    self?.updateMaterial(material.texture, for: pattern)
+                    self?.updateMaterial(material, for: pattern)
                 }
             }
             .store(in: &subscriptions)
@@ -59,14 +58,15 @@ final class ConfigurationViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
-    private func updateMaterial(_ textureData: Data?, for pattern: TShirtPatternInfo) {
-        guard let textureData else { return }
+    private func updateMaterial(_ textureMaterial: ImageMaterial, for pattern: TShirtPatternInfo) {
+        guard let texture = textureMaterial.texture else { return }
         do {
-            try scene.applyMaterial(data: textureData, to: pattern)
+            try scene.applyMaterial(data: texture, to: pattern)
         } catch {
             fatalError(error.localizedDescription)
         }
-        model.update(pattern: pattern, with: textureData)
+        model.update(pattern: pattern, with: textureMaterial)
+        objectWillChange.send()
     }
 }
 

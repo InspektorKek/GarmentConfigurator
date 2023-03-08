@@ -12,7 +12,7 @@ struct TShirtPatternInfo: Patternable {
     let type: TShirtPattern
     let id: UUID
     
-    var textureData: Data?
+    var textureMaterial: ImageMaterial?
     var scale: Float = 0
     var rotation: Float = 0
     

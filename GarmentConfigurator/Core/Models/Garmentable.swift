@@ -8,7 +8,7 @@
 import Foundation
 
 /// A protocol for garments that can have patterns.
-protocol Garmentable: AnyObject, Codable, Identifiable {
+protocol Garmentable: AnyObject, Codable, Identifiable, Equatable {
     var type: GarmentType { get }
     var bodyType: BodyType { get }
     var name: String { get }
