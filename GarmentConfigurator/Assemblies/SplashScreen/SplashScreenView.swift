@@ -25,7 +25,7 @@ struct SplashScreenView: View {
                         Spacer()
                             .frame(height: 100)
                         Text(L10n.coreSpeedUpText + "\n" + L10n.corePrototypingProcessesText)
-                            .font(.title2)
+                            .font(.system(size: 25))
                     }
                     .multilineTextAlignment(.center)
                 }
@@ -47,8 +47,9 @@ struct SplashScreenView: View {
             }
             .padding()
 
-            Text("\(L10n.coreAgreementText) [\(L10n.coreTermsAndConditions)](https://google.com) \(L10n.coreAndText) [\(L10n.corePrivacyPolicy)](https://apple.com).")
-                .padding(3)
+            Text("\(L10n.coreAgreementText)\n [\(L10n.coreTermsAndConditions)](https://google.com) \(L10n.coreAndText) [\(L10n.corePrivacyPolicy)](https://apple.com).")
+                .padding(5)
+                .multilineTextAlignment(.center)
                 .font(.subheadline)
                 .foregroundColor(.gray)
 

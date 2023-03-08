@@ -4,10 +4,10 @@
 "coreButtonSave" = "Salva";
 "coreButtonSaved" = "Salvato";
 "coreButtonShare" = "Condividere";
-"coreTermsAndConditions" = "";
-"corePrivacyPolicy" = "";
-"coreAgreementText" = "";
-"coreWelcomeToText" = "";
-"coreSpeedUpText" = "";
-"corePrototypingProcessesText" = "";
+"coreTermsAndConditions" = "Termini e Condizioni";
+"corePrivacyPolicy" = "Politica sulla Privacy";
+"coreAgreementText" = "Continuando accetti il nostro";
+"coreWelcomeToText" = "Benvenuti a";
+"coreSpeedUpText" = "accelerare il processo";
+"corePrototypingProcessesText" = "di prototipazione dell'indumento";
 "coreAndText" = "e";
