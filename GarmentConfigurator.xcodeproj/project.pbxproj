@@ -9,7 +9,38 @@
 /* Begin PBXBuildFile section */
 		B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674929A39BA40077A9FB /* Strings+Generated.swift */; };
 		B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */; };
-		B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
+		B3994E6229AE47CA00DFBAE2 /* Model3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */; };
+		B3994E6429AE480900DFBAE2 /* Model3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6329AE480900DFBAE2 /* Model3DTypes.swift */; };
+		B3994E6629AE495F00DFBAE2 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6529AE495F00DFBAE2 /* Math.swift */; };
+		B3994E6829AE4AD100DFBAE2 /* Euler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6729AE4AD100DFBAE2 /* Euler.swift */; };
+		B3994E6A29AE4B0900DFBAE2 /* Cameras.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6929AE4B0900DFBAE2 /* Cameras.swift */; };
+		B3994E6C29AE4B5D00DFBAE2 /* CameraControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6B29AE4B5D00DFBAE2 /* CameraControls.swift */; };
+		B3994E6F29AE4C5400DFBAE2 /* ResourcesCash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6E29AE4C5400DFBAE2 /* ResourcesCash.swift */; };
+		B3994E7129AE4D7200DFBAE2 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E7029AE4D7200DFBAE2 /* EnvironmentValues.swift */; };
+		B3994E7329AE4D9B00DFBAE2 /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E7229AE4D9B00DFBAE2 /* Transform3D.swift */; };
+		B3994E7829AE508D00DFBAE2 /* DisplayLink in Frameworks */ = {isa = PBXBuildFile; productRef = B3994E7729AE508D00DFBAE2 /* DisplayLink */; };
+		B3994E7B29AE509C00DFBAE2 /* GLTFSceneKit in Frameworks */ = {isa = PBXBuildFile; productRef = B3994E7A29AE509C00DFBAE2 /* GLTFSceneKit */; };
+		B3AD240829B70BF2007215B1 /* GarmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240729B70BF2007215B1 /* GarmentType.swift */; };
+		B3AD240A29B70C10007215B1 /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240929B70C10007215B1 /* BodyType.swift */; };
+		B3AD240C29B70C24007215B1 /* Garmentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240B29B70C24007215B1 /* Garmentable.swift */; };
+		B3AD240E29B70C69007215B1 /* GarmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240D29B70C69007215B1 /* GarmentModel.swift */; };
+		B3AD241029B70CCC007215B1 /* Patternable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD240F29B70CCC007215B1 /* Patternable.swift */; };
+		B3AD241329B70D32007215B1 /* TShirtPatternInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241229B70D32007215B1 /* TShirtPatternInfo.swift */; };
+		B3AD241629B70D72007215B1 /* TShirtPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241529B70D72007215B1 /* TShirtPattern.swift */; };
+		B3AD241829B728E4007215B1 /* MaterialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241729B728E4007215B1 /* MaterialsService.swift */; };
+		B3AD241B29B7711D007215B1 /* PatternNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241A29B7711D007215B1 /* PatternNode.swift */; };
+		B3AD241D29B77158007215B1 /* PatternedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241C29B77158007215B1 /* PatternedScene.swift */; };
+		B3AD242029B78A8E007215B1 /* View+RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */; };
+		B3AD242229B8776B007215B1 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242129B8776B007215B1 /* ImagePickerCoordinator.swift */; };
+		B3AD242429B877E7007215B1 /* ImagePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242329B877E7007215B1 /* ImagePickerPresentable.swift */; };
+		B3AD242729B87805007215B1 /* ImageCropperCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242629B87805007215B1 /* ImageCropperCoordinator.swift */; };
+		B3AD242A29B8788C007215B1 /* CropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = B3AD242929B8788C007215B1 /* CropViewController */; };
+		B3AD242C29B89509007215B1 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242B29B89509007215B1 /* AppData.swift */; };
+		B3AD242E29B89F07007215B1 /* ImageMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242D29B89F07007215B1 /* ImageMaterial.swift */; };
+		B3AD243029B89F22007215B1 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242F29B89F22007215B1 /* FilesManager.swift */; };
+		B3AD243329B8C877007215B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
+		B3AD243429B8C87E007215B1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9829A8BDFD00CF07F2 /* SplashScreenViewController.swift */; };
+		B3AD243629B8CA78007215B1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD243529B8CA78007215B1 /* UIApplication+Extension.swift */; };
 		B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Images.xcassets */; };
 		B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */; };
 		B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */; };
@@ -22,7 +53,6 @@
 		B3EFFE9429A8B99500CF07F2 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = B3EFFE9329A8B99500CF07F2 /* Resolver */; };
 		B3EFFE9629A8BA3700CF07F2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9529A8BA3700CF07F2 /* AppCoordinator.swift */; };
 		B3EFFE9E29A8BDFD00CF07F2 /* SplashScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9729A8BDFD00CF07F2 /* SplashScreenContract.swift */; };
-		B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9829A8BDFD00CF07F2 /* SplashScreenViewController.swift */; };
 		B3EFFEA029A8BDFD00CF07F2 /* SplashScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9929A8BDFD00CF07F2 /* SplashScreenAssembly.swift */; };
 		B3EFFEA229A8BDFD00CF07F2 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9B29A8BDFD00CF07F2 /* SplashScreenView.swift */; };
 		B3EFFEA329A8BDFD00CF07F2 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9C29A8BDFD00CF07F2 /* SplashScreenViewModel.swift */; };
@@ -60,10 +90,10 @@
 		B3EFFF1329ACD26300CF07F2 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */; };
 		B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */; };
 		B3EFFF1629ACE4A000CF07F2 /* GarmentsNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFF1529ACE4A000CF07F2 /* GarmentsNavigationVC.swift */; };
+		B3FE968729AE176700767BF6 /* SceneCatalog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FE968629AE176700767BF6 /* SceneCatalog.scnassets */; };
 		F22E108029AE11010050FF14 /* ARScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107929AE11010050FF14 /* ARScreenContract.swift */; };
 		F22E108129AE11010050FF14 /* ARScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107A29AE11010050FF14 /* ARScreenViewController.swift */; };
 		F22E108229AE11010050FF14 /* ARScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */; };
-		F22E108329AE11010050FF14 /* ARScreenNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */; };
 		F22E108429AE11010050FF14 /* ARScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107D29AE11010050FF14 /* ARScreenView.swift */; };
 		F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */; };
 		F22E108629AE11010050FF14 /* ARScreenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107F29AE11010050FF14 /* ARScreenFlow.swift */; };
@@ -77,14 +107,39 @@
 		F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63229AFABFC00D709CD /* ARResultView.swift */; };
 		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
 		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
-		F24CE91C29B5F7900076D241 /* test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91829B5F78F0076D241 /* test.usdz */; };
-		F24CE91E29B5F7900076D241 /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91A29B5F78F0076D241 /* robot.usdz */; };
-		F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */; };
+		F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B381674929A39BA40077A9FB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3DView.swift; sourceTree = "<group>"; };
+		B3994E6329AE480900DFBAE2 /* Model3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3DTypes.swift; sourceTree = "<group>"; };
+		B3994E6529AE495F00DFBAE2 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		B3994E6729AE4AD100DFBAE2 /* Euler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euler.swift; sourceTree = "<group>"; };
+		B3994E6929AE4B0900DFBAE2 /* Cameras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cameras.swift; sourceTree = "<group>"; };
+		B3994E6B29AE4B5D00DFBAE2 /* CameraControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControls.swift; sourceTree = "<group>"; };
+		B3994E6E29AE4C5400DFBAE2 /* ResourcesCash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesCash.swift; sourceTree = "<group>"; };
+		B3994E7029AE4D7200DFBAE2 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
+		B3994E7229AE4D9B00DFBAE2 /* Transform3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
+		B3AD240729B70BF2007215B1 /* GarmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentType.swift; sourceTree = "<group>"; };
+		B3AD240929B70C10007215B1 /* BodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		B3AD240B29B70C24007215B1 /* Garmentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garmentable.swift; sourceTree = "<group>"; };
+		B3AD240D29B70C69007215B1 /* GarmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentModel.swift; sourceTree = "<group>"; };
+		B3AD240F29B70CCC007215B1 /* Patternable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patternable.swift; sourceTree = "<group>"; };
+		B3AD241229B70D32007215B1 /* TShirtPatternInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtPatternInfo.swift; sourceTree = "<group>"; };
+		B3AD241529B70D72007215B1 /* TShirtPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtPattern.swift; sourceTree = "<group>"; };
+		B3AD241729B728E4007215B1 /* MaterialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsService.swift; sourceTree = "<group>"; };
+		B3AD241A29B7711D007215B1 /* PatternNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternNode.swift; sourceTree = "<group>"; };
+		B3AD241C29B77158007215B1 /* PatternedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternedScene.swift; sourceTree = "<group>"; };
+		B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorner.swift"; sourceTree = "<group>"; };
+		B3AD242129B8776B007215B1 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		B3AD242329B877E7007215B1 /* ImagePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPresentable.swift; sourceTree = "<group>"; };
+		B3AD242629B87805007215B1 /* ImageCropperCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperCoordinator.swift; sourceTree = "<group>"; };
+		B3AD242B29B89509007215B1 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		B3AD242D29B89F07007215B1 /* ImageMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMaterial.swift; sourceTree = "<group>"; };
+		B3AD242F29B89F22007215B1 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
+		B3AD243529B8CA78007215B1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarmentConfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B2C8CB299F7BEC00474A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -140,10 +195,10 @@
 		B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
 		B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationFlow.swift; sourceTree = "<group>"; };
 		B3EFFF1529ACE4A000CF07F2 /* GarmentsNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentsNavigationVC.swift; sourceTree = "<group>"; };
+		B3FE968629AE176700767BF6 /* SceneCatalog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = SceneCatalog.scnassets; sourceTree = "<group>"; };
 		F22E107929AE11010050FF14 /* ARScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenContract.swift; sourceTree = "<group>"; };
 		F22E107A29AE11010050FF14 /* ARScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenViewController.swift; sourceTree = "<group>"; };
 		F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenAssembly.swift; sourceTree = "<group>"; };
-		F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenNavigationVC.swift; sourceTree = "<group>"; };
 		F22E107D29AE11010050FF14 /* ARScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenView.swift; sourceTree = "<group>"; };
 		F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenViewModel.swift; sourceTree = "<group>"; };
 		F22E107F29AE11010050FF14 /* ARScreenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenFlow.swift; sourceTree = "<group>"; };
@@ -156,9 +211,7 @@
 		F22EE63229AFABFC00D709CD /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
 		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
 		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
-		F24CE91829B5F78F0076D241 /* test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = test.usdz; sourceTree = "<group>"; };
-		F24CE91A29B5F78F0076D241 /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
-		F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tshirtModel.usdz; sourceTree = "<group>"; };
+		F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,12 +222,97 @@
 				F22E108E29AE12D80050FF14 /* SCNRecorder in Frameworks */,
 				B3EFFE9429A8B99500CF07F2 /* Resolver in Frameworks */,
 				B3EFFEAC29A8BEBD00CF07F2 /* SnapKit in Frameworks */,
+				B3994E7829AE508D00DFBAE2 /* DisplayLink in Frameworks */,
+				B3AD242A29B8788C007215B1 /* CropViewController in Frameworks */,
+				B3994E7B29AE509C00DFBAE2 /* GLTFSceneKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3994E6D29AE4C3600DFBAE2 /* Cameras */ = {
+			isa = PBXGroup;
+			children = (
+				B3994E6929AE4B0900DFBAE2 /* Cameras.swift */,
+				B3994E6B29AE4B5D00DFBAE2 /* CameraControls.swift */,
+			);
+			path = Cameras;
+			sourceTree = "<group>";
+		};
+		B3994E7429AE4EA600DFBAE2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3994E6529AE495F00DFBAE2 /* Math.swift */,
+				B3994E6729AE4AD100DFBAE2 /* Euler.swift */,
+				B3994E6E29AE4C5400DFBAE2 /* ResourcesCash.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B3994E7529AE4EAF00DFBAE2 /* 3DView */ = {
+			isa = PBXGroup;
+			children = (
+				B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */,
+				B3994E6329AE480900DFBAE2 /* Model3DTypes.swift */,
+				B3994E7229AE4D9B00DFBAE2 /* Transform3D.swift */,
+				B3994E7029AE4D7200DFBAE2 /* EnvironmentValues.swift */,
+				B3994E7429AE4EA600DFBAE2 /* Utils */,
+				B3994E6D29AE4C3600DFBAE2 /* Cameras */,
+			);
+			path = 3DView;
+			sourceTree = "<group>";
+		};
+		B3AD241129B70D03007215B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD240729B70BF2007215B1 /* GarmentType.swift */,
+				B3AD240929B70C10007215B1 /* BodyType.swift */,
+				B3AD240B29B70C24007215B1 /* Garmentable.swift */,
+				B3AD240F29B70CCC007215B1 /* Patternable.swift */,
+				B3AD240D29B70C69007215B1 /* GarmentModel.swift */,
+				B3AD241429B70D37007215B1 /* TShirts */,
+				B3AD242D29B89F07007215B1 /* ImageMaterial.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B3AD241429B70D37007215B1 /* TShirts */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD241529B70D72007215B1 /* TShirtPattern.swift */,
+				B3AD241229B70D32007215B1 /* TShirtPatternInfo.swift */,
+			);
+			path = TShirts;
+			sourceTree = "<group>";
+		};
+		B3AD241929B72BF6007215B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD241729B728E4007215B1 /* MaterialsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B3AD241E29B771DF007215B1 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD241A29B7711D007215B1 /* PatternNode.swift */,
+				B3AD241C29B77158007215B1 /* PatternedScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		B3AD242529B877EE007215B1 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD242129B8776B007215B1 /* ImagePickerCoordinator.swift */,
+				B3AD242629B87805007215B1 /* ImageCropperCoordinator.swift */,
+				B3AD242329B877E7007215B1 /* ImagePickerPresentable.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		B3B2C8B9299F7BEA00474A3D = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +336,7 @@
 				B3EFFEC529A8C88C00CF07F2 /* Coordinators */,
 				B3EFFEC929A8C8DF00CF07F2 /* Core */,
 				B3EFFEC729A8C8CB00CF07F2 /* UI */,
+				B3AD241929B72BF6007215B1 /* Services */,
 				B3EFFECC29A8C99800CF07F2 /* Assemblies */,
 				B3B2C8DB299F867900474A3D /* Resources */,
 			);
@@ -221,6 +360,7 @@
 				B3CDC12029A3981A00AD0B7A /* Generated */,
 				B3CDC11E29A371E400AD0B7A /* Localization */,
 				B3B2C8CD299F7BEC00474A3D /* Preview Content */,
+				B3FE968629AE176700767BF6 /* SceneCatalog.scnassets */,
 			);
 			name = Resources;
 			path = GarmentConfigurator/Resources;
@@ -291,6 +431,7 @@
 				B3EFFEC829A8C8D100CF07F2 /* Core */,
 				B3EFFECB29A8C94400CF07F2 /* Extensions */,
 				B3EFFEE629ACBD9100CF07F2 /* Buttons */,
+				B3994E7529AE4EAF00DFBAE2 /* 3DView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -303,6 +444,7 @@
 				B3EFFEB729A8C3B700CF07F2 /* ChildViewControllerViewInterface.swift */,
 				B3EFFEB529A8C18B00CF07F2 /* CompletionHandler.swift */,
 				B3EFFE8E29A8B81D00CF07F2 /* BaseNavigationController.swift */,
+				B3AD242529B877EE007215B1 /* ImagePicker */,
 				B3EFFECA29A8C90400CF07F2 /* Navigation */,
 			);
 			path = Core;
@@ -314,6 +456,9 @@
 				B3EFFEA629A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift */,
 				B3EFFE9029A8B87200CF07F2 /* NotificationCenter.swift */,
 				B3EFFED129A8CE8400CF07F2 /* Resolver */,
+				B3AD241129B70D03007215B1 /* Models */,
+				B3AD242B29B89509007215B1 /* AppData.swift */,
+				B3AD242F29B89F22007215B1 /* FilesManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -336,6 +481,8 @@
 				B3EFFEBF29A8C5D900CF07F2 /* UIView+AddSubviews.swift */,
 				B3EFFEC329A8C72800CF07F2 /* UIControl+Extensions.swift */,
 				B3EFFEBD29A8C5A500CF07F2 /* UIView+Animation.swift */,
+				B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */,
+				B3AD243529B8CA78007215B1 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +540,7 @@
 				B3EFFF0B29ACD26300CF07F2 /* ConfigurationView.swift */,
 				B3EFFF0C29ACD26300CF07F2 /* ConfigurationViewModel.swift */,
 				B3EFFF0D29ACD26300CF07F2 /* ConfigurationFlow.swift */,
+				B3AD241E29B771DF007215B1 /* Scene */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -403,15 +551,12 @@
 				F22E107929AE11010050FF14 /* ARScreenContract.swift */,
 				F22E107A29AE11010050FF14 /* ARScreenViewController.swift */,
 				F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */,
-				F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */,
 				F22E107D29AE11010050FF14 /* ARScreenView.swift */,
 				F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */,
 				F22E107F29AE11010050FF14 /* ARScreenFlow.swift */,
 				F22E109529AE181E0050FF14 /* ARViewRecordable.swift */,
 				F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */,
-				F24CE91A29B5F78F0076D241 /* robot.usdz */,
-				F24CE91829B5F78F0076D241 /* test.usdz */,
-				F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */,
+				F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */,
 			);
 			path = ARScreen;
 			sourceTree = "<group>";
@@ -441,7 +586,6 @@
 				B3B2C8BE299F7BEA00474A3D /* Sources */,
 				B3B2C8BF299F7BEA00474A3D /* Frameworks */,
 				B3B2C8C0299F7BEA00474A3D /* Resources */,
-				B3D8BCE9299F8FEB00BEA574 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -451,6 +595,9 @@
 			packageProductDependencies = (
 				B3EFFE9329A8B99500CF07F2 /* Resolver */,
 				B3EFFEAB29A8BEBD00CF07F2 /* SnapKit */,
+				B3994E7729AE508D00DFBAE2 /* DisplayLink */,
+				B3994E7A29AE509C00DFBAE2 /* GLTFSceneKit */,
+				B3AD242929B8788C007215B1 /* CropViewController */,
 				F22E108D29AE12D80050FF14 /* SCNRecorder */,
 			);
 			productName = GarmentConfigurator;
@@ -486,6 +633,9 @@
 			packageReferences = (
 				B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */,
 				B3EFFEAA29A8BEBD00CF07F2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B3994E7629AE508D00DFBAE2 /* XCRemoteSwiftPackageReference "DisplayLink" */,
+				B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */,
+				B3AD242829B8788C007215B1 /* XCRemoteSwiftPackageReference "TOCropViewController" */,
 				F22E108C29AE12D80050FF14 /* XCRemoteSwiftPackageReference "SCNRecorder" */,
 			);
 			productRefGroup = B3B2C8C3299F7BEA00474A3D /* Products */;
@@ -503,13 +653,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
-				F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */,
+				F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
+				B3FE968729AE176700767BF6 /* SceneCatalog.scnassets in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
 				B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */,
-				F24CE91E29B5F7900076D241 /* robot.usdz in Resources */,
-				F24CE91C29B5F7900076D241 /* test.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,24 +684,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftgen; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
 		};
-		B3D8BCE9299F8FEB00BEA574 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -560,42 +691,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3AD243429B8C87E007215B1 /* SplashScreenViewController.swift in Sources */,
+				B3AD243329B8C877007215B1 /* AppDelegate.swift in Sources */,
 				B3EFFEB629A8C18B00CF07F2 /* CompletionHandler.swift in Sources */,
 				F22EE63729AFABFC00D709CD /* ARResultAssembly.swift in Sources */,
 				B3EFFF1129ACD26300CF07F2 /* ConfigurationNavigationVC.swift in Sources */,
 				F22E109629AE181E0050FF14 /* ARViewRecordable.swift in Sources */,
 				B3EFFEBC29A8C4F200CF07F2 /* ViewControllable.swift in Sources */,
+				B3AD243629B8CA78007215B1 /* UIApplication+Extension.swift in Sources */,
 				B3EFFEFF29ACC18D00CF07F2 /* GarmentsAssembly.swift in Sources */,
+				B3994E6C29AE4B5D00DFBAE2 /* CameraControls.swift in Sources */,
 				B3EFFEA929A8BE5100CF07F2 /* NavigationContainerViewController.swift in Sources */,
 				B3EFFED029A8CE3800CF07F2 /* Resolver+Services.swift in Sources */,
+				B3AD242229B8776B007215B1 /* ImagePickerCoordinator.swift in Sources */,
+				B3994E7129AE4D7200DFBAE2 /* EnvironmentValues.swift in Sources */,
 				B3EFFEBE29A8C5A500CF07F2 /* UIView+Animation.swift in Sources */,
 				F22EE63629AFABFC00D709CD /* ARResultViewController.swift in Sources */,
 				F22E108429AE11010050FF14 /* ARScreenView.swift in Sources */,
 				B3EFFEA029A8BDFD00CF07F2 /* SplashScreenAssembly.swift in Sources */,
 				B3EFFE8B29A8B7E500CF07F2 /* BaseCoordinator.swift in Sources */,
+				B3994E7329AE4D9B00DFBAE2 /* Transform3D.swift in Sources */,
 				F22E108129AE11010050FF14 /* ARScreenViewController.swift in Sources */,
 				B3EFFE8F29A8B81D00CF07F2 /* BaseNavigationController.swift in Sources */,
+				B3994E6429AE480900DFBAE2 /* Model3DTypes.swift in Sources */,
+				B3AD241629B70D72007215B1 /* TShirtPattern.swift in Sources */,
 				B3EFFF0129ACC18D00CF07F2 /* GarmentsView.swift in Sources */,
+				B3AD241B29B7711D007215B1 /* PatternNode.swift in Sources */,
 				F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */,
 				F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */,
 				B3EFFEBA29A8C3D000CF07F2 /* BaseViewController.swift in Sources */,
 				B3EFFEC029A8C5D900CF07F2 /* UIView+AddSubviews.swift in Sources */,
 				B3EFFEA729A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift in Sources */,
 				B3EFFEFE29ACC18D00CF07F2 /* GarmentsViewController.swift in Sources */,
+				B3AD241329B70D32007215B1 /* TShirtPatternInfo.swift in Sources */,
+				B3AD242E29B89F07007215B1 /* ImageMaterial.swift in Sources */,
 				B3EFFEB429A8C17400CF07F2 /* UIViewController+Alert.swift in Sources */,
-				F22E108329AE11010050FF14 /* ARScreenNavigationVC.swift in Sources */,
+				B3994E6629AE495F00DFBAE2 /* Math.swift in Sources */,
+				B3994E6A29AE4B0900DFBAE2 /* Cameras.swift in Sources */,
 				B3EFFF0E29ACD26300CF07F2 /* ConfigurationContract.swift in Sources */,
 				B3EFFEA429A8BDFD00CF07F2 /* SplashScreenFlow.swift in Sources */,
 				F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */,
 				B3EFFE9129A8B87200CF07F2 /* NotificationCenter.swift in Sources */,
+				B3994E6829AE4AD100DFBAE2 /* Euler.swift in Sources */,
+				B3AD240C29B70C24007215B1 /* Garmentable.swift in Sources */,
+				B3AD242729B87805007215B1 /* ImageCropperCoordinator.swift in Sources */,
+				B3AD243029B89F22007215B1 /* FilesManager.swift in Sources */,
+				B3AD242429B877E7007215B1 /* ImagePickerPresentable.swift in Sources */,
 				F22EE63529AFABFC00D709CD /* ARResultContract.swift in Sources */,
-				B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */,
-				B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */,
 				F22EE63829AFABFC00D709CD /* ARResultNavigationVC.swift in Sources */,
 				F22E108029AE11010050FF14 /* ARScreenContract.swift in Sources */,
 				B3EFFEFD29ACC18C00CF07F2 /* GarmentsContract.swift in Sources */,
 				B3EFFECE29A8CDA100CF07F2 /* SceneDelegate.swift in Sources */,
 				B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */,
+				B3AD241D29B77158007215B1 /* PatternedScene.swift in Sources */,
 				B3EFFF1229ACD26300CF07F2 /* ConfigurationView.swift in Sources */,
 				B3EFFEA229A8BDFD00CF07F2 /* SplashScreenView.swift in Sources */,
 				B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */,
@@ -604,11 +752,14 @@
 				B3EFFE9629A8BA3700CF07F2 /* AppCoordinator.swift in Sources */,
 				F22E109829AE18270050FF14 /* ARViewSelfSceneRecordable.swift in Sources */,
 				B3EFFF0329ACC18D00CF07F2 /* GarmentsFlow.swift in Sources */,
+				B3994E6229AE47CA00DFBAE2 /* Model3DView.swift in Sources */,
 				B3EFFEC229A8C62F00CF07F2 /* BackButtonAndTitleNavigationVC.swift in Sources */,
 				B3EFFEE529ACBD8E00CF07F2 /* GradientBackgroundStyle.swift in Sources */,
 				B3EFFEC429A8C72800CF07F2 /* UIControl+Extensions.swift in Sources */,
 				B3EFFF0229ACC18D00CF07F2 /* GarmentsViewModel.swift in Sources */,
+				B3AD240A29B70C10007215B1 /* BodyType.swift in Sources */,
 				B3EFFE8D29A8B81000CF07F2 /* Router.swift in Sources */,
+				B3994E6F29AE4C5400DFBAE2 /* ResourcesCash.swift in Sources */,
 				B3EFFEB029A8BF6100CF07F2 /* NavigationVC.swift in Sources */,
 				B3EFFF1029ACD26300CF07F2 /* ConfigurationAssembly.swift in Sources */,
 				B3EFFF0F29ACD26300CF07F2 /* ConfigurationViewController.swift in Sources */,
@@ -619,9 +770,15 @@
 				F22E108629AE11010050FF14 /* ARScreenFlow.swift in Sources */,
 				F22E108229AE11010050FF14 /* ARScreenAssembly.swift in Sources */,
 				B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */,
+				B3AD241829B728E4007215B1 /* MaterialsService.swift in Sources */,
+				B3AD241029B70CCC007215B1 /* Patternable.swift in Sources */,
+				B3AD240829B70BF2007215B1 /* GarmentType.swift in Sources */,
 				B3EFFEAE29A8BF1400CF07F2 /* BackButtonNavigationVC.swift in Sources */,
+				B3AD240E29B70C69007215B1 /* GarmentModel.swift in Sources */,
+				B3AD242029B78A8E007215B1 /* View+RoundedCorner.swift in Sources */,
 				B3EFFEA329A8BDFD00CF07F2 /* SplashScreenViewModel.swift in Sources */,
 				B3EFFF1329ACD26300CF07F2 /* ConfigurationViewModel.swift in Sources */,
+				B3AD242C29B89509007215B1 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,9 +947,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -831,9 +989,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -875,6 +1034,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B3994E7629AE508D00DFBAE2 /* XCRemoteSwiftPackageReference "DisplayLink" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timdonnelly/DisplayLink";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+		B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/frzi/GLTFSceneKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+		B3AD242829B8788C007215B1 /* XCRemoteSwiftPackageReference "TOCropViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TimOliver/TOCropViewController";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -902,6 +1085,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B3994E7729AE508D00DFBAE2 /* DisplayLink */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3994E7629AE508D00DFBAE2 /* XCRemoteSwiftPackageReference "DisplayLink" */;
+			productName = DisplayLink;
+		};
+		B3994E7A29AE509C00DFBAE2 /* GLTFSceneKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */;
+			productName = GLTFSceneKit;
+		};
+		B3AD242929B8788C007215B1 /* CropViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3AD242829B8788C007215B1 /* XCRemoteSwiftPackageReference "TOCropViewController" */;
+			productName = CropViewController;
+		};
 		B3EFFE9329A8B99500CF07F2 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */;

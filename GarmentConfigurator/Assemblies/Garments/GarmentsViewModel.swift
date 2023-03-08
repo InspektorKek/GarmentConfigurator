@@ -30,11 +30,12 @@ final class GarmentsViewModel: ObservableObject {
     private func bindInput() {
         eventSubject
             .sink { [weak self] event in
+                guard let self else { return }
                 switch event {
                 case .onAppear:
-                    self?.objectWillChange.send()
+                    self.objectWillChange.send()
                 case .onNextScene:
-                    self?.delegate?.openConfigurator()
+                    self.openConfigurator()
                 }
             }
             .store(in: &subscriptions)
@@ -44,6 +45,14 @@ final class GarmentsViewModel: ObservableObject {
         stateValueSubject
             .assign(to: \.state, on: self)
             .store(in: &subscriptions)
+    }
+    
+    private func openConfigurator() {
+        let model = GarmentModel(type: .tShirt,
+                                 name: "T-Shirt",
+                                 bodyType: .female)
+        let input = ConfigurationSceneInput(model: model)
+        delegate?.openConfigurator(input: input)
     }
 }
 

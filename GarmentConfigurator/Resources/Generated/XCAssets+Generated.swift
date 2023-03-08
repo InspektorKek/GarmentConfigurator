@@ -35,10 +35,17 @@ internal enum Asset {
       internal static let second = ColorAsset(name: "second")
     }
     internal static let labelsPrimary = ColorAsset(name: "LabelsPrimary")
+    internal static let secondary = ColorAsset(name: "Secondary")
   }
   internal enum Images {
+    internal static let first = ImageAsset(name: "First")
+    internal static let second = ImageAsset(name: "Second")
+    internal static let third = ImageAsset(name: "Third")
+    internal static let iconEmptyTexture = ImageAsset(name: "icon_empty_texture")
     internal static let img = ImageAsset(name: "img")
     internal static let instagram = SymbolAsset(name: "instagram")
+    internal static let waveWomen = ImageAsset(name: "wave women")
+    internal static let waves = ImageAsset(name: "waves")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

@@ -2,18 +2,18 @@ import UIKit
 
 struct ARScreenAssembly: SceneAssembly {
     private let delegate: ARScreenSceneDelegate
+    private let model: GarmentModel
 
-    init(delegate: ARScreenSceneDelegate) {
+    init(model: GarmentModel, delegate: ARScreenSceneDelegate) {
+        self.model = model
         self.delegate = delegate
     }
 
     func makeScene() -> UIViewController {
-        let viewModel = ARScreenViewModel()
+        let viewModel = ARScreenViewModel(model: model)
         viewModel.delegate = delegate
         let viewController = ARScreenViewController(viewModel: viewModel)
-        let navigationVC = ARScreenNavigationVC(backButtonDelegate: viewModel)
-        navigationVC.delegate = viewModel
-        viewModel.navigationVC = navigationVC
-        return viewController.withCustom(navigationViewController: navigationVC)
+        viewController.modalPresentationStyle = .fullScreen
+        return viewController
     }
 }

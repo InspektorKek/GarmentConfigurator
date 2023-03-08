@@ -14,46 +14,46 @@ struct ARResultView: View {
     @StateObject var viewModel: ARResultViewModel
     @State var isSaved: Bool = false
     @State var isShareSheetPresented: Bool = false
-
+    
     var body: some View {
-        VStack {
-            ZStack(alignment: .topLeading) {
-                switch viewModel.mediaType {
-                case .image(let image):
-                    Image(uiImage: image)
-                        .resizable()
-                case .none:
-                    Text("nothing")
-                case .video(let video):
-                    VideoPlayer(player: viewModel.player)
-                        .ignoresSafeArea()
-                        .onAppear {
-                            let playerItem = AVPlayerItem(url: video)
-                            viewModel.initPlayer(with: playerItem)
-                        }
-                        .onDisappear {
-                            viewModel.player?.pause()
-                            viewModel.player = nil
-                            viewModel.playerLooper = nil
-                        }
-                }
-                HStack(alignment: .top) {
-                    Spacer()
-                    closeButton
-                }
+        ZStack {
+            switch viewModel.mediaType {
+            case .image(let image):
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(32)
+            case .none:
+                EmptyView()
+            case .video(let video):
+                VideoPlayer(player: viewModel.player)
+                    .onAppear {
+                        let playerItem = AVPlayerItem(url: video)
+                        viewModel.initPlayer(with: playerItem)
+                    }
+                    .onDisappear {
+                        viewModel.player?.pause()
+                        viewModel.player = nil
+                        viewModel.playerLooper = nil
+                    }
             }
-            .cornerRadius(32)
-
-            Spacer()
-
-            ZStack {
+            
+            VStack {
                 HStack {
                     Spacer()
+                    closeButton
+                        .padding(.trailing, 24)
+                }
+                Spacer()
+            }
+            
+            VStack {
+                Spacer()
+                
+                HStack(alignment: .center) {
                     saveButton
-                    Spacer()
                     instagramButton
-                    // shareButton
-                    Spacer()
+    
                     switch viewModel.mediaType {
                     case .image(let image):
                         ShareLink(item: Image(uiImage: image),
@@ -67,7 +67,7 @@ struct ARResultView: View {
                             }
                             .frame(maxWidth: 100, maxHeight: 100)
                         }
-
+    
                     case .video(let video):
                         ShareLink(item: video) {
                             VStack(spacing: 4) {
@@ -82,14 +82,19 @@ struct ARResultView: View {
                     case .none:
                         Text("none")
                     }
-                    Spacer()
                 }
-                .padding()
+                .frame(
+                    maxWidth: .infinity
+                )
+                .background(Color(uiColor: Asset.Colors.baseNavigationColor.color.withAlphaComponent(0.8)))
+                .frame(height: 80)
+                .cornerRadius(32)
+                .padding(.horizontal, 20)
             }
-            .frame(height: 80)
+            .cornerRadius(32)
         }
     }
-
+    
     private var closeButton: some View {
         Button(action: {
             dismiss()
@@ -101,11 +106,11 @@ struct ARResultView: View {
                 .padding()
                 .background(.white)
                 .clipShape(Circle())
-
+            
         })
         .padding()
     }
-
+    
     private var saveButton: some View {
         Button(action: {
             viewModel.saveMediaToAlbum()
@@ -121,7 +126,7 @@ struct ARResultView: View {
             .frame(maxWidth: 100, maxHeight: 100)
         })
     }
-
+    
     private var instagramButton: some View {
         Button(action: {
             viewModel.shareToInstagram()
