@@ -1,1 +1,2 @@
-"NSCameraUsageDescription" = "Give me access!!";
+"NSCameraUsageDescription" = "Give me access to camera!!!";
+"NSPhotoLibraryUsageDescription" = "Give me access to library!!!";

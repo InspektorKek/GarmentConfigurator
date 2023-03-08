@@ -16,6 +16,8 @@ class GarmentModel {
     var type: GarmentType
     var patterns: [TShirtPatternInfo]
     
+    var sceneName: String { "SceneCatalog.scnassets/Configurator-\(bodyType.name).scn" }
+    
     init(type: GarmentType, id: UUID = UUID(), name: String, bodyType: BodyType) {
         self.type = type
         self.patterns = Self.patterns(by: type)

@@ -16,7 +16,9 @@ struct TShirtPatternInfo: Patternable {
     var scale: Float = 0
     var rotation: Float = 0
     
-    var name: String { type.name }
+    var nodeName: String { type.nodeName }
+    
+    var name: String { type.description }
     
     static func `default`(_ type: TShirtPattern) -> Self {
         .init(type: type, id: UUID())

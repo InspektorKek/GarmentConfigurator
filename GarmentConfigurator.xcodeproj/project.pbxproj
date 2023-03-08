@@ -31,6 +31,13 @@
 		B3AD241B29B7711D007215B1 /* PatternNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241A29B7711D007215B1 /* PatternNode.swift */; };
 		B3AD241D29B77158007215B1 /* PatternedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241C29B77158007215B1 /* PatternedScene.swift */; };
 		B3AD242029B78A8E007215B1 /* View+RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */; };
+		B3AD242229B8776B007215B1 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242129B8776B007215B1 /* ImagePickerCoordinator.swift */; };
+		B3AD242429B877E7007215B1 /* ImagePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242329B877E7007215B1 /* ImagePickerPresentable.swift */; };
+		B3AD242729B87805007215B1 /* ImageCropperCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242629B87805007215B1 /* ImageCropperCoordinator.swift */; };
+		B3AD242A29B8788C007215B1 /* CropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = B3AD242929B8788C007215B1 /* CropViewController */; };
+		B3AD242C29B89509007215B1 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242B29B89509007215B1 /* AppData.swift */; };
+		B3AD242E29B89F07007215B1 /* ImageMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242D29B89F07007215B1 /* ImageMaterial.swift */; };
+		B3AD243029B89F22007215B1 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242F29B89F22007215B1 /* FilesManager.swift */; };
 		B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
 		B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Images.xcassets */; };
 		B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */; };
@@ -108,6 +115,12 @@
 		B3AD241A29B7711D007215B1 /* PatternNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternNode.swift; sourceTree = "<group>"; };
 		B3AD241C29B77158007215B1 /* PatternedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternedScene.swift; sourceTree = "<group>"; };
 		B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorner.swift"; sourceTree = "<group>"; };
+		B3AD242129B8776B007215B1 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		B3AD242329B877E7007215B1 /* ImagePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPresentable.swift; sourceTree = "<group>"; };
+		B3AD242629B87805007215B1 /* ImageCropperCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperCoordinator.swift; sourceTree = "<group>"; };
+		B3AD242B29B89509007215B1 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		B3AD242D29B89F07007215B1 /* ImageMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMaterial.swift; sourceTree = "<group>"; };
+		B3AD242F29B89F22007215B1 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
 		B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarmentConfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B2C8CB299F7BEC00474A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -174,6 +187,7 @@
 				B3EFFE9429A8B99500CF07F2 /* Resolver in Frameworks */,
 				B3EFFEAC29A8BEBD00CF07F2 /* SnapKit in Frameworks */,
 				B3994E7829AE508D00DFBAE2 /* DisplayLink in Frameworks */,
+				B3AD242A29B8788C007215B1 /* CropViewController in Frameworks */,
 				B3994E7B29AE509C00DFBAE2 /* GLTFSceneKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +236,7 @@
 				B3AD240F29B70CCC007215B1 /* Patternable.swift */,
 				B3AD240D29B70C69007215B1 /* GarmentModel.swift */,
 				B3AD241429B70D37007215B1 /* TShirts */,
+				B3AD242D29B89F07007215B1 /* ImageMaterial.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +265,16 @@
 				B3AD241C29B77158007215B1 /* PatternedScene.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		B3AD242529B877EE007215B1 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD242129B8776B007215B1 /* ImagePickerCoordinator.swift */,
+				B3AD242629B87805007215B1 /* ImageCropperCoordinator.swift */,
+				B3AD242329B877E7007215B1 /* ImagePickerPresentable.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		B3B2C8B9299F7BEA00474A3D = {
@@ -383,6 +408,7 @@
 				B3EFFEB729A8C3B700CF07F2 /* ChildViewControllerViewInterface.swift */,
 				B3EFFEB529A8C18B00CF07F2 /* CompletionHandler.swift */,
 				B3EFFE8E29A8B81D00CF07F2 /* BaseNavigationController.swift */,
+				B3AD242529B877EE007215B1 /* ImagePicker */,
 				B3EFFECA29A8C90400CF07F2 /* Navigation */,
 			);
 			path = Core;
@@ -395,6 +421,8 @@
 				B3EFFE9029A8B87200CF07F2 /* NotificationCenter.swift */,
 				B3EFFED129A8CE8400CF07F2 /* Resolver */,
 				B3AD241129B70D03007215B1 /* Models */,
+				B3AD242B29B89509007215B1 /* AppData.swift */,
+				B3AD242F29B89F22007215B1 /* FilesManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -500,6 +528,7 @@
 				B3EFFEAB29A8BEBD00CF07F2 /* SnapKit */,
 				B3994E7729AE508D00DFBAE2 /* DisplayLink */,
 				B3994E7A29AE509C00DFBAE2 /* GLTFSceneKit */,
+				B3AD242929B8788C007215B1 /* CropViewController */,
 			);
 			productName = GarmentConfigurator;
 			productReference = B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */;
@@ -536,6 +565,7 @@
 				B3EFFEAA29A8BEBD00CF07F2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B3994E7629AE508D00DFBAE2 /* XCRemoteSwiftPackageReference "DisplayLink" */,
 				B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */,
+				B3AD242829B8788C007215B1 /* XCRemoteSwiftPackageReference "TOCropViewController" */,
 			);
 			productRefGroup = B3B2C8C3299F7BEA00474A3D /* Products */;
 			projectDirPath = "";
@@ -596,6 +626,7 @@
 				B3994E6C29AE4B5D00DFBAE2 /* CameraControls.swift in Sources */,
 				B3EFFEA929A8BE5100CF07F2 /* NavigationContainerViewController.swift in Sources */,
 				B3EFFED029A8CE3800CF07F2 /* Resolver+Services.swift in Sources */,
+				B3AD242229B8776B007215B1 /* ImagePickerCoordinator.swift in Sources */,
 				B3994E7129AE4D7200DFBAE2 /* EnvironmentValues.swift in Sources */,
 				B3EFFEBE29A8C5A500CF07F2 /* UIView+Animation.swift in Sources */,
 				B3EFFEA029A8BDFD00CF07F2 /* SplashScreenAssembly.swift in Sources */,
@@ -611,6 +642,7 @@
 				B3EFFEA729A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift in Sources */,
 				B3EFFEFE29ACC18D00CF07F2 /* GarmentsViewController.swift in Sources */,
 				B3AD241329B70D32007215B1 /* TShirtPatternInfo.swift in Sources */,
+				B3AD242E29B89F07007215B1 /* ImageMaterial.swift in Sources */,
 				B3EFFEB429A8C17400CF07F2 /* UIViewController+Alert.swift in Sources */,
 				B3994E6629AE495F00DFBAE2 /* Math.swift in Sources */,
 				B3994E6A29AE4B0900DFBAE2 /* Cameras.swift in Sources */,
@@ -621,6 +653,9 @@
 				B3AD240C29B70C24007215B1 /* Garmentable.swift in Sources */,
 				B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */,
 				B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */,
+				B3AD242729B87805007215B1 /* ImageCropperCoordinator.swift in Sources */,
+				B3AD243029B89F22007215B1 /* FilesManager.swift in Sources */,
+				B3AD242429B877E7007215B1 /* ImagePickerPresentable.swift in Sources */,
 				B3EFFEFD29ACC18C00CF07F2 /* GarmentsContract.swift in Sources */,
 				B3EFFECE29A8CDA100CF07F2 /* SceneDelegate.swift in Sources */,
 				B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */,
@@ -655,6 +690,7 @@
 				B3AD242029B78A8E007215B1 /* View+RoundedCorner.swift in Sources */,
 				B3EFFEA329A8BDFD00CF07F2 /* SplashScreenViewModel.swift in Sources */,
 				B3EFFF1329ACD26300CF07F2 /* ConfigurationViewModel.swift in Sources */,
+				B3AD242C29B89509007215B1 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +960,14 @@
 				minimumVersion = 0.4.1;
 			};
 		};
+		B3AD242829B8788C007215B1 /* XCRemoteSwiftPackageReference "TOCropViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TimOliver/TOCropViewController";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		B3EFFE9229A8B99500CF07F2 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -952,6 +996,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3994E7929AE509C00DFBAE2 /* XCRemoteSwiftPackageReference "GLTFSceneKit" */;
 			productName = GLTFSceneKit;
+		};
+		B3AD242929B8788C007215B1 /* CropViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3AD242829B8788C007215B1 /* XCRemoteSwiftPackageReference "TOCropViewController" */;
+			productName = CropViewController;
 		};
 		B3EFFE9329A8B99500CF07F2 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;

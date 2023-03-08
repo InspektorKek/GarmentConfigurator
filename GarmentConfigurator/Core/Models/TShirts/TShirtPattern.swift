@@ -21,7 +21,20 @@ enum TShirtPattern: String, Codable, CaseIterable {
     case front
     case back
     
-    var name: String {
+    var description: String {
+        switch self {
+        case .leftArm:
+            return L10n.patternTshirtLeftArmTitle
+        case .rightArm:
+            return L10n.patternTshirtRightArmTitle
+        case .front:
+            return L10n.patternTshirtFrontTitle
+        case .back:
+            return L10n.patternTshirtBackTitle
+        }
+    }
+    
+    var nodeName: String {
         switch self {
         case .leftArm:
             return Constants.leftArmName

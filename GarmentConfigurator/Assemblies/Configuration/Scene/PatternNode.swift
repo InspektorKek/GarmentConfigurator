@@ -15,7 +15,7 @@ class PatternedNode {
     }
     
     func applyTexture(textureData: Data, to pattern: any Patternable) throws {
-        guard let patternNode = node.childNode(withName: pattern.name, recursively: true),
+        guard let patternNode = node.childNode(withName: pattern.nodeName, recursively: true),
               let geometryNode = patternNode.childNode(withName: "Geometry", recursively: true),
               let material = geometryNode.geometry?.firstMaterial else {
             throw PatternedNodeError.invalidPattern

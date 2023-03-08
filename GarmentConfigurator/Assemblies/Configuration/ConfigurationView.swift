@@ -43,6 +43,7 @@ struct ConfigurationView: View {
                 }
                 .cornerRadius(20, corners: [.topLeft, .topRight])
                 .edgesIgnoringSafeArea(.bottom)
+                .navigationViewStyle(.stack)
             }
         }
     }
@@ -55,9 +56,9 @@ struct ConfigurationView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
                                 Button {
-                                    #warning("Add own material")
+                                    viewModel.send(.addOwnMaterial(pattern: pattern))
                                 } label: {
-                                    Text("Add own image")
+                                    Text(L10n.titleButtonAddOwnImage)
                                         .frame(width: 80, height: 80)
                                         .font(.system(size: 13))
                                         .overlay {
@@ -93,7 +94,7 @@ struct ConfigurationView: View {
                                 .foregroundColor(Asset.Colors.accentColor.swiftUIColor)
                                 .tint(Asset.Colors.baseWhite.swiftUIColor)
                                 
-                                Text("Scale: \(numberFormatter.string(from: NSNumber(value: scaleValue))!)%")
+                                Text(L10n.titleScaleValue(numberFormatter.string(from: NSNumber(value: scaleValue))!))
                             }
                             
                             VStack {
@@ -101,7 +102,7 @@ struct ConfigurationView: View {
                                 .foregroundColor(Asset.Colors.accentColor.swiftUIColor)
                                 .tint(Asset.Colors.baseWhite.swiftUIColor)
                                 
-                                Text("Rotation: \(numberFormatter.string(from: NSNumber(value: rotationValue))!)°")
+                                Text(L10n.titleRotationValue(numberFormatter.string(from: NSNumber(value: rotationValue))!))
                             }
                         }
                         .padding(20)
@@ -159,7 +160,7 @@ struct ConfigurationView: View {
                     Capsule()
                         .frame(width: 34, height: 6)
                         .foregroundColor(Asset.Colors.labelsPrimary.swiftUIColor)
-                    Text("Patterns")
+                    Text(L10n.coreTitlePatterns)
                         .font(.system(size: 25, weight: .medium))
                         .foregroundColor(Asset.Colors.baseWhite.swiftUIColor)
                 }

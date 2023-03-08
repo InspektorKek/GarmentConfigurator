@@ -6,7 +6,9 @@
 //
 
 // Enum representing the body type of a garment.
-enum BodyType: Int, Codable {
+enum BodyType: String, Codable {
     case male
     case female
+    
+    var name: String { rawValue.capitalized }
 }

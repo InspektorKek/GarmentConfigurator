@@ -50,7 +50,7 @@ final class GarmentsViewModel: ObservableObject {
     private func openConfigurator() {
         let model = GarmentModel(type: .tShirt,
                                  name: "T-Shirt",
-                                 bodyType: .male)
+                                 bodyType: .female)
         let input = ConfigurationSceneInput(model: model)
         delegate?.openConfigurator(input: input)
     }

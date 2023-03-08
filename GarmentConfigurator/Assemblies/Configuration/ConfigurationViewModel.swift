@@ -8,7 +8,7 @@ final class ConfigurationViewModel: ObservableObject {
 
     @Published private(set) var model: GarmentModel
     @Published private(set) var state: ConfigurationFlow.ViewState = .idle
-    @Published private(set) var materials: [ImageMaterial]
+    @Published private(set) var materials: [ImageMaterial] = []
     
     let scene: PatternedScene
 
@@ -21,9 +21,8 @@ final class ConfigurationViewModel: ObservableObject {
     private let imageMaterialsService: any MaterialManagingProtocol = ImageDataMaterialsService()
 
     init(model: GarmentModel) {
-        self.scene = PatternedScene(scene: SCNScene(named: "SceneCatalog.scnassets/Configurator.scn")!)
+        self.scene = PatternedScene(scene: SCNScene(named: model.sceneName)!)
         self.model = model
-        self.materials = imageMaterialsService.retrieveSavedMaterials()
         bindInput()
         bindOutput()
     }
@@ -43,8 +42,8 @@ final class ConfigurationViewModel: ObservableObject {
                 switch event {
                 case .onAppear:
                     self?.objectWillChange.send()
-                case .onNextScene:
-                    print("Next scene")
+                case .addOwnMaterial(pattern: let pattern):
+                    self?.openPhotoSelector(for: pattern)
                 case .apply(material: let material, pattern: let pattern):
                     self?.updateMaterial(material, for: pattern)
                 }
@@ -56,6 +55,12 @@ final class ConfigurationViewModel: ObservableObject {
         stateValueSubject
             .assign(to: \.state, on: self)
             .store(in: &subscriptions)
+        
+        imageMaterialsService.materials
+            .receive(on: RunLoop.main)
+            .assign(to: \.materials, on: self)
+            .store(in: &subscriptions)
+            
     }
     
     private func updateMaterial(_ textureMaterial: ImageMaterial, for pattern: TShirtPatternInfo) {
@@ -67,6 +72,16 @@ final class ConfigurationViewModel: ObservableObject {
         }
         model.update(pattern: pattern, with: textureMaterial)
         objectWillChange.send()
+    }
+    
+    private func openPhotoSelector(for pattern: TShirtPatternInfo) {
+        let updateHandler: ((UIImage) -> Void) = { [weak self] image in
+            let material = ImageMaterial(texture: image.pngData(), id: .init())
+            self?.imageMaterialsService.addNew(material)
+            self?.updateMaterial(material, for: pattern)
+        }
+        
+        delegate?.openImagePicker(updateHandler: updateHandler, removeHandler: nil)
     }
 }
 

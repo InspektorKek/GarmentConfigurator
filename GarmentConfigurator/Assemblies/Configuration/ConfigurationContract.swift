@@ -4,7 +4,7 @@ protocol ConfigurationContainerDelegate: AnyObject, BackNavigator {
 
 }
 
-protocol ConfigurationSceneDelegate: AnyObject, AlertPresentable {
+protocol ConfigurationSceneDelegate: AnyObject, AlertPresentable, ImagePickerPresentable {
     func back()
 }
 

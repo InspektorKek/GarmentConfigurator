@@ -6,28 +6,63 @@
 //
 
 import UIKit
+import Combine
 
 protocol MaterialManagingProtocol {
-    func retrieveSavedMaterials() -> [ImageMaterial]
+    var materials: Published<[ImageMaterial]>.Publisher { get }
     func addNew(_ material: ImageMaterial)
 }
 
-struct ImageMaterial: Codable, Identifiable, Hashable, Equatable {
-    var texture: Data?
-    let id: UUID
+extension MaterialManagingProtocol {
+    static func retrieveSavedMaterials() -> [ImageMaterial] {
+        AppData.imageMaterialIDs
+            .compactMap { id -> ImageMaterial? in
+                do {
+                    let material = try FilesManager.shared.read(fileNamed: id)
+                    return ImageMaterial(texture: material, id: UUID(uuidString: id)!)
+                } catch {
+                    return nil
+                }
+            }
+    }
 }
 
 final class ImageDataMaterialsService: MaterialManagingProtocol {
-    func retrieveSavedMaterials() -> [ImageMaterial] {
-        return [
-            .init(texture: UIImage(named: "AppIcon")!.pngData(), id: UUID()),
-            .init(texture: UIImage(named: "First")!.pngData(), id: UUID()),
-            .init(texture: UIImage(named: "Second")!.pngData(), id: UUID()),
-            .init(texture: UIImage(named: "Third")!.pngData(), id: UUID())
-        ]
+    var materials: Published<[ImageMaterial]>.Publisher { $sourceMaterials }
+    
+    @Published private var sourceMaterials: [ImageMaterial]
+    
+    private var subscriptions = Set<AnyCancellable>()
+    
+    init() {
+        sourceMaterials = Self.retrieveSavedMaterials()
+        bind()
+    }
+    
+    deinit {
+        subscriptions.forEach { $0.cancel() }
+        subscriptions.removeAll()
     }
     
     func addNew(_ material: ImageMaterial) {
-        #warning("Cache new material")
+        sourceMaterials.insert(material, at: 0)
+    }
+    
+    private func bind() {
+        $sourceMaterials
+            .receive(on: DispatchQueue.global(qos: .background))
+            .sink { materials in
+                guard !materials.isEmpty else { return }
+                
+                materials.forEach {
+                    do {
+                        try FilesManager.shared.save(fileNamed: $0.id.uuidString, data: $0.texture!)
+                    } catch {
+                        print(error)
+                    }
+                }
+                AppData.imageMaterialIDs = materials.map { $0.id.uuidString }
+            }
+            .store(in: &subscriptions)
     }
 }
