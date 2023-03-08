@@ -86,6 +86,10 @@ final class ConfigurationViewModel: ObservableObject {
 }
 
 extension ConfigurationViewModel: ConfigurationContainerDelegate {
+    func openAR() {
+        delegate?.openAR(input: model)
+    }
+    
     func back() {
         delegate?.back()
     }

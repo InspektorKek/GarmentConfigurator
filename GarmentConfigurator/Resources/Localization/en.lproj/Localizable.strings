@@ -17,3 +17,6 @@
 "pattern_tshirt_rightArmTitle" = "Right Arm";
 "pattern_tshirt_frontTitle" = "Front Side";
 "pattern_tshirt_backTitle" = "Back Side";
+"coreButtonSave" = "Save";
+"coreButtonSaved" = "Saved";
+"coreButtonShare" = "Share";

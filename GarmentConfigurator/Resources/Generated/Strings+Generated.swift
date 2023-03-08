@@ -30,6 +30,12 @@ internal enum L10n {
   internal static let coreTitlePatterns = L10n.tr("Localizable", "core_title_patterns", fallback: "Patterns")
   /// Continue
   internal static let coreButtonContinue = L10n.tr("Localizable", "coreButtonContinue", fallback: "Continue")
+  /// Save
+  internal static let coreButtonSave = L10n.tr("Localizable", "coreButtonSave", fallback: "Save")
+  /// Saved
+  internal static let coreButtonSaved = L10n.tr("Localizable", "coreButtonSaved", fallback: "Saved")
+  /// Share
+  internal static let coreButtonShare = L10n.tr("Localizable", "coreButtonShare", fallback: "Share")
   /// OK
   internal static let coreOkButton = L10n.tr("Localizable", "coreOkButton", fallback: "OK")
   /// Back Side

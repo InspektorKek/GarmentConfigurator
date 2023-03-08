@@ -1,3 +1,6 @@
 "coreOkButton" = "OK";
 "coreButtonContinue" = "Продолжить";
-"title_garments" = "Одежда";
+"titleGarments" = "Одежда";
+"coreButtonSave" = "Сохранить";
+"coreButtonSaved" = "Сохранено";
+"coreButtonShare" = "Поделиться";
