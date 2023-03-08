@@ -3,16 +3,6 @@ import SwiftUI
 struct SplashScreenView: View {
     @ObservedObject var viewModel: SplashScreenViewModel
 
-//    var bottomString = AttributedString("By continuing you agree to our")
-//    var tappableTermsAndConditions = AttributedString("Terms and Conditions")
-//    tappableTermsAndConditions.link = URL(string: AppConstants.Links.termsAndConditions)
-//    bottomString.append(tappableTermsAndConditions)
-//    var andString = AttributedString("and")
-//    bottomString.append(andString)
-//    var tappablePrivacyPolicy = AttributedString("Privacy Policy.")
-//    tappableTermsAndConditions.link = URL(string: AppConstants.Links.privacyPolicy)
-//    bottomString.append(tappablePrivacyPolicy)
-
     var body: some View {
         content
             .onAppear {
@@ -29,12 +19,12 @@ struct SplashScreenView: View {
                         .stroke(Color.gray, lineWidth: 2)
                         .frame(maxWidth: 211, maxHeight: 459)
                     VStack {
-                        Text("Welcome to \nARgo")
+                        Text(L10n.coreWelcomeToText + "\nARgo")
                             .font(.system(size: 34).bold())
 
                         Spacer()
                             .frame(height: 100)
-                        Text("speed up the garment \nprototyping process")
+                        Text(L10n.coreSpeedUpText + "\n" + L10n.corePrototypingProcessesText)
                             .font(.title2)
                     }
                     .multilineTextAlignment(.center)
@@ -56,17 +46,11 @@ struct SplashScreenView: View {
                 )
             }
             .padding()
-//            Text("By continuing you agree to our Terms and Conditions and Privacy Policy.")
-//                .font(.subheadline)
-//                .padding(7)
-//                .onTapGesture {
-//                    viewModel.openPrivacyPolicy()
-//                }
 
-            Text("By continuing you agree to our **[Terms and Conditions](https://stackoverflow.com)** and **[Privacy Policy](https://stackoverflow.com)**.")
+            Text("\(L10n.coreAgreementText) [\(L10n.coreTermsAndConditions)](https://google.com) \(L10n.coreAndText) [\(L10n.corePrivacyPolicy)](https://apple.com).")
+                .padding(3)
                 .font(.subheadline)
                 .foregroundColor(.gray)
-                
 
         }
     }

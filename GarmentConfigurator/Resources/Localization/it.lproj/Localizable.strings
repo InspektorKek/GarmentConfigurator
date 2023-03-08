@@ -4,3 +4,10 @@
 "coreButtonSave" = "Salva";
 "coreButtonSaved" = "Salvato";
 "coreButtonShare" = "Condividere";
+"coreTermsAndConditions" = "";
+"corePrivacyPolicy" = "";
+"coreAgreementText" = "";
+"coreWelcomeToText" = "";
+"coreSpeedUpText" = "";
+"corePrototypingProcessesText" = "";
+"coreAndText" = "e";

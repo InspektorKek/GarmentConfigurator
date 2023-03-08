@@ -10,6 +10,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// By continuing you agree to our
+  internal static let coreAgreementText = L10n.tr("Localizable", "coreAgreementText", fallback: "By continuing you agree to our")
+  /// and
+  internal static let coreAndText = L10n.tr("Localizable", "coreAndText", fallback: "and")
   /// Continue
   internal static let coreButtonContinue = L10n.tr("Localizable", "coreButtonContinue", fallback: "Continue")
   /// Save
@@ -20,6 +24,16 @@ internal enum L10n {
   internal static let coreButtonShare = L10n.tr("Localizable", "coreButtonShare", fallback: "Share")
   /// OK
   internal static let coreOkButton = L10n.tr("Localizable", "coreOkButton", fallback: "OK")
+  /// Privacy Policy
+  internal static let corePrivacyPolicy = L10n.tr("Localizable", "corePrivacyPolicy", fallback: "Privacy Policy")
+  /// prototyping process
+  internal static let corePrototypingProcessesText = L10n.tr("Localizable", "corePrototypingProcessesText", fallback: "prototyping process")
+  /// speed up the garment
+  internal static let coreSpeedUpText = L10n.tr("Localizable", "coreSpeedUpText", fallback: "speed up the garment")
+  /// Terms and Conditions
+  internal static let coreTermsAndConditions = L10n.tr("Localizable", "coreTermsAndConditions", fallback: "Terms and Conditions")
+  /// Welcome to
+  internal static let coreWelcomeToText = L10n.tr("Localizable", "coreWelcomeToText", fallback: "Welcome to")
   /// Garments
   internal static let titleGarments = L10n.tr("Localizable", "titleGarments", fallback: "Garments")
 }
