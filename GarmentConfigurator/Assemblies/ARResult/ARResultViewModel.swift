@@ -134,12 +134,12 @@ final class ARResultViewModel: ObservableObject {
             print("image share")
             let items: [Any] = [image]
             let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-            UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(shareSheet, animated: true, completion: nil)
+            UIApplication.shared.keyWindow?.rootViewController?.presentedViewController?.present(shareSheet, animated: true, completion: nil)
         case .video(let video):
             print("video share")
             let items: [Any] = [video.path]
             let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-            UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(shareSheet, animated: true, completion: nil)
+            UIApplication.shared.keyWindow?.rootViewController?.presentedViewController?.present(shareSheet, animated: true, completion: nil)
         case .none:
             print("non")
         }

@@ -38,7 +38,9 @@
 		B3AD242C29B89509007215B1 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242B29B89509007215B1 /* AppData.swift */; };
 		B3AD242E29B89F07007215B1 /* ImageMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242D29B89F07007215B1 /* ImageMaterial.swift */; };
 		B3AD243029B89F22007215B1 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD242F29B89F22007215B1 /* FilesManager.swift */; };
-		B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
+		B3AD243329B8C877007215B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */; };
+		B3AD243429B8C87E007215B1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9829A8BDFD00CF07F2 /* SplashScreenViewController.swift */; };
+		B3AD243629B8CA78007215B1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD243529B8CA78007215B1 /* UIApplication+Extension.swift */; };
 		B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CB299F7BEC00474A3D /* Images.xcassets */; };
 		B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2C8CE299F7BEC00474A3D /* Preview Assets.xcassets */; };
 		B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */; };
@@ -51,7 +53,6 @@
 		B3EFFE9429A8B99500CF07F2 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = B3EFFE9329A8B99500CF07F2 /* Resolver */; };
 		B3EFFE9629A8BA3700CF07F2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9529A8BA3700CF07F2 /* AppCoordinator.swift */; };
 		B3EFFE9E29A8BDFD00CF07F2 /* SplashScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9729A8BDFD00CF07F2 /* SplashScreenContract.swift */; };
-		B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9829A8BDFD00CF07F2 /* SplashScreenViewController.swift */; };
 		B3EFFEA029A8BDFD00CF07F2 /* SplashScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9929A8BDFD00CF07F2 /* SplashScreenAssembly.swift */; };
 		B3EFFEA229A8BDFD00CF07F2 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9B29A8BDFD00CF07F2 /* SplashScreenView.swift */; };
 		B3EFFEA329A8BDFD00CF07F2 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE9C29A8BDFD00CF07F2 /* SplashScreenViewModel.swift */; };
@@ -93,7 +94,6 @@
 		F22E108029AE11010050FF14 /* ARScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107929AE11010050FF14 /* ARScreenContract.swift */; };
 		F22E108129AE11010050FF14 /* ARScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107A29AE11010050FF14 /* ARScreenViewController.swift */; };
 		F22E108229AE11010050FF14 /* ARScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */; };
-		F22E108329AE11010050FF14 /* ARScreenNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */; };
 		F22E108429AE11010050FF14 /* ARScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107D29AE11010050FF14 /* ARScreenView.swift */; };
 		F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */; };
 		F22E108629AE11010050FF14 /* ARScreenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E107F29AE11010050FF14 /* ARScreenFlow.swift */; };
@@ -107,9 +107,7 @@
 		F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63229AFABFC00D709CD /* ARResultView.swift */; };
 		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
 		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
-		F24CE91C29B5F7900076D241 /* test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91829B5F78F0076D241 /* test.usdz */; };
-		F24CE91E29B5F7900076D241 /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91A29B5F78F0076D241 /* robot.usdz */; };
-		F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */; };
+		F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +139,7 @@
 		B3AD242B29B89509007215B1 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		B3AD242D29B89F07007215B1 /* ImageMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMaterial.swift; sourceTree = "<group>"; };
 		B3AD242F29B89F22007215B1 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
+		B3AD243529B8CA78007215B1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		B3B2C8C2299F7BEA00474A3D /* GarmentConfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarmentConfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B2C8C5299F7BEA00474A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B2C8CB299F7BEC00474A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -200,7 +199,6 @@
 		F22E107929AE11010050FF14 /* ARScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenContract.swift; sourceTree = "<group>"; };
 		F22E107A29AE11010050FF14 /* ARScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenViewController.swift; sourceTree = "<group>"; };
 		F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenAssembly.swift; sourceTree = "<group>"; };
-		F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenNavigationVC.swift; sourceTree = "<group>"; };
 		F22E107D29AE11010050FF14 /* ARScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenView.swift; sourceTree = "<group>"; };
 		F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenViewModel.swift; sourceTree = "<group>"; };
 		F22E107F29AE11010050FF14 /* ARScreenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreenFlow.swift; sourceTree = "<group>"; };
@@ -213,9 +211,7 @@
 		F22EE63229AFABFC00D709CD /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
 		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
 		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
-		F24CE91829B5F78F0076D241 /* test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = test.usdz; sourceTree = "<group>"; };
-		F24CE91A29B5F78F0076D241 /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
-		F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tshirtModel.usdz; sourceTree = "<group>"; };
+		F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +482,7 @@
 				B3EFFEC329A8C72800CF07F2 /* UIControl+Extensions.swift */,
 				B3EFFEBD29A8C5A500CF07F2 /* UIView+Animation.swift */,
 				B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */,
+				B3AD243529B8CA78007215B1 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,15 +551,12 @@
 				F22E107929AE11010050FF14 /* ARScreenContract.swift */,
 				F22E107A29AE11010050FF14 /* ARScreenViewController.swift */,
 				F22E107B29AE11010050FF14 /* ARScreenAssembly.swift */,
-				F22E107C29AE11010050FF14 /* ARScreenNavigationVC.swift */,
 				F22E107D29AE11010050FF14 /* ARScreenView.swift */,
 				F22E107E29AE11010050FF14 /* ARScreenViewModel.swift */,
 				F22E107F29AE11010050FF14 /* ARScreenFlow.swift */,
 				F22E109529AE181E0050FF14 /* ARViewRecordable.swift */,
 				F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */,
-				F24CE91A29B5F78F0076D241 /* robot.usdz */,
-				F24CE91829B5F78F0076D241 /* test.usdz */,
-				F24CE91B29B5F78F0076D241 /* tshirtModel.usdz */,
+				F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */,
 			);
 			path = ARScreen;
 			sourceTree = "<group>";
@@ -659,14 +653,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
-				F24CE91F29B5F7900076D241 /* tshirtModel.usdz in Resources */,
+				F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
 				B3FE968729AE176700767BF6 /* SceneCatalog.scnassets in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
 				B3B2C8CC299F7BEC00474A3D /* Images.xcassets in Resources */,
-				F24CE91E29B5F7900076D241 /* robot.usdz in Resources */,
-				F24CE91C29B5F7900076D241 /* test.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,11 +691,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3AD243429B8C87E007215B1 /* SplashScreenViewController.swift in Sources */,
+				B3AD243329B8C877007215B1 /* AppDelegate.swift in Sources */,
 				B3EFFEB629A8C18B00CF07F2 /* CompletionHandler.swift in Sources */,
 				F22EE63729AFABFC00D709CD /* ARResultAssembly.swift in Sources */,
 				B3EFFF1129ACD26300CF07F2 /* ConfigurationNavigationVC.swift in Sources */,
 				F22E109629AE181E0050FF14 /* ARViewRecordable.swift in Sources */,
 				B3EFFEBC29A8C4F200CF07F2 /* ViewControllable.swift in Sources */,
+				B3AD243629B8CA78007215B1 /* UIApplication+Extension.swift in Sources */,
 				B3EFFEFF29ACC18D00CF07F2 /* GarmentsAssembly.swift in Sources */,
 				B3994E6C29AE4B5D00DFBAE2 /* CameraControls.swift in Sources */,
 				B3EFFEA929A8BE5100CF07F2 /* NavigationContainerViewController.swift in Sources */,
@@ -733,21 +728,16 @@
 				B3EFFEB429A8C17400CF07F2 /* UIViewController+Alert.swift in Sources */,
 				B3994E6629AE495F00DFBAE2 /* Math.swift in Sources */,
 				B3994E6A29AE4B0900DFBAE2 /* Cameras.swift in Sources */,
-				F22E108329AE11010050FF14 /* ARScreenNavigationVC.swift in Sources */,
 				B3EFFF0E29ACD26300CF07F2 /* ConfigurationContract.swift in Sources */,
 				B3EFFEA429A8BDFD00CF07F2 /* SplashScreenFlow.swift in Sources */,
 				F22E108529AE11010050FF14 /* ARScreenViewModel.swift in Sources */,
 				B3EFFE9129A8B87200CF07F2 /* NotificationCenter.swift in Sources */,
 				B3994E6829AE4AD100DFBAE2 /* Euler.swift in Sources */,
 				B3AD240C29B70C24007215B1 /* Garmentable.swift in Sources */,
-				B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */,
-				B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */,
 				B3AD242729B87805007215B1 /* ImageCropperCoordinator.swift in Sources */,
 				B3AD243029B89F22007215B1 /* FilesManager.swift in Sources */,
 				B3AD242429B877E7007215B1 /* ImagePickerPresentable.swift in Sources */,
 				F22EE63529AFABFC00D709CD /* ARResultContract.swift in Sources */,
-				B3B2C8C6299F7BEA00474A3D /* AppDelegate.swift in Sources */,
-				B3EFFE9F29A8BDFD00CF07F2 /* SplashScreenViewController.swift in Sources */,
 				F22EE63829AFABFC00D709CD /* ARResultNavigationVC.swift in Sources */,
 				F22E108029AE11010050FF14 /* ARScreenContract.swift in Sources */,
 				B3EFFEFD29ACC18C00CF07F2 /* GarmentsContract.swift in Sources */,

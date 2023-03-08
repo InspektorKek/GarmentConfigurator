@@ -21,6 +21,12 @@ struct ARScreenView: View {
             ARViewContainer(viewModel: viewModel)
                 .edgesIgnoringSafeArea(.all)
             VStack {
+                HStack {
+                    closeButton
+                    
+                    Spacer()
+                }
+                
                 if viewModel.isRecording {
                     timeLabel
                         .padding()
@@ -74,9 +80,26 @@ struct ARScreenView: View {
                         ARResultView(viewModel: ARResultViewModel(mediaType: mediaType))
                     }
                 }
-
             }
         }
+    }
+    
+    var closeButton: some View {
+        HStack{
+            Button {
+                viewModel.send(.onNextScene)
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(.white)
+            }
+            .frame(width: 60, height: 45)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 15))
+            
+            Spacer()
+        }
+        .padding(.horizontal, 24)
+        .padding(.top, 24)
     }
 
     private var timeLabel: some View {
@@ -103,7 +126,14 @@ struct ARViewContainer: UIViewRepresentable {
 
         do {
             var material = SimpleMaterial()
-            material.color = try .init(tint: .white, texture: .init(.load(named: "img", in: nil)))
+            if let textureMaterial = viewModel.model.patterns[0].textureMaterial,
+               let fileURL = FilesManager.makeURL(forFileNamed: textureMaterial.id.uuidString) {
+                let texture = try TextureResource.load(contentsOf: fileURL)
+                material.color = .init(tint: .white, texture: .init(texture))
+            } else {
+                material.color = .init(tint: .white)
+            }
+                
             material.metallic = .init(floatLiteral: 1.0)
             material.roughness = .init(floatLiteral: 0.5)
 

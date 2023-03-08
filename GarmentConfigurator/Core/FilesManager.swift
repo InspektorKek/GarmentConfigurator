@@ -25,7 +25,7 @@ class FilesManager {
     }
     
     func save(fileNamed: String, data: Data) throws {
-        guard let url = makeURL(forFileNamed: fileNamed) else {
+        guard let url = Self.makeURL(forFileNamed: fileNamed) else {
             throw Error.invalidDirectory
         }
         if fileManager.fileExists(atPath: url.path()) {
@@ -40,7 +40,7 @@ class FilesManager {
     }
     
     func read(fileNamed: String) throws -> Data {
-        guard let url = makeURL(forFileNamed: fileNamed) else {
+        guard let url = Self.makeURL(forFileNamed: fileNamed) else {
             throw Error.invalidDirectory
         }
         guard fileManager.fileExists(atPath: url.path()) else {
@@ -54,8 +54,8 @@ class FilesManager {
         }
     }
     
-    private func makeURL(forFileNamed fileName: String) -> URL? {
-        guard let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+    static func makeURL(forFileNamed fileName: String) -> URL? {
+        guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
         return url.appendingPathComponent(fileName)
