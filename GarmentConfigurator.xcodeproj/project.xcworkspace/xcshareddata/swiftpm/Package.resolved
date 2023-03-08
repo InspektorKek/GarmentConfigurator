@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "displaylink",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/timdonnelly/DisplayLink",
+      "state" : {
+        "revision" : "e95f592a176246172324f10eb1bdc92f121d479f",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "gltfscenekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/frzi/GLTFSceneKit",
+      "state" : {
+        "revision" : "a9587ec5c6515ee7d036533fdd909815a9a718ef",
+        "version" : "0.4.1"
+      }
+    },
+    {
       "identity" : "multicastdelegate",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/v-grigoriev/MulticastDelegate.git",
@@ -34,6 +52,15 @@
       "state" : {
         "revision" : "f222cbdf325885926566172f6f5f06af95473158",
         "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "tocropviewcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimOliver/TOCropViewController",
+      "state" : {
+        "revision" : "d0470491f56e734731bbf77991944c0dfdee3e0e",
+        "version" : "2.6.1"
       }
     }
   ],

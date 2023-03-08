@@ -9,6 +9,9 @@ enum ConfigurationFlow {
 
     enum Event {
         case onAppear
-        case onNextScene
+        case apply(material: ImageMaterial, pattern: TShirtPatternInfo)
+        case onChangeScale(value: Float, pattern: TShirtPatternInfo)
+        case onChangeRotation(value: Float, pattern: TShirtPatternInfo)
+        case addOwnMaterial(pattern: TShirtPatternInfo)
     }
 }

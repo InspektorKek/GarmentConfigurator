@@ -22,7 +22,6 @@ enum Capture {
 
 class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     weak var delegate: ARScreenSceneDelegate?
-    weak var navigationVC: ARScreenNavigationVC?
 
     @Published private(set) var state: ARScreenFlow.ViewState = .idle
 
@@ -38,7 +37,7 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     @Published var isRecording: Bool = false
     @Published var labelText: String = "00:00"
     @Published var progressValue: CGFloat = 0.0
-
+    
     var arView: ARView? {
         didSet {
             arView?.prepareForRecording()
@@ -51,8 +50,11 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     let characterOffset: SIMD3<Float> = [0, 0, 0]
     let characterAnchor = AnchorEntity()
     var cancellables = Set<AnyCancellable>()
+    
+    let model: GarmentModel
 
-    override init() {
+    init(model: GarmentModel) {
+        self.model = model
         super.init()
         bindInput()
         bindOutput()
@@ -70,12 +72,12 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     private func bindInput() {
         eventSubject
             .sink { [weak self] event in
+                guard let self else { return }
                 switch event {
                 case .onAppear:
-                    self?.objectWillChange.send()
+                    self.objectWillChange.send()
                 case .onNextScene:
-                    // self?.delegate?.openARResult()
-                    print("Next scene")
+                    self.delegate?.closeAR()
                 }
             }
             .store(in: &subscriptions)
@@ -148,16 +150,14 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
 
     // MARK: Augmented Reality model methods
     func loadCharacter(material: SimpleMaterial) {
-        Entity.loadBodyTrackedAsync(named: "tshirtModel").sink(receiveCompletion: { completion in
+        Entity.loadBodyTrackedAsync(named: "T-Shirt").sink(receiveCompletion: { completion in
             if case let .failure(error) = completion {
                 print("Error: Unable to load model: \(error.localizedDescription)")
             }
         }, receiveValue: { [weak self] (character: Entity) in
             if let character = character as? BodyTrackedEntity {
-                character.model?.materials[0] = material
                 character.scale = [self?.scaleValue ?? 0.01, self?.scaleValue ?? 0.01, self?.scaleValue ?? 0.01]
                 self?.character = character
-
                 self?.arView!.scene.addAnchor(self!.characterAnchor) // Add characterAnchor to the scene
             } else {
                 print("Error: Unable to load model as BodyTrackedEntity")
@@ -177,11 +177,5 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
                 characterAnchor.addChild(character)
             }
         }
-    }
-}
-
-extension ARScreenViewModel: ARScreenContainerDelegate {
-    func back() {
-        delegate?.back()
     }
 }

@@ -5,5 +5,5 @@ protocol GarmentsContainerDelegate: AnyObject {
 }
 
 protocol GarmentsSceneDelegate: AnyObject {
-    func openConfigurator()
+    func openConfigurator(input: ConfigurationSceneInput)
 }

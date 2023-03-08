@@ -12,5 +12,7 @@ extension Resolver {
     public static func registerServices() {
         register { NotificationCenter.default }.implements(NotificationCenterProtocol.self)
         register { UserDefaults.standard }
+        register { ImageDataMaterialsService() }
+            .implements((any MaterialManagingProtocol).self)
     }
 }

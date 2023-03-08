@@ -20,7 +20,11 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        router.setRootModule(SplashScreenAssembly(delegate: self).makeScene())
+        if AppData.isWelcomeScreenShown {
+            startMainFlow()
+        } else {
+            router.setRootModule(SplashScreenAssembly(delegate: self).makeScene())
+        }
     }
 }
 
