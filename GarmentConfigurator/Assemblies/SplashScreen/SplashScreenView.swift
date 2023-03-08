@@ -17,7 +17,7 @@ struct SplashScreenView: View {
                     RoundedRectangle(cornerRadius: 38)
                         .inset(by: 10)
                         .stroke(Color.gray, lineWidth: 2)
-                        .frame(maxWidth: 211, maxHeight: 459)
+                        .frame(maxWidth: 235, maxHeight: 490)
                     VStack {
                         Text(L10n.coreWelcomeToText + "\nARgo")
                             .font(.system(size: 34).bold())
