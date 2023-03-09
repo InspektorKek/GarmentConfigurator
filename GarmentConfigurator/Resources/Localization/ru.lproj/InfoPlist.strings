@@ -1,1 +1,2 @@
-"NSCameraUsageDescription" = "Дай мне доступ!";
+"NSCameraUsageDescription" = "Это позволяет использовать ваши фотографии из библиотеки в качестве узора и сохранять фотографии и видео в вашу камеру.";
+"NSPhotoLibraryUsageDescription" = "Для съемки фотографий и видео.";
