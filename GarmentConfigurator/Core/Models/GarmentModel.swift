@@ -8,7 +8,7 @@
 import Foundation
 
 /// A model for a garment with patterns.
-class GarmentModel {
+class GarmentModel: Identifiable {
     let id: UUID
     let name: String
     let bodyType: BodyType
@@ -49,5 +49,15 @@ class GarmentModel {
         case .tShirt:
             return TShirtPattern.allCases.map { TShirtPatternInfo.default($0) }
         }
+    }
+}
+
+extension GarmentModel: Hashable {
+    static func == (lhs: GarmentModel, rhs: GarmentModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

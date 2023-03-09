@@ -9,5 +9,6 @@ enum GarmentsFlow {
 
     enum Event {
         case onAppear
+        case onTap(model: GarmentModel)
     }
 }
