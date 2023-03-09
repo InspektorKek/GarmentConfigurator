@@ -34,8 +34,6 @@ final class GarmentsViewModel: ObservableObject {
                 switch event {
                 case .onAppear:
                     self.objectWillChange.send()
-                case .onNextScene:
-                    self.openConfigurator()
                 }
             }
             .store(in: &subscriptions)
@@ -47,7 +45,7 @@ final class GarmentsViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
-    private func openConfigurator() {
+    private func openNewConfigurator() {
         let model = GarmentModel(type: .tShirt,
                                  name: "T-Shirt",
                                  bodyType: .female)
@@ -57,5 +55,7 @@ final class GarmentsViewModel: ObservableObject {
 }
 
 extension GarmentsViewModel: GarmentsContainerDelegate {
-
+    func addActionTapped() {
+        openNewConfigurator()
+    }
 }

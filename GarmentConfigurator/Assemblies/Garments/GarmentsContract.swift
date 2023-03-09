@@ -1,7 +1,7 @@
 import Foundation
 
 protocol GarmentsContainerDelegate: AnyObject {
-
+    func addActionTapped()
 }
 
 protocol GarmentsSceneDelegate: AnyObject {

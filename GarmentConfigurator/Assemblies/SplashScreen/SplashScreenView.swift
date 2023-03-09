@@ -1,6 +1,12 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    private enum Constants {
+        static let markdown = LinkMarkdownComposer.replaceIn(text: L10n.coreAgreementText, translationAndLinks: [
+            L10n.coreTermsAndConditions: AppConstants.Links.termsAndConditions,
+            L10n.corePrivacyPolicy: AppConstants.Links.privacyPolicy
+        ])
+    }
     @ObservedObject var viewModel: SplashScreenViewModel
 
     var body: some View {
@@ -47,12 +53,16 @@ struct SplashScreenView: View {
             }
             .padding()
 
-            Text("\(L10n.coreAgreementText)\n [\(L10n.coreTermsAndConditions)](https://google.com) \(L10n.coreAndText) [\(L10n.corePrivacyPolicy)](https://apple.com).")
+            Text(.init(Constants.markdown))
                 .padding(5)
                 .multilineTextAlignment(.center)
                 .font(.subheadline)
                 .foregroundColor(.gray)
-
+                .environment(\.openURL, OpenURLAction { url in
+                    viewModel.send(.onSelect(url))
+                    return .discarded
+                })
+                .padding(.horizontal, 16)
         }
     }
 }
@@ -60,5 +70,19 @@ struct SplashScreenView: View {
 struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
         SplashScreenView(viewModel: SplashScreenViewModel())
+    }
+}
+
+struct LinkMarkdownComposer {
+    static func replaceIn(text: String, translationAndLinks: [String: String]) -> String {
+        var result = text
+        translationAndLinks.forEach { key, link in
+            result = result.replacingOccurrences(of: key, with: getMarkdownFor(text: key, link: link))
+        }
+        return result
+    }
+    
+    private static func getMarkdownFor(text: String, link: String) -> String {
+        "**[\(text)](\(link))**"
     }
 }

@@ -9,6 +9,5 @@ enum GarmentsFlow {
 
     enum Event {
         case onAppear
-        case onNextScene
     }
 }

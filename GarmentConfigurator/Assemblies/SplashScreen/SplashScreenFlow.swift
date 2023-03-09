@@ -10,5 +10,6 @@ enum SplashScreenFlow {
     enum Event {
         case onAppear
         case onNextScene
+        case onSelect(_ url: URL)
     }
 }

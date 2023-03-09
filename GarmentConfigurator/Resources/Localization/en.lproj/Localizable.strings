@@ -20,10 +20,10 @@
 "coreButtonSave" = "Save";
 "coreButtonSaved" = "Saved";
 "coreButtonShare" = "Share";
-"coreTermsAndConditions" = "Terms and Conditions";
+"coreTermsAndConditions" = "Terms & Services";
 "corePrivacyPolicy" = "Privacy Policy";
-"coreAgreementText" = "By continuing you agree to our";
+"coreAgreementText" = "By continuing, you acknowledge that you have read and understood, and agree to ARgo’s \nTerms & Services and Privacy Policy";
 "coreWelcomeToText" = "Welcome to";
 "coreSpeedUpText" = "speed up the garment";
 "corePrototypingProcessesText" = "prototyping process";
-"coreAndText" = "and";
+"coreButtonAdd" = "Add";

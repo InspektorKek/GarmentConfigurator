@@ -46,6 +46,9 @@
 		B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3CDC11B29A371CB00AD0B7A /* InfoPlist.strings */; };
 		B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CDC12129A398B000AD0B7A /* Colors.xcassets */; };
 		B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D8BCE2299F89F400BEA574 /* Localizable.strings */; };
+		B3E7816029B94F1000464F53 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7815F29B94F1000464F53 /* CALayer.swift */; };
+		B3E7816229B94FA400464F53 /* GradientButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7816129B94FA400464F53 /* GradientButtonOptions.swift */; };
+		B3E7816429B94FB600464F53 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7816329B94FB600464F53 /* GradientButton.swift */; };
 		B3EFFE8B29A8B7E500CF07F2 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE8A29A8B7E500CF07F2 /* BaseCoordinator.swift */; };
 		B3EFFE8D29A8B81000CF07F2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE8C29A8B81000CF07F2 /* Router.swift */; };
 		B3EFFE8F29A8B81D00CF07F2 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFFE8E29A8B81D00CF07F2 /* BaseNavigationController.swift */; };
@@ -107,8 +110,8 @@
 		F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63229AFABFC00D709CD /* ARResultView.swift */; };
 		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
 		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
-		F2E999EF29B88FAF00CEC4C9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */; };
 		F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */; };
+		F2E999EF29B88FAF00CEC4C9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +156,9 @@
 		B3D8BCE1299F89F400BEA574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3D8BCE3299F8A6900BEA574 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3D8BCE4299F8A7800BEA574 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3E7815F29B94F1000464F53 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		B3E7816129B94FA400464F53 /* GradientButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonOptions.swift; sourceTree = "<group>"; };
+		B3E7816329B94FB600464F53 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		B3EFFE8A29A8B7E500CF07F2 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		B3EFFE8C29A8B81000CF07F2 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B3EFFE8E29A8B81D00CF07F2 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -212,8 +218,8 @@
 		F22EE63229AFABFC00D709CD /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
 		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
 		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
-		F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
+		F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +492,7 @@
 				B3EFFEBD29A8C5A500CF07F2 /* UIView+Animation.swift */,
 				B3AD241F29B78A8E007215B1 /* View+RoundedCorner.swift */,
 				B3AD243529B8CA78007215B1 /* UIApplication+Extension.swift */,
+				B3E7815F29B94F1000464F53 /* CALayer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +522,8 @@
 			isa = PBXGroup;
 			children = (
 				B3EFFEE429ACBD8E00CF07F2 /* GradientBackgroundStyle.swift */,
+				B3E7816129B94FA400464F53 /* GradientButtonOptions.swift */,
+				B3E7816329B94FB600464F53 /* GradientButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -723,6 +732,7 @@
 				F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */,
 				F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */,
 				B3EFFEBA29A8C3D000CF07F2 /* BaseViewController.swift in Sources */,
+				B3E7816429B94FB600464F53 /* GradientButton.swift in Sources */,
 				B3EFFEC029A8C5D900CF07F2 /* UIView+AddSubviews.swift in Sources */,
 				B3EFFEA729A8BE2800CF07F2 /* UIHostingViewControllerCustom.swift in Sources */,
 				B3EFFEFE29ACC18D00CF07F2 /* GarmentsViewController.swift in Sources */,
@@ -743,6 +753,7 @@
 				F22EE63529AFABFC00D709CD /* ARResultContract.swift in Sources */,
 				F22EE63829AFABFC00D709CD /* ARResultNavigationVC.swift in Sources */,
 				F22E108029AE11010050FF14 /* ARScreenContract.swift in Sources */,
+				B3E7816229B94FA400464F53 /* GradientButtonOptions.swift in Sources */,
 				B3EFFEFD29ACC18C00CF07F2 /* GarmentsContract.swift in Sources */,
 				B3EFFECE29A8CDA100CF07F2 /* SceneDelegate.swift in Sources */,
 				B3EFFF1429ACD26300CF07F2 /* ConfigurationFlow.swift in Sources */,
@@ -763,6 +774,7 @@
 				B3EFFF0229ACC18D00CF07F2 /* GarmentsViewModel.swift in Sources */,
 				B3AD240A29B70C10007215B1 /* BodyType.swift in Sources */,
 				B3EFFE8D29A8B81000CF07F2 /* Router.swift in Sources */,
+				B3E7816029B94F1000464F53 /* CALayer.swift in Sources */,
 				B3994E6F29AE4C5400DFBAE2 /* ResourcesCash.swift in Sources */,
 				B3EFFEB029A8BF6100CF07F2 /* NavigationVC.swift in Sources */,
 				B3EFFF1029ACD26300CF07F2 /* ConfigurationAssembly.swift in Sources */,

@@ -12,6 +12,7 @@ struct GarmentsAssembly: SceneAssembly {
         viewModel.delegate = delegate
         let viewController = GarmentsViewController(viewModel: viewModel)
         let navigationVC = GarmentsNavigationVC()
+        navigationVC.delegate = viewModel
         viewModel.navigationVC = navigationVC
         return viewController.withCustom(navigationViewController: navigationVC)
     }

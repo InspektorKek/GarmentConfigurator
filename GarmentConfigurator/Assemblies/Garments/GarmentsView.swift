@@ -12,18 +12,7 @@ struct GarmentsView: View {
 
     private var content: some View {
         ZStack {
-            Button {
-                viewModel.send(.onNextScene)
-            } label: {
-                Text(L10n.titleGarments)
-                    .frame(width: 250, height: 30)
-            }
-            .buttonStyle(
-                GradientBackgroundStyle(
-                    startColor: Color(Asset.Colors.Gradients.first.color),
-                    endColor: Color(Asset.Colors.Gradients.second.color)
-                )
-            )
+            EmptyView()
         }
     }
 }
