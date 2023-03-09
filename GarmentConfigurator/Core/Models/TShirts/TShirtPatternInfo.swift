@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// A struct that represents a pattern for a T-shirt.
 struct TShirtPatternInfo: Patternable {
