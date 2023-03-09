@@ -15,30 +15,21 @@ struct GradientBackgroundStyle: ButtonStyle {
 
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-//            .frame(maxWidth: .infinity)
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(
                         LinearGradient(gradient: Gradient(stops: [
-                            Gradient.Stop(color: startColor, location: 0.1),
-                            Gradient.Stop(color: endColor, location: 0.7)
+                            Gradient.Stop(color: startColor, location: 0.2),
+                            Gradient.Stop(color: endColor, location: 1)
                         ]), startPoint: .top, endPoint: .bottom)
                     )
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.white, lineWidth: 2)
+                            .stroke(Color.white, lineWidth: 1)
                     )
             )
             .foregroundColor(.white)
             .font(.system(size: 16, weight: .bold))
-
-        //            .background(isEnabled
-        //                        ? LinearGradient(gradient: Gradient(colors: [startColor, endColor]),
-        //                                         startPoint: .leading, endPoint: .trailing)
-        //                        : LinearGradient(colors: [Color(Asset.Colors.accentColor.color)],
-        //                                         startPoint: .bottom, endPoint: .top)
-        //        )
-
     }
 }

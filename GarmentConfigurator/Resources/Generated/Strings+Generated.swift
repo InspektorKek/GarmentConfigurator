@@ -31,6 +31,8 @@ internal enum L10n {
   /// By continuing, you acknowledge that you have read and understood, and agree to ARgo’s 
   /// Terms & Services and Privacy Policy
   internal static let coreAgreementText = L10n.tr("Localizable", "coreAgreementText", fallback: "By continuing, you acknowledge that you have read and understood, and agree to ARgo’s \nTerms & Services and Privacy Policy")
+  /// Add
+  internal static let coreButtonAdd = L10n.tr("Localizable", "coreButtonAdd", fallback: "Add")
   /// Continue
   internal static let coreButtonContinue = L10n.tr("Localizable", "coreButtonContinue", fallback: "Continue")
   /// Save
