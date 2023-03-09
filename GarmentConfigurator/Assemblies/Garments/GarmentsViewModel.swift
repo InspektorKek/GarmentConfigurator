@@ -6,6 +6,7 @@ final class GarmentsViewModel: ObservableObject {
     weak var navigationVC: GarmentsNavigationVC?
 
     @Published private(set) var state: GarmentsFlow.ViewState = .idle
+    @Published private(set) var garments: [GarmentModel] = []
 
     // MARK: - Private Properties
 
@@ -14,6 +15,7 @@ final class GarmentsViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
     init() {
+        fillGarments()
         bindInput()
         bindOutput()
     }
@@ -34,6 +36,8 @@ final class GarmentsViewModel: ObservableObject {
                 switch event {
                 case .onAppear:
                     self.objectWillChange.send()
+                case .onTap(model: let model):
+                    self.openConfigurator(for: model)
                 }
             }
             .store(in: &subscriptions)
@@ -45,11 +49,24 @@ final class GarmentsViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
+    private func fillGarments() {
+        garments = [
+            GarmentModel(type: .tShirt,name: "T-Shirt-Female", bodyType: .female),
+            GarmentModel(type: .tShirt,name: "T-Shirt-Male", bodyType: .male)
+        ]
+    }
+    
+    private func openConfigurator(for model: GarmentModel) {
+        let input = ConfigurationSceneInput(model: model)
+        delegate?.openConfigurator(input: input)
+    }
+    
     private func openNewConfigurator() {
         let model = GarmentModel(type: .tShirt,
                                  name: "T-Shirt",
                                  bodyType: .female)
         let input = ConfigurationSceneInput(model: model)
+        garments.append(model)
         delegate?.openConfigurator(input: input)
     }
 }

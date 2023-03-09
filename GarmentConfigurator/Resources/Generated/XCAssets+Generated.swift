@@ -44,7 +44,6 @@ internal enum Asset {
     internal static let iconEmptyTexture = ImageAsset(name: "icon_empty_texture")
     internal static let img = ImageAsset(name: "img")
     internal static let instagram = SymbolAsset(name: "instagram")
-    internal static let waveWomen = ImageAsset(name: "wave women")
     internal static let waves = ImageAsset(name: "waves")
   }
 }
