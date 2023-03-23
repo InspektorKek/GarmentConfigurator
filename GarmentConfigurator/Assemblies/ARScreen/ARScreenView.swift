@@ -59,8 +59,8 @@ struct ARScreenView: View {
                     .padding()
                     .scaleEffect(viewModel.isRecording ? 1.35 : 1)
                 })
-                .highPriorityGesture(
-                    LongPressGesture(minimumDuration: 0.1)
+                .simultaneousGesture(
+                    LongPressGesture(minimumDuration: 0.3)
                         .onEnded { _ in
                             viewModel.startCapturingVideo()
                         }
