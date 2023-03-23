@@ -61,7 +61,13 @@ struct ARScreenView: View {
                 })
                 .simultaneousGesture(
                     LongPressGesture(minimumDuration: 0.3)
+                        .onChanged({ _ in
+                            let impactMed = UIImpactFeedbackGenerator(style: .soft)
+                                impactMed.impactOccurred()
+                        })
                         .onEnded { _ in
+                            let impactMed = UIImpactFeedbackGenerator(style: .light)
+                                impactMed.impactOccurred()
                             viewModel.startCapturingVideo()
                         }
                 )
