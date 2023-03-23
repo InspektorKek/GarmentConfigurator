@@ -32,7 +32,7 @@ struct ARScreenView: View {
                 }
 
                 Spacer()
-
+                guideLabel
                 Button(action: {
                 }, label: {
                     ZStack {
@@ -75,6 +75,7 @@ struct ARScreenView: View {
                         .onEnded {
                             if viewModel.isRecording {
                                 viewModel.stopCapturingVideo()
+                                viewModel.isFoundedBody = false
                             } else {
                                 viewModel.takePhoto()
                             }
@@ -86,6 +87,25 @@ struct ARScreenView: View {
                     }
                 }
             }
+        }
+    }
+
+    var guideLabel: some View {
+        HStack {
+            if viewModel.isFoundedBody == false {
+                return Text("Point the camera at the body")
+            } else if viewModel.isRecording == false {
+                return Text("Tap for photo & hold for video")
+            } else if viewModel.isRecording {
+                return Text("Tap to stop")
+            } else {
+                return Text("")
+            }
+        }
+        .padding(8)
+        .background {
+            RoundedRectangle(cornerRadius: 28)
+                .foregroundColor(Color(asset: Asset.Colors.baseNavigationColor).opacity(0.8))
         }
     }
     
@@ -109,9 +129,9 @@ struct ARScreenView: View {
 
     private var timeLabel: some View {
         Label(viewModel.labelText, systemImage: "heart")
-            .padding(5)
+            .padding(6)
             .background {
-                Rectangle()
+                RoundedRectangle(cornerRadius: 8)
                     .foregroundColor(Color.red)
             }
             .labelStyle(.titleOnly)
