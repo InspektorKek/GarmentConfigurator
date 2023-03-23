@@ -22,14 +22,13 @@ struct ARScreenView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    closeButton
-                    
-                    Spacer()
-                }
-                
-                if viewModel.isRecording {
-                    timeLabel
-                        .padding()
+                    if viewModel.isRecording {
+                        timeLabel
+                            .padding()
+                    } else {
+                        closeButton
+                        Spacer()
+                    }
                 }
 
                 Spacer()
