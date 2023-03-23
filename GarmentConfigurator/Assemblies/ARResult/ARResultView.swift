@@ -21,31 +21,31 @@ struct ARResultView: View {
             case .image(let image):
                 Image(uiImage: image)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                //                    .aspectRatio(contentMode: .fit)
                     .cornerRadius(32)
             case .none:
                 EmptyView()
             case .video(let video):
-                VideoPlayer(player: viewModel.player)
-                    .allowsHitTesting(false)
-                    .padding()
-                    .onAppear {
-                        let playerItem = AVPlayerItem(url: video)
-
-                        viewModel.initPlayer(with: playerItem)
-                    }
-                    .onDisappear {
-                        viewModel.player?.pause()
-                        viewModel.player = nil
-                        viewModel.playerLooper = nil
-                    }
+                GeometryReader { proxy in
+                    VideoPlayer(player: viewModel.player)
+                        .ignoresSafeArea()
+                    //                            .frame(width: proxy.size.height * 16 / 9, height: proxy.size.height)
+                    //                            .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
+                        .cornerRadius(32)
+                        .allowsHitTesting(false)
+                        .onAppear {
+                            let playerItem = AVPlayerItem(url: video)
+                            viewModel.initPlayer(with: playerItem)
+                        }
+                }
             }
-            
+
             VStack {
                 HStack {
                     Spacer()
                     closeButton
-                        .padding(.trailing, 24)
+                        .padding(.leading, 24)
+                        .padding()
                 }
                 Spacer()
             }
@@ -56,7 +56,7 @@ struct ARResultView: View {
                 HStack(alignment: .center) {
                     saveButton
                     instagramButton
-    
+
                     switch viewModel.mediaType {
                     case .image(let image):
                         ShareLink(item: Image(uiImage: image),
@@ -70,7 +70,7 @@ struct ARResultView: View {
                             }
                             .frame(maxWidth: 100, maxHeight: 100)
                         }
-    
+
                     case .video(let video):
                         ShareLink(item: video) {
                             VStack(spacing: 4) {
@@ -86,16 +86,14 @@ struct ARResultView: View {
                         Text("none")
                     }
                 }
-                .frame(
-                    maxWidth: .infinity
-                )
-                .background(Color(uiColor: Asset.Colors.baseNavigationColor.color.withAlphaComponent(0.8)))
+                //                                .frame(maxWidth: .infinity)
+                .background(Color(uiColor: Asset.Colors.baseNavigationColor.color.withAlphaComponent(0.9)))
                 .frame(height: 80)
                 .cornerRadius(32)
-                .padding(.horizontal, 20)
+                .padding(4)
             }
-            .cornerRadius(32)
         }
+        .statusBarHidden()
     }
     
     private var closeButton: some View {
