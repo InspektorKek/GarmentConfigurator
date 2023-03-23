@@ -68,6 +68,7 @@ struct ARScreenView: View {
                             let impactMed = UIImpactFeedbackGenerator(style: .soft)
                                 impactMed.impactOccurred()
                             viewModel.startCapturingVideo()
+                            viewModel.isFoundedBody = true
                         }
                 )
                 .simultaneousGesture(
