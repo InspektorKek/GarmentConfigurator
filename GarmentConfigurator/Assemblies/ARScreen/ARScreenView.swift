@@ -76,10 +76,10 @@ struct ARScreenView: View {
                         .onEnded {
                             if viewModel.isRecording {
                                 viewModel.stopCapturingVideo()
-                                viewModel.isFoundedBody = false
                             } else {
                                 viewModel.takePhoto()
                             }
+                            viewModel.isFoundedBody = false
                         }
                 )
                 .fullScreenCover(isPresented: $viewModel.shouldShowResult) {

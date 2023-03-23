@@ -27,8 +27,11 @@ struct ARResultView: View {
                 EmptyView()
             case .video(let video):
                 VideoPlayer(player: viewModel.player)
+                    .allowsHitTesting(false)
+                    .padding()
                     .onAppear {
                         let playerItem = AVPlayerItem(url: video)
+
                         viewModel.initPlayer(with: playerItem)
                     }
                     .onDisappear {
