@@ -98,7 +98,7 @@ struct ARScreenView: View {
             } else if viewModel.isRecording == false {
                 return Text("Tap for photo & hold for video")
             } else if viewModel.isRecording {
-                return Text("Tap to stop")
+                return Text("Tap again to stop")
             } else {
                 return Text("")
             }
