@@ -37,7 +37,8 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     @Published var isRecording: Bool = false
     @Published var labelText: String = "00:00"
     @Published var progressValue: CGFloat = 0.0
-    
+    @Published var isFoundedBody = false
+
     var arView: ARView? {
         didSet {
             arView?.prepareForRecording()
@@ -206,7 +207,7 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
             guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-
+            isFoundedBody = true
             let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
             characterAnchor.position = bodyPosition + characterOffset
             characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
