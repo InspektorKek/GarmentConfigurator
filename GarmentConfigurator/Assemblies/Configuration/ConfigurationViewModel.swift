@@ -25,6 +25,7 @@ final class ConfigurationViewModel: ObservableObject {
         self.model = model
         bindInput()
         bindOutput()
+        setupMaterials()
     }
 
     deinit {
@@ -65,6 +66,14 @@ final class ConfigurationViewModel: ObservableObject {
             .assign(to: \.materials, on: self)
             .store(in: &subscriptions)
             
+    }
+    
+    private func setupMaterials() {
+        model.patterns.forEach { pattern in
+            if let textureMaterial = pattern.textureMaterial {
+                updateMaterial(textureMaterial, for: pattern)
+            }
+        }
     }
     
     private func updateMaterial(_ textureMaterial: ImageMaterial, for pattern: TShirtPatternInfo) {
