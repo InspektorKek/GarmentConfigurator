@@ -10,5 +10,6 @@ enum ARScreenFlow {
     enum Event {
         case onAppear
         case onNextScene
+        case onResetButtonTapped
     }
 }

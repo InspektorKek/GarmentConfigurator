@@ -16,18 +16,18 @@ struct GarmentsView: View {
     private var content: some View {
         ScrollView {
             LazyVGrid(columns: garmentLayout, spacing: 16) {
-                ForEach(viewModel.garments, id: \.self) { garment in
+                ForEach(viewModel.garments) { garment in
                     ZStack {
                         VStack(spacing: 10) {
-                            Model3DView(scene: PatternedScene(scene: SCNScene(named: garment.sceneName)!).scene)
+                            Model3DView(scene: garment.scene.scene)
                                 .transform(rotate: Euler(y: .degrees(180)))
                                 .frame(height: 160)
                                 .camera(PerspectiveCamera(fov: .degrees(60)))
-                            
+
                             VStack {
-                                Text(garment.name)
+                                Text(garment.model.name)
                                     .font(.system(size: 17))
-                                Text(garment.bodyType.name)
+                                Text(garment.model.bodyType.name)
                                     .foregroundColor(Asset.Colors.labelsPrimary.swiftUIColor)
                                     .font(.system(size: 13))
                             }
@@ -40,7 +40,7 @@ struct GarmentsView: View {
                             .stroke(.white, lineWidth: 1)
                     )
                     .onTapGesture {
-                        viewModel.send(.onTap(model: garment))
+                        viewModel.send(.onTap(model: garment.model))
                     }
                 }
             }

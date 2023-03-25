@@ -1,12 +1,29 @@
 import Combine
+import SceneKit
 import UIKit
+
+class GarmentListCellModel: Identifiable {
+    let id: UUID
+    let scene: PatternedScene
+    let model: GarmentModel
+    
+    init(scene: PatternedScene, model: GarmentModel) {
+        self.id = UUID()
+        self.scene = scene
+        self.model = model
+    }
+    
+    static func == (lhs: GarmentListCellModel, rhs: GarmentListCellModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}
 
 final class GarmentsViewModel: ObservableObject {
     weak var delegate: GarmentsSceneDelegate?
     weak var navigationVC: GarmentsNavigationVC?
 
     @Published private(set) var state: GarmentsFlow.ViewState = .idle
-    @Published private(set) var garments: [GarmentModel] = []
+    @Published private(set) var garments: [GarmentListCellModel] = []
 
     // MARK: - Private Properties
 
@@ -35,7 +52,7 @@ final class GarmentsViewModel: ObservableObject {
                 guard let self else { return }
                 switch event {
                 case .onAppear:
-                    self.objectWillChange.send()
+                    self.applyMaterials()
                 case .onTap(model: let model):
                     self.openConfigurator(for: model)
                 }
@@ -51,9 +68,26 @@ final class GarmentsViewModel: ObservableObject {
     
     private func fillGarments() {
         garments = [
-            GarmentModel(type: .tShirt,name: "T-Shirt-Female", bodyType: .female),
             GarmentModel(type: .tShirt,name: "T-Shirt-Male", bodyType: .male)
         ]
+            .map {
+                GarmentListCellModel(scene: PatternedScene(scene: SCNScene(named: $0.sceneName)!), model: $0)
+            }
+    }
+    
+    private func applyMaterials() {
+        garments
+            .forEach { cellModel in
+                cellModel.model.patterns.forEach { pattern in
+                    if let material = pattern.textureMaterial, let imageData = material.texture {
+                        do {
+                            try cellModel.scene.applyMaterial(data: imageData, to: pattern)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
     }
     
     private func openConfigurator(for model: GarmentModel) {
@@ -65,8 +99,9 @@ final class GarmentsViewModel: ObservableObject {
         let model = GarmentModel(type: .tShirt,
                                  name: "T-Shirt",
                                  bodyType: .female)
+        let cellModel = GarmentListCellModel(scene: PatternedScene(scene: SCNScene(named: model.sceneName)!), model: model)
         let input = ConfigurationSceneInput(model: model)
-        garments.append(model)
+        garments.append(cellModel)
         delegate?.openConfigurator(input: input)
     }
 }

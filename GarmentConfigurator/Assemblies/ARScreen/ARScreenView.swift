@@ -27,7 +27,10 @@ struct ARScreenView: View {
                             .padding()
                     } else {
                         closeButton
+                        
                         Spacer()
+                        
+                        resetButton
                     }
                 }
 
@@ -125,6 +128,19 @@ struct ARScreenView: View {
         .padding(.horizontal, 24)
         .padding(.top, 24)
     }
+    
+    var resetButton: some View {
+        Button {
+            viewModel.send(.onResetButtonTapped)
+        } label: {
+            Image(systemName: "arrow.triangle.2.circlepath")
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundColor(.white)
+        }
+        .frame(width: 45, height: 45)
+        .padding(.horizontal, 24)
+        .padding(.top, 24)
+    }
 
     private var timeLabel: some View {
         Label(viewModel.labelText, systemImage: "heart")
@@ -143,7 +159,9 @@ struct ARViewContainer: UIViewRepresentable {
 
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
-        arView.session.run(ARBodyTrackingConfiguration())
+        let configuration = ARBodyTrackingConfiguration()
+        configuration.automaticSkeletonScaleEstimationEnabled = true
+        arView.session.run(configuration)
 
         viewModel.arView = arView
         arView.session.delegate = viewModel
