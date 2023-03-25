@@ -957,8 +957,8 @@
 				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ARgo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app lets you capture photo and video with AR objects";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app lets you add photo and video to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -999,8 +999,8 @@
 				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ARgo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app lets you capture photo and video with AR objects";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app lets you add photo and video to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
