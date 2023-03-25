@@ -177,9 +177,7 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
                         try self.model.patterns.forEach { patternInfo in
                             if let patternMaterial = patternInfo.textureMaterial,
                                let url = FilesManager.makeURL(forFileNamed: patternMaterial.id.uuidString) {
-                                let baseResource = try TextureResource.load(contentsOf: url)
-                                let baseColor = MaterialParameters.Texture(baseResource)
-                                imageMaterial.color = try .init(tint: .white,texture: .init(.load(contentsOf:url, withName:nil)))
+                                imageMaterial.color = try .init(tint: .white,texture: .init(.load(contentsOf: url, withName: nil)))
                                 
                                 switch patternInfo.type {
                                 case .leftArm:
