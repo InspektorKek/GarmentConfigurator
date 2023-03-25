@@ -37,7 +37,7 @@ struct ARScreenView: View {
                 }, label: {
                     ZStack {
                         Circle()
-//                            .fill(Color.gray)
+                        //                            .fill(Color.gray)
                             .fill(
                                 RadialGradient(gradient: Gradient(colors: [.white, .black]), center: .center, startRadius: 0, endRadius: 50)
                                 , strokeBorder: .white)
@@ -62,11 +62,11 @@ struct ARScreenView: View {
                     LongPressGesture(minimumDuration: 0.3)
                         .onChanged({ _ in
                             let impactMed = UIImpactFeedbackGenerator(style: .rigid)
-                                impactMed.impactOccurred()
+                            impactMed.impactOccurred()
                         })
                         .onEnded { _ in
                             let impactMed = UIImpactFeedbackGenerator(style: .soft)
-                                impactMed.impactOccurred()
+                            impactMed.impactOccurred()
                             viewModel.startCapturingVideo()
                             viewModel.isFoundedBody = true
                         }
@@ -93,14 +93,12 @@ struct ARScreenView: View {
 
     var guideLabel: some View {
         HStack {
-            if viewModel.isFoundedBody == false {
-                return Text("Point the camera at the body")
-            } else if viewModel.isRecording == false {
-                return Text("Tap for photo & hold for video")
+            if !viewModel.isFoundedBody {
+                Text("Point the camera at the body")
             } else if viewModel.isRecording {
-                return Text("Tap again to stop")
+                Text("Tap again to stop")
             } else {
-                return Text("")
+                Text("Tap for photo & hold for video")
             }
         }
         .padding(8)
@@ -159,7 +157,7 @@ struct ARViewContainer: UIViewRepresentable {
             } else {
                 material.color = .init(tint: .white)
             }
-                
+
             material.metallic = .init(floatLiteral: 1.0)
             material.roughness = .init(floatLiteral: 0.5)
 
