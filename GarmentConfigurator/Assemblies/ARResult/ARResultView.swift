@@ -21,7 +21,6 @@ struct ARResultView: View {
             case .image(let image):
                 Image(uiImage: image)
                     .resizable()
-                //                    .aspectRatio(contentMode: .fit)
                     .cornerRadius(32)
             case .none:
                 EmptyView()
@@ -29,8 +28,6 @@ struct ARResultView: View {
                 GeometryReader { proxy in
                     VideoPlayer(player: viewModel.player)
                         .ignoresSafeArea()
-                    //                            .frame(width: proxy.size.height * 16 / 9, height: proxy.size.height)
-                    //                            .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
                         .cornerRadius(32)
                         .allowsHitTesting(false)
                         .onAppear {
@@ -86,7 +83,6 @@ struct ARResultView: View {
                         Text("none")
                     }
                 }
-                //                                .frame(maxWidth: .infinity)
                 .background(Color(uiColor: Asset.Colors.baseNavigationColor.color.withAlphaComponent(0.9)))
                 .frame(height: 80)
                 .cornerRadius(32)
@@ -101,7 +97,6 @@ struct ARResultView: View {
             dismiss()
         }, label: {
             Image(systemName: "xmark")
-            //                .font(.title2)
                 .frame(width: 8, height: 8)
                 .foregroundColor(.black)
                 .padding()
