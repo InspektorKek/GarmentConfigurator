@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32D735F29CF29DF0030A238 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = B32D735E29CF29DF0030A238 /* T-Shirt.usdz */; };
 		B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674929A39BA40077A9FB /* Strings+Generated.swift */; };
 		B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */; };
 		B3994E6229AE47CA00DFBAE2 /* Model3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */; };
@@ -110,11 +111,11 @@
 		F22EE63929AFABFC00D709CD /* ARResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63229AFABFC00D709CD /* ARResultView.swift */; };
 		F22EE63A29AFABFC00D709CD /* ARResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */; };
 		F22EE63B29AFABFC00D709CD /* ARResultFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EE63429AFABFC00D709CD /* ARResultFlow.swift */; };
-		F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */; };
 		F2E999EF29B88FAF00CEC4C9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B32D735E29CF29DF0030A238 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
 		B381674929A39BA40077A9FB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3DView.swift; sourceTree = "<group>"; };
@@ -218,7 +219,6 @@
 		F22EE63229AFABFC00D709CD /* ARResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultView.swift; sourceTree = "<group>"; };
 		F22EE63329AFABFC00D709CD /* ARResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultViewModel.swift; sourceTree = "<group>"; };
 		F22EE63429AFABFC00D709CD /* ARResultFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARResultFlow.swift; sourceTree = "<group>"; };
-		F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
 		F2E999EE29B88FAF00CEC4C9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -568,7 +568,7 @@
 				F22E107F29AE11010050FF14 /* ARScreenFlow.swift */,
 				F22E109529AE181E0050FF14 /* ARViewRecordable.swift */,
 				F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */,
-				F24CE91B29B5F78F0076D241 /* T-Shirt.usdz */,
+				B32D735E29CF29DF0030A238 /* T-Shirt.usdz */,
 			);
 			path = ARScreen;
 			sourceTree = "<group>";
@@ -665,8 +665,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
-				F24CE91F29B5F7900076D241 /* T-Shirt.usdz in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
+				B32D735F29CF29DF0030A238 /* T-Shirt.usdz in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
 				B3FE968729AE176700767BF6 /* SceneCatalog.scnassets in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
@@ -957,7 +957,6 @@
 				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ARgo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -999,7 +998,6 @@
 				INFOPLIST_FILE = GarmentConfigurator/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ARgo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
