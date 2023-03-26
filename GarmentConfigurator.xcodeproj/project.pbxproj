@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B32D735F29CF29DF0030A238 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = B32D735E29CF29DF0030A238 /* T-Shirt.usdz */; };
+		B33D2ADD29D00F97006AAFE1 /* T-Shirt.usdz in Resources */ = {isa = PBXBuildFile; fileRef = B33D2ADC29D00F97006AAFE1 /* T-Shirt.usdz */; };
 		B381674B29A39BA40077A9FB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674929A39BA40077A9FB /* Strings+Generated.swift */; };
 		B381674C29A39BA40077A9FB /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */; };
 		B3994E6229AE47CA00DFBAE2 /* Model3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */; };
@@ -115,7 +115,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B32D735E29CF29DF0030A238 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
+		B33D2ADC29D00F97006AAFE1 /* T-Shirt.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "T-Shirt.usdz"; sourceTree = "<group>"; };
 		B381674929A39BA40077A9FB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		B381674A29A39BA40077A9FB /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		B3994E6129AE47CA00DFBAE2 /* Model3DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3DView.swift; sourceTree = "<group>"; };
@@ -568,7 +568,7 @@
 				F22E107F29AE11010050FF14 /* ARScreenFlow.swift */,
 				F22E109529AE181E0050FF14 /* ARViewRecordable.swift */,
 				F22E109729AE18270050FF14 /* ARViewSelfSceneRecordable.swift */,
-				B32D735E29CF29DF0030A238 /* T-Shirt.usdz */,
+				B33D2ADC29D00F97006AAFE1 /* T-Shirt.usdz */,
 			);
 			path = ARScreen;
 			sourceTree = "<group>";
@@ -664,9 +664,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33D2ADD29D00F97006AAFE1 /* T-Shirt.usdz in Resources */,
 				B3CDC12229A398B000AD0B7A /* Colors.xcassets in Resources */,
 				B3B2C8CF299F7BEC00474A3D /* Preview Assets.xcassets in Resources */,
-				B32D735F29CF29DF0030A238 /* T-Shirt.usdz in Resources */,
 				B3CDC11929A371CB00AD0B7A /* InfoPlist.strings in Resources */,
 				B3FE968729AE176700767BF6 /* SceneCatalog.scnassets in Resources */,
 				B3D8BCE0299F89F400BEA574 /* Localizable.strings in Resources */,
