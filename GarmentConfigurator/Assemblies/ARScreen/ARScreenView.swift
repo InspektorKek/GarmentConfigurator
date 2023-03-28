@@ -22,23 +22,25 @@ struct ARScreenView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    closeButton
-                    
-                    Spacer()
-                }
-                
-                if viewModel.isRecording {
-                    timeLabel
-                        .padding()
+                    if viewModel.isRecording {
+                        timeLabel
+                            .padding()
+                    } else {
+                        closeButton
+                        
+                        Spacer()
+                        
+                        resetButton
+                    }
                 }
 
                 Spacer()
-
+                guideLabel
                 Button(action: {
                 }, label: {
                     ZStack {
                         Circle()
-//                            .fill(Color.gray)
+                        //                            .fill(Color.gray)
                             .fill(
                                 RadialGradient(gradient: Gradient(colors: [.white, .black]), center: .center, startRadius: 0, endRadius: 50)
                                 , strokeBorder: .white)
@@ -59,10 +61,17 @@ struct ARScreenView: View {
                     .padding()
                     .scaleEffect(viewModel.isRecording ? 1.35 : 1)
                 })
-                .highPriorityGesture(
-                    LongPressGesture(minimumDuration: 0.1)
+                .simultaneousGesture(
+                    LongPressGesture(minimumDuration: 0.3)
+                        .onChanged({ _ in
+                            let impactMed = UIImpactFeedbackGenerator(style: .rigid)
+                            impactMed.impactOccurred()
+                        })
                         .onEnded { _ in
+                            let impactMed = UIImpactFeedbackGenerator(style: .soft)
+                            impactMed.impactOccurred()
                             viewModel.startCapturingVideo()
+                            viewModel.isFoundedBody = true
                         }
                 )
                 .simultaneousGesture(
@@ -73,6 +82,7 @@ struct ARScreenView: View {
                             } else {
                                 viewModel.takePhoto()
                             }
+                            viewModel.isFoundedBody = false
                         }
                 )
                 .fullScreenCover(isPresented: $viewModel.shouldShowResult) {
@@ -81,6 +91,23 @@ struct ARScreenView: View {
                     }
                 }
             }
+        }
+    }
+
+    var guideLabel: some View {
+        HStack {
+            if !viewModel.isFoundedBody {
+                Text("Point the camera at the body")
+            } else if viewModel.isRecording {
+                Text("Tap again to stop")
+            } else {
+                Text("Tap for photo & hold for video")
+            }
+        }
+        .padding(8)
+        .background {
+            RoundedRectangle(cornerRadius: 28)
+                .foregroundColor(Color(asset: Asset.Colors.baseNavigationColor).opacity(0.8))
         }
     }
     
@@ -101,12 +128,25 @@ struct ARScreenView: View {
         .padding(.horizontal, 24)
         .padding(.top, 24)
     }
+    
+    var resetButton: some View {
+        Button {
+            viewModel.send(.onResetButtonTapped)
+        } label: {
+            Image(systemName: "arrow.triangle.2.circlepath")
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundColor(.white)
+        }
+        .frame(width: 45, height: 45)
+        .padding(.horizontal, 24)
+        .padding(.top, 24)
+    }
 
     private var timeLabel: some View {
         Label(viewModel.labelText, systemImage: "heart")
-            .padding(5)
+            .padding(6)
             .background {
-                Rectangle()
+                RoundedRectangle(cornerRadius: 8)
                     .foregroundColor(Color.red)
             }
             .labelStyle(.titleOnly)
@@ -119,7 +159,9 @@ struct ARViewContainer: UIViewRepresentable {
 
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
-        arView.session.run(ARBodyTrackingConfiguration())
+        let configuration = ARBodyTrackingConfiguration()
+        configuration.automaticSkeletonScaleEstimationEnabled = true
+        arView.session.run(configuration)
 
         viewModel.arView = arView
         arView.session.delegate = viewModel
@@ -133,7 +175,7 @@ struct ARViewContainer: UIViewRepresentable {
             } else {
                 material.color = .init(tint: .white)
             }
-                
+
             material.metallic = .init(floatLiteral: 1.0)
             material.roughness = .init(floatLiteral: 0.5)
 

@@ -1,2 +1,3 @@
-"NSCameraUsageDescription" = "This lets you use your photos from your library as a pattern and save photos and videos to your Camera Roll.";
-"NSPhotoLibraryUsageDescription" = "To take photos and videos.";
+"NSCameraUsageDescription" = "To take photos and videos.";
+"NSPhotoLibraryUsageDescription" = "This lets you use your photos from your library as a pattern and save photos and videos to your Camera Roll.";
+

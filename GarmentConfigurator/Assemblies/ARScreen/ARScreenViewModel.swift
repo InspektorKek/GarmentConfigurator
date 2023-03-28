@@ -37,7 +37,8 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     @Published var isRecording: Bool = false
     @Published var labelText: String = "00:00"
     @Published var progressValue: CGFloat = 0.0
-    
+    @Published var isFoundedBody = false
+
     var arView: ARView? {
         didSet {
             arView?.prepareForRecording()
@@ -47,7 +48,7 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     // MARK: Augmented Reality model properties
     var scaleValue: Float = 0.01
     var character: BodyTrackedEntity?
-    let characterOffset: SIMD3<Float> = [0, 0, 0]
+    let characterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
     let characterAnchor = AnchorEntity()
     var cancellables = Set<AnyCancellable>()
     
@@ -68,6 +69,13 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
     func send(_ event: ARScreenFlow.Event) {
         eventSubject.send(event)
     }
+    
+    private func resetAR() {
+        let configuration = ARBodyTrackingConfiguration()
+        configuration.automaticSkeletonScaleEstimationEnabled = true
+        arView?.session.run(configuration,
+                                  options: .resetTracking)
+    }
 
     private func bindInput() {
         eventSubject
@@ -78,6 +86,8 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
                     self.objectWillChange.send()
                 case .onNextScene:
                     self.delegate?.closeAR()
+                case .onResetButtonTapped:
+                    self.resetAR()
                 }
             }
             .store(in: &subscriptions)
@@ -150,25 +160,52 @@ class ARScreenViewModel: NSObject, ObservableObject, ARSessionDelegate {
 
     // MARK: Augmented Reality model methods
     func loadCharacter(material: SimpleMaterial) {
-        Entity.loadBodyTrackedAsync(named: "T-Shirt").sink(receiveCompletion: { completion in
-            if case let .failure(error) = completion {
-                print("Error: Unable to load model: \(error.localizedDescription)")
-            }
-        }, receiveValue: { [weak self] (character: Entity) in
-            if let character = character as? BodyTrackedEntity {
-                character.scale = [self?.scaleValue ?? 0.01, self?.scaleValue ?? 0.01, self?.scaleValue ?? 0.01]
-                self?.character = character
-                self?.arView!.scene.addAnchor(self!.characterAnchor) // Add characterAnchor to the scene
-            } else {
-                print("Error: Unable to load model as BodyTrackedEntity")
-            }
-        }).store(in: &cancellables)
+        arView?.scene.addAnchor(characterAnchor)
+            Entity.loadBodyTrackedAsync(named: "T-Shirt").sink(receiveCompletion: { completion in
+                if case let .failure(error) = completion {
+                    print("Error: Unable to load model: \(error.localizedDescription)")
+                }
+            }, receiveValue: { [weak self] (character: Entity) in
+                guard let self else { return }
+                
+                if let character = character as? BodyTrackedEntity {
+                    character.scale = [self.scaleValue, self.scaleValue, self.scaleValue]
+                    
+                    var imageMaterial = SimpleMaterial()
+                    
+                    do {
+                        try self.model.patterns.forEach { patternInfo in
+                            if let patternMaterial = patternInfo.textureMaterial,
+                               let url = FilesManager.makeURL(forFileNamed: patternMaterial.id.uuidString) {
+                                imageMaterial.color = try .init(tint: .white,texture: .init(.load(contentsOf: url, withName: nil)))
+                                
+                                switch patternInfo.type {
+                                case .leftArm:
+                                    character.model?.materials[1] = imageMaterial
+                                case .rightArm:
+                                    character.model?.materials[2] = imageMaterial
+                                case .front:
+                                    character.model?.materials[3] = imageMaterial
+                                case .back:
+                                    character.model?.materials[0] = imageMaterial
+                                }
+                            }
+                        }
+                    } catch {
+                        print(error)
+                    }
+                    
+                    self.character = character
+                } else {
+                    print("Error: Unable to load model as BodyTrackedEntity")
+                }
+            }).store(in: &cancellables)
     }
 
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
             guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-
+            isFoundedBody = true
             let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
             characterAnchor.position = bodyPosition + characterOffset
             characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
