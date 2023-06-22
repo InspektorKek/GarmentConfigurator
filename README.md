@@ -3,7 +3,7 @@ ARgo is a groundbreaking iOS app developed by our team at the Apple Developer Ac
 
 The app comprises a user-friendly interface and various features, such as a Welcome Screen, Main Screen, Configurator Screen, and AR Screen. These intuitive screens facilitate effortless interaction with 3D clothing models, customization of t-shirt patterns using personal images, and the ability to virtually "try on" garments in real-time.
 
-Try it out in ![TestFlight](https://testflight.apple.com/join/e77hvCTB)
+Try it out in [TestFlight](https://testflight.apple.com/join/e77hvCTB)
 
 # Screenshots
 
